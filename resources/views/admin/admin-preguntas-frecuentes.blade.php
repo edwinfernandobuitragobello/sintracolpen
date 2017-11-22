@@ -8,23 +8,24 @@
                             </div>
 
                             <div class="row">
-                                <form action="" method="">
+                                <form action="{{ url('/admin/preguntas_frecuentes_editar1') }}" method="POST" role="form" enctype="multipart/form-data">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Título</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Título">
+                                            <input type="text" id="" name="titulo_preguntas" class="form-control" placeholder="Título" value="{{$preguntas_frecuentes->titulo_preguntas}}">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Descripción</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Descripción">
+                                            <input type="text" id="" name="descripcion_preguntas" class="form-control" placeholder="Descripción" value="{{$preguntas_frecuentes->descripcion_preguntas}}">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Imagen</label>
-                                            <input type="file" id="" name="" class="form-control" placeholder="Imagen">
+                                            <input type="file" id="" name="imagen_preguntas" class="form-control" placeholder="Imagen">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -45,14 +46,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>¿Para qué es un sindicato?</td>
-                                            <td>Para representar a los trabajadores ante los empleadores, con miras a mejorar sus condiciones de trabajo, al interior de la empresa e instituciones y como actor social deben contribuir a la construcción y fortalecimiento de la democracia y a la creación de condiciones que desarrollen y defiendan los derechos humanos.</td>
-                                            <td class="text-center">
-                                                <a href="#" data-toggle="modal" data-target="#editarPregunta" title="Editar Pregunta" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" title="Eliminar Pregunta" class="btn btn-effect-ripple btn-sm btn-danger"><i class="fa fa-times"></i></a>
-                                            </td>
-                                        </tr>
+                                        @foreach($preguntas_frecuentes1s as $preguntas_frecuentes1)
+                                            <tr>
+                                                <td>{{$preguntas_frecuentes1->pregunta_preguntas}}</td>
+                                                <td>{{$preguntas_frecuentes1->respuesta_preguntas}}</td>
+                                                <td class="text-center">
+                                                    <a onclick="preguntas_frecuentes_editar('{{$preguntas_frecuentes1->id}}' , '{{$preguntas_frecuentes1->pregunta_preguntas}}' , '{{$preguntas_frecuentes1->respuesta_preguntas}}')" href="#" data-toggle="modal" data-target="#editarPregunta" title="Editar Pregunta" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
+                                                    <a href="{{url('admin/preguntas_frecuentes_eliminar')}}/{{$preguntas_frecuentes1->id}}" title="Eliminar Pregunta" class="btn btn-effect-ripple btn-sm btn-danger"><i class="fa fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -64,7 +67,7 @@
 
         <!--Modal Crear Pregunta-->
         <div class="modal fade" id="crearPregunta" tabindex="-1" role="dialog" aria-labelledby="crearPregunta" aria-hidden="true">
-            <form action="" method="">
+            <form action="{{ url('/admin/preguntas_frecuentes_crear') }}" method="POST" role="form">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -74,25 +77,26 @@
                             <h3 class="modal-title">Crear pregunta</h3>
                         </div>
                         <div class="modal-body">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Pregunta</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Pregunta..." required>
+                                        <input type="text" class="form-control" id="" name="pregunta_preguntas" placeholder="Pregunta..." required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Respuesta</label>
-                                        <textarea class="form-control textArea" rows="6" id="" name="" placeholder="Respuesta..." required></textarea>
+                                        <textarea class="form-control textArea" rows="6" id="" name="respuesta_preguntas" placeholder="Respuesta..." required></textarea>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                            <button class="btn btn-success">Crear</button>
+                            <button type="submit" class="btn btn-success">Crear</button>
                         </div>
                     </div>
                 </div>
@@ -101,7 +105,8 @@
 
         <!--Modal Editar Pregunta-->
         <div class="modal fade" id="editarPregunta" tabindex="-1" role="dialog" aria-labelledby="editarPregunta" aria-hidden="true">
-            <form action="" method="">
+            <form action="{{ url('/admin/preguntas_frecuentes_editar') }}" method="POST" role="form">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -115,14 +120,15 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Pregunta</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Pregunta...">
+                                        <input type="hidden" class="form-control" id="id" name="id" placeholder="Pregunta..." value="">
+                                        <input type="text" class="form-control" id="pregunta_preguntas" name="pregunta_preguntas" placeholder="Pregunta..." value="">
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Respuesta</label>
-                                        <textarea class="form-control textArea" rows="6" id="" name="" placeholder="Respuesta..."></textarea>
+                                        <textarea class="form-control textArea" rows="6" id="respuesta_preguntas" name="respuesta_preguntas" placeholder="Respuesta..."></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -135,5 +141,11 @@
                 </div>
             </form>
         </div>
-
+<script type="text/javascript">
+    function preguntas_frecuentes_editar(id,pregunta,respuesta){
+        $("#id").val(id);
+        $("#pregunta_preguntas").val(pregunta);
+        $("#respuesta_preguntas").val(respuesta);
+    }
+</script>
 @include('admin.admin-footer')

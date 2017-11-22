@@ -8,11 +8,12 @@
                             </div>
 
                             <div class="row">
-                                <form action="" method="">
+                                <form action="{{ url('/admin/enlaces_interes_editar') }}" method="POST" role="form">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Título</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Título">
+                                            <input type="text" id="" name="titulo_enlaces_interes" class="form-control" placeholder="Título" value="{{$enlaces_interes->titulo_enlaces_interes}}">
                                         </div>
                                     </div>
                                     <div class="col-md-4">

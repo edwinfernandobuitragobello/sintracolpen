@@ -132,7 +132,7 @@
                                         </ul>
                                     </li>
                                     <li class="dropdown megamenu-container">
-                                        <a href="preguntas-frecuentes.html">Preguntas</a>
+                                        <a href="{{url('preguntas-frecuentes')}}">Preguntas</a>
                                     </li>
                                     <li class="dropdown">
                                         <a href="{{url('contactanos')}}">Contáctanos</a>

@@ -1,7 +1,7 @@
 <div class="mb50"></div>
 
             <div class="container">
-                <h2 class="title-underblock dark mb30">Enlaces de interés</h2>
+                <h2 class="title-underblock dark mb30">{{$enlaces_interes->titulo_enlaces_interes}}</h2>
                 <div class="team-member-carousel owl-carousel nav-border nav-higher">
                     <a href="https://www.colpensiones.gov.co/" target="_blank" title="Colpensiones - Ven por tu futuro ya">
                         <img src="{{ asset('imgUser/aliados/logoColpensiones.jpg') }}" style="width: 80%">
@@ -37,15 +37,15 @@
                             <div class="widget">
                                 <div class="corporate-widget">
                                     <a href=""><img src="{{ asset('imgUser/logoSintracolpen.png') }}"></a><br><br>
-                                    <p><i>Sindicato de Trabajadores de la Administradora Colombiana de Pensiones - SINTRACOLPEN.</i></p>
+                                    <p><i>{{$contactanos->texto_descriptivo_contactenos}}</i></p>
 
                                     <address>
-                                        <strong>Domicilio Principal: </strong>Calle 4 No. 9-43 <br> Zipaquirá - Cundinamarca<br> 
-                                        <strong>Oficina: </strong> 403<br><br>
-                                        <strong>Notificaciones: </strong>Carrera 20C No. 72-13 <br> Barrio San Felipe-Bogotá<br>
-                                        <strong>Oficina: </strong>207<br><br>
-                                        <strong>Correo: </strong> <a href="mailto:sintracolpen@gmail.com">sintracolpen@gmail.com</a><br>
-                                        <strong>Teléfono: </strong>3099131
+                                        <strong>Domicilio Principal: </strong>{{$contactanos->domicilio_principal_contactenos}}<br> 
+                                        <strong>Oficina: </strong> {{$contactanos->oficina1_contactenos}}<br><br>
+                                        <strong>Notificaciones: </strong>{{$contactanos->Notificaciones_contactenos}}<br>
+                                        <strong>Oficina: </strong>{{$contactanos->oficina2_contactenos}}<br><br>
+                                        <strong>Correo: </strong> <a href="mailto:{{$contactanos->correo_contactenos}}">{{$contactanos->correo_contactenos}}</a><br>
+                                        <strong>Teléfono: </strong>{{$contactanos->telefono_contactenos}}
                                     </address>
                                     
                                     <span class="social-icons-label">Síguenos en...</span>
@@ -124,8 +124,8 @@
                                 <li><a href="nosotros.html">Nosotros</a></li>
                                 <li><a href="afiliate-ya.html">Afiliaciones</a></li>
                                 <li><a href="contenidos.html">Contenidos</a></li>
-                                <li><a href="preguntas-frecuentes.html">Preguntas</a></li>
-                                <li><a href="contactanos.html">Contáctanos</a></li>
+                                <li><a href="{{url('preguntas-frecuentes')}}">Preguntas</a></li>
+                                <li><a href="{{url('contactanos')}}">Contáctanos</a></li>
                             </ul>
                         </div>
                         <div class="col-md-6 col-md-pull-6">
