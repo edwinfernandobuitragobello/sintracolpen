@@ -20,7 +20,7 @@
                     @foreach($galerias1s as $galerias1)
                         <div class="portfolio-item portfolio-meta-slideup design">
                             <figure>
-                                <a href="{{url('uploads')}}/{{$galerias1->imagen_galerias}}" class="zoom-item" title="{{$galerias1->nombre_galerias}}"><img src="{{url('uploads')}}/{{$galerias1->imagen_galerias}}" alt="{{$galerias1->nombre_galerias}}" class="img-responsive"></a>
+                                <a href="{{url('uploads')}}/{{$galerias1->imagen_galerias}}" class="zoom-item" title="{{$galerias1->nombre_galerias}}"><img src="{{url('uploads')}}/{{$galerias1->imagen_galerias}}" style="width: 100%; height: 290px;" alt="{{$galerias1->nombre_galerias}}" class="img-responsive"></a>
                             </figure>
                             <div class="portfolio-meta backgroungWhite">
                                 <h2 class="portfolio-title colorWhite">{{$galerias1->nombre_galerias}}</h2>
