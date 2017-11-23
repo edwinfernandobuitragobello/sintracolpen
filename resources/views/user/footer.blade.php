@@ -3,27 +3,11 @@
             <div class="container">
                 <h2 class="title-underblock dark mb30">{{$enlaces_interes->titulo_enlaces_interes}}</h2>
                 <div class="team-member-carousel owl-carousel nav-border nav-higher">
-                    <a href="https://www.colpensiones.gov.co/" target="_blank" title="Colpensiones - Ven por tu futuro ya">
-                        <img src="{{ asset('imgUser/aliados/logoColpensiones.jpg') }}" style="width: 80%">
-                    </a>
-                    <a href="https://cut.org.co/" target="_blank" title="Central Colombiana de Trabajadores - Colombia">
-                        <img src="{{ asset('imgUser/aliados/logoCUT-Colombia.jpg') }}" style="width: 80%;">
-                    </a>
-                    <a href="http://www.mintrabajo.gov.co/web/guest/inicio" target="_blank" title="Mintrabajo - Paz, Equidad, Educación">
-                        <img src="{{ asset('imgUser/aliados/LogoMintrabajo.jpg') }}" style="width: 80%;">
-                    </a>
-                    <a href="https://www.procuraduria.gov.co/portal/" target="_blank" title="Procuraduría General de la Nación">
-                        <img src="{{ asset('imgUser/aliados/logoProcuraduria.jpg') }}" style="width: 80%;">
-                    </a>
-                    <a href="http://cutbogota.org/" target="_blank" title="Central Colombia de Trabajadores - Bogotá">
-                        <img src="{{ asset('imgUser/aliados/logoCUT-Bogota.jpg') }}" style="width: 80%">
-                    </a>
-                    <a href="http://www.ilo.org/global/lang--es/index.htm" target="_blank" title="Organización Internacional del Trabajo">
-                        <img src="{{ asset('imgUser/aliados/logoOIT.jpg') }}" style="width: 80%;">
-                    </a>
-                    <a href="http://www.ens.org.co/" target="_blank" title="Escuela Nacional Sindical">
-                        <img src="{{ asset('imgUser/aliados/logoENS.jpg') }}" style="width: 80%;">
-                    </a>
+                	@foreach($enlaces_interes1s as $enlaces_interes1)
+	                    <a href="{{$enlaces_interes1->enlace_enlaces_interes}}" target="_blank" title="{{$enlaces_interes1->nombre_enlaces_interes}}">
+	                        <img src="{{url('uploads')}}/{{$enlaces_interes1->imagen_enlaces_interes}}" style="width: 80%">
+	                    </a>
+	                @endforeach
                 </div>
             </div>
             <div class="mb40 mb30-xs"></div>

@@ -122,8 +122,8 @@
                                             <li class="dropdown sub-dropdown">
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Multimedia<span class="angle"></span></a>
                                                 <ul class="dropdown-menu" role="menu">
-                                                    <li><a href="galeria.html">Galería</a></li>
-                                                    <li><a href="videos.html">Vídeos</a></li> 
+                                                    <li><a href="{{url('galeria')}}">Galería</a></li>
+                                                    <li><a href="{{url('videos')}}">Vídeos</a></li> 
                                                 </ul>
                                             </li>
                                             <li class="dropdown sub-dropdown">

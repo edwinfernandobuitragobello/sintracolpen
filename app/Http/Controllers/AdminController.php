@@ -5,6 +5,11 @@ use App\Contactenos;
 use App\Preguntas_frecuentes;
 use App\Preguntas_frecuentes1s;
 use App\Enlaces_interes;
+use App\Enlaces_interes1s;
+use App\Videos;
+use App\Videos1s;
+use App\Galerias;
+use App\Galerias1s;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use File;
@@ -56,9 +61,11 @@ class AdminController extends Controller
     public function documentos_oficiales(){
     	return view('admin.admin-documentos-oficiales');
     }
+    //TODO SOBRE ENLACES DE INTERES
     public function enlaces_interes(){
     	$enlaces_interes = Enlaces_interes::find(1);
-    	return view('admin.admin-enlaces-interes',compact('enlaces_interes'));
+    	$enlaces_interes1s = Enlaces_interes1s::get();
+    	return view('admin.admin-enlaces-interes',compact('enlaces_interes','enlaces_interes1s'));
     }
     public function enlaces_interes_editar(Request $request){
     	$enlaces_interes = Enlaces_interes::find(1);
@@ -66,8 +73,83 @@ class AdminController extends Controller
         $enlaces_interes->save();
     	return redirect()->back()->with('success', 'Actualizado con exito');
     }
-    public function galeria(){
-    	return view('admin.admin-galeria');
+    public function enlaces_interes_crear(Request $request){
+    	$enlaces_interes1 = new Enlaces_interes1s();
+    	if($request->hasFile('imagen_enlaces_interes')){
+            $filename = 'imagen_enlaces_interes'.str_random(40).".".$request->file('imagen_enlaces_interes')->getClientOriginalExtension();
+            $request->file('imagen_enlaces_interes')->move('uploads/', $filename);
+            File::delete('uploads/'.$enlaces_interes1->imagen_enlaces_interes);
+            $enlaces_interes1->imagen_enlaces_interes = $filename;
+        }else{
+        	return redirect()->back()->with('success', 'No fue creado con exito');
+        }
+        $enlaces_interes1->nombre_enlaces_interes = $request->nombre_enlaces_interes;
+        $enlaces_interes1->enlace_enlaces_interes = $request->enlace_enlaces_interes;
+        $enlaces_interes1->save();
+        return redirect()->back()->with('success', 'Creado con exito');
+    }
+    public function enlaces_interes_editar1(Request $request){
+    	$enlaces_interes1 = Enlaces_interes1s::find($request->id);
+    	if($request->hasFile('imagen_enlaces_interes')){
+            $filename = 'imagen_enlaces_interes'.str_random(40).".".$request->file('imagen_enlaces_interes')->getClientOriginalExtension();
+            $request->file('imagen_enlaces_interes')->move('uploads/', $filename);
+            File::delete('uploads/'.$enlaces_interes1->imagen_enlaces_interes);
+            $enlaces_interes1->imagen_enlaces_interes = $filename;
+        }
+        $enlaces_interes1->nombre_enlaces_interes = $request->nombre_enlaces_interes;
+        $enlaces_interes1->enlace_enlaces_interes = $request->enlace_enlaces_interes;
+        $enlaces_interes1->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function enlaces_interes_eliminar($id){
+    	//eliminar categoria
+        $enlaces_interes1 = Enlaces_interes1s::find($id);
+		$enlaces_interes1->delete();
+        return redirect()->back()->with('success', 'Eliminado con exito');
+    }
+    //TODO SOBRE GALERIAS
+    public function galerias(){
+    	$galerias = Galerias::find('1');
+    	$galerias1s = Galerias1s::paginate(10);
+    	return view('admin.admin-galeria',compact('galerias','galerias1s'));
+    }
+    public function galerias_editar1(Request $request){
+    	$galerias = Galerias::find('1');
+        $galerias->titulo_galerias = $request->titulo_galerias;
+        $galerias->descripcion_galerias = $request->descripcion_galerias;
+        $galerias->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function galerias_crear(Request $request){
+    	$galerias1 = new Galerias1s();
+    	if($request->hasFile('imagen_galerias')){
+            $filename = 'imagen_galerias'.str_random(40).".".$request->file('imagen_galerias')->getClientOriginalExtension();
+            $request->file('imagen_galerias')->move('uploads/', $filename);
+            File::delete('uploads/'.$galerias1->imagen_galerias);
+            $galerias1->imagen_galerias = $filename;
+        }else{
+        	return redirect()->back()->with('success', 'No fue creado con exito');
+        }
+        $galerias1->nombre_galerias = $request->nombre_galerias;
+        $galerias1->save();
+        return redirect()->back()->with('success', 'Se creo con exito');
+    }
+    public function galerias_editar(Request $request){
+    	$galerias1 = Galerias1s::find($request->id);
+    	if($request->hasFile('imagen_galerias')){
+            $filename = 'imagen_galerias'.str_random(40).".".$request->file('imagen_galerias')->getClientOriginalExtension();
+            $request->file('imagen_galerias')->move('uploads/', $filename);
+            File::delete('uploads/'.$galerias1->imagen_galerias);
+            $galerias1->imagen_galerias = $filename;
+        }
+        $galerias1->nombre_galerias = $request->nombre_galerias;
+        $galerias1->save();
+        return redirect()->back()->with('success', 'Se creo con exito');
+    }
+    public function galerias_eliminar($id){
+        $galerias1 = Galerias1s::find($id);
+		$galerias1->delete();
+        return redirect()->back()->with('success', 'Eliminado con exito');
     }
     public function inicio(){
     	return view('admin.admin-inicio');
@@ -112,12 +194,40 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Creado con exito');
     }
     public function preguntas_frecuentes_eliminar($id){
-    	//eliminar categoria
         $preguntas_frecuentes = Preguntas_frecuentes1s::find($id);
 		$preguntas_frecuentes->delete();
-        return redirect()->back()->with('success', 'Creado con exito');
+        return redirect()->back()->with('success', 'Eliminado con exito');
     }
+    //TODO SOBRE VIDEOS
     public function videos(){
-    	return view('admin.admin-videos');
+    	$videos = Videos::find('1');
+    	$videos1s = Videos1s::get();
+    	return view('admin.admin-videos', compact('videos','videos1s'));
+    }
+    public function videos_editar1(Request $request){
+    	$videos = Videos::find('1');
+        $videos->titulo_videos = $request->titulo_videos;
+        $videos->descripcion_videos = $request->descripcion_videos;
+        $videos->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function videos_crear(Request $request){
+    	$videos1 = new Videos1s();
+        $videos1->nombre_videos = $request->nombre_videos;
+        $videos1->url_videos = $request->url_videos;
+        $videos1->save();
+        return redirect()->back()->with('success', 'Se creo con exito');
+    }
+    public function videos_editar(Request $request){
+    	$videos1 = Videos1s::find($request->id);
+        $videos1->nombre_videos = $request->nombre_videos;
+        $videos1->url_videos = $request->url_videos;
+        $videos1->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function videos_eliminar($id){
+        $videos1 = Videos1s::find($id);
+		$videos1->delete();
+        return redirect()->back()->with('success', 'Eliminado con exito');
     }
 }

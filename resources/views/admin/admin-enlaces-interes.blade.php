@@ -35,15 +35,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td><center><img src="img/logoCUT-Bogota.jpg" width="80%"></center></td>
-                                            <td>Para representar a los trabajadores ante los empleadores, con miras a mejorar sus condiciones de trabajo, al interior de la empresa e instituciones y como actor social deben contribuir a la construcción y fortalecimiento de la democracia y a la creación de condiciones que desarrollen y defiendan los derechos humanos.</td>
-                                            <td><a href="" target="_blank">https://www.colpensiones.gov.co/</a></td>
-                                            <td class="text-center">
-                                                <a href="#" data-toggle="modal" data-target="#editarEnlace" title="Editar Enlace" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" title="Eliminar Enlace" class="btn btn-effect-ripple btn-sm btn-danger"><i class="fa fa-times"></i></a>
-                                            </td>
-                                        </tr>
+                                        @foreach($enlaces_interes1s as $enlaces_interes1)
+                                            <tr>
+                                                <td><center><img src="{{url('uploads')}}/{{$enlaces_interes1->imagen_enlaces_interes}}" width="80%"></center></td>
+                                                <td>{{$enlaces_interes1->nombre_enlaces_interes}}</td>
+                                                <td><a href="" target="_blank">{{$enlaces_interes1->enlace_enlaces_interes}}</a></td>
+                                                <td class="text-center">
+                                                    <a onclick="enlaces_interes_editar('{{$enlaces_interes1->id}}' , '{{$enlaces_interes1->nombre_enlaces_interes}}' , '{{$enlaces_interes1->enlace_enlaces_interes}}')" href="#" data-toggle="modal" data-target="#editarEnlace" title="Editar Enlace" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
+                                                    <a href="{{url('admin/enlaces_interes_eliminar')}}/{{$enlaces_interes1->id}}" title="Eliminar Enlace" class="btn btn-effect-ripple btn-sm btn-danger"><i class="fa fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -55,7 +57,8 @@
 
         <!--Modal Crear Enlace-->
         <div class="modal fade" id="crearEnlace" tabindex="-1" role="dialog" aria-labelledby="crearEnlace" aria-hidden="true">
-            <form id="contact-form-advanced" method="get" action="#">
+            <form id="contact-form-advanced" action="{{ url('/admin/enlaces_interes_crear') }}" method="POST" role="form" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -69,20 +72,20 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Nombre</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Nombre del enlace" required>
+                                        <input type="text" class="form-control" id="" name="nombre_enlaces_interes" placeholder="Nombre del enlace" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Dirección URL</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Dirección url del enlace" required>
+                                        <input type="text" class="form-control" id="" name="enlace_enlaces_interes" placeholder="Dirección url del enlace" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Logo</label>
-                                        <input type="file" id="" name="" class="form-control" placeholder="Imagen" required>
+                                        <input type="file" id="" name="imagen_enlaces_interes" class="form-control" placeholder="Imagen" required>
                                     </div>
                                 </div>
                             </div>
@@ -98,7 +101,9 @@
 
         <!--Modal Editar Enlace-->
         <div class="modal fade" id="editarEnlace" tabindex="-1" role="dialog" aria-labelledby="editarEnlace" aria-hidden="true">
-            <form id="contact-form-advanced" method="get" action="#">
+            <form id="contact-form-advanced" action="{{ url('/admin/enlaces_interes_editar1') }}" method="POST" role="form" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="hidden" id="id" name="id" value="">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -112,31 +117,37 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Nombre</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Nombre del enlace">
+                                        <input type="text" class="form-control" id="nombre_enlaces_interes" name="nombre_enlaces_interes" placeholder="Nombre del enlace">
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Dirección URL</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Dirección url del enlace">
+                                        <input type="text" class="form-control" id="enlace_enlaces_interes" name="enlace_enlaces_interes" placeholder="Dirección url del enlace">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Logo</label>
-                                        <input type="file" id="" name="" class="form-control" placeholder="Imagen">
+                                        <input type="file" id="" name="imagen_enlaces_interes" class="form-control" placeholder="Imagen">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                            <button class="btn btn-success">Editar</button>
+                            <button type="submit" class="btn btn-success">Editar</button>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
-
+<script type="text/javascript">
+    function enlaces_interes_editar(id,nombre,enlace){
+        $("#id").val(id);
+        $("#nombre_enlaces_interes").val(nombre);
+        $("#enlace_enlaces_interes").val(enlace);
+    }
+</script>
 @include('admin.admin-footer')

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEnlacesInteresTable extends Migration
+class CreateEnlacesInteres1sTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateEnlacesInteresTable extends Migration
      */
     public function up()
     {
-        Schema::create('enlaces-interes', function (Blueprint $table) {
+        Schema::create('enlaces_interes1s', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titulo_enlaces_interes')->nullable();
+            $table->string('imagen_enlaces_interes')->nullable();
+            $table->longText('nombre_enlaces_interes')->nullable();
+            $table->string('enlace_enlaces_interes')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateEnlacesInteresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('enlaces-interes');
+        Schema::dropIfExists('enlaces_interes1s');
     }
 }
