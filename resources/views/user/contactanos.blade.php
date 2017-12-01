@@ -74,13 +74,13 @@
 
                         <h4 class="mb20">Síguenos en...</h4>
                         <div class="social-icons">
-                            <a href="https://twitter.com/sintracolpen1?lang=es" target="_blank" class="social-icon icon-twitter" title="Twitter">
+                            <a href="{{$contactanos->twitter_contactenos}}" target="_blank" class="social-icon icon-twitter" title="Twitter">
                                 <i class="fa fa-twitter sizeIcons-footer" ></i>
                             </a>
-                            <a href="https://www.instagram.com/sintracolpen/?hl=es" target="_blank" class="social-icon icon-instagram" title="Instagram">
+                            <a href="{{$contactanos->instagram_contactenos}}" target="_blank" class="social-icon icon-instagram" title="Instagram">
                                 <i class="fa fa-instagram sizeIcons-footer"></i>
                             </a>
-                            <a href="https://www.youtube.com/channel/UCca6tePo-yD1tmmoQYJTn1g" target="_blank" class="social-icon icon-youtube" title="Youtube">
+                            <a href="{{$contactanos->youtube_contactenos}}" target="_blank" class="social-icon icon-youtube" title="Youtube">
                                 <i class="fa fa-youtube-play sizeIcons-footer"></i>
                             </a>
                         </div>
