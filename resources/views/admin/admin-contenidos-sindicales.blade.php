@@ -38,7 +38,7 @@
                                             <th width="30%">Descripción</th>
                                             <th width="10%" class="text-center">Autor</th>
                                             <th width="5%" class="text-center">Año</th>
-                                            <th width="15%" class="text-center">PDF</th>
+                                            <th width="15%" class="text-center">Pdf</th>
                                             <th width="15%" class="text-center"><i class="fa fa-flash"></i></th>
                                         </tr>
                                     </thead>
@@ -90,7 +90,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Descripción</label>
-                                        <textarea class="form-control textArea" rows="4" id="" name="descripcion_contenidos_sindicales" placeholder="Descripción del contenido" required></textarea>
+                                        <textarea class="form-control textArea" rows="4" id="" name="descripcion_contenidos_sindicales" placeholder="Descripción del contenido" maxlength="200" required></textarea>
                                     </div>
                                 </div>
 
@@ -111,14 +111,14 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Imagen</label>
-                                        <input type="file" class="form-control" id="" name="imagen_contenidos_sindicales" placeholder="Imagen" required>
+                                        <input type="file" id="" name="imagen_contenidos_sindicales" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Archivo PDF</label>
-                                        <input type="file" class="form-control" id="" name="pdf_contenidos_sindicales" placeholder="Archivo PDF" required>
+                                        <input type="file" id="" name="pdf_contenidos_sindicales" class="filestyle" data-buttonName="btn-primary" data-buttonText="Archivo PDF" required>
                                     </div>
                                 </div>
                             </div>
@@ -150,42 +150,42 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Título</label>
-                                        <input type="text" class="form-control" id="titulo_contenidos_sindicales" name="titulo_contenidos_sindicales" placeholder="Título del contenido">
+                                        <input type="text" class="form-control" id="titulo_contenidos_sindicales" name="titulo_contenidos_sindicales" placeholder="Título del contenido" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Descripción</label>
-                                        <textarea class="form-control textArea" rows="4" id="descripcion_contenidos_sindicales" name="descripcion_contenidos_sindicales" placeholder="Descripción del contenido"></textarea>
+                                        <textarea class="form-control textArea" rows="4" id="descripcion_contenidos_sindicales" name="descripcion_contenidos_sindicales" placeholder="Descripción del contenido" maxlength="200" required></textarea>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="input-desc">Autor</label>
-                                        <input type="text" class="form-control" id="autor_contenidos_sindicales" name="autor_contenidos_sindicales" placeholder="Autor del contenido">
+                                        <input type="text" class="form-control" id="autor_contenidos_sindicales" name="autor_contenidos_sindicales" placeholder="Autor del contenido" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="input-desc">Año</label>
-                                        <input type="text" class="form-control" id="ano_contenidos_sindicales" name="ano_contenidos_sindicales" placeholder="Año de publicación">
+                                        <input type="text" class="form-control" id="ano_contenidos_sindicales" name="ano_contenidos_sindicales" placeholder="Año de publicación" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Imagen</label>
-                                        <input type="file" class="form-control" id="" name="imagen_contenidos_sindicales" placeholder="Imagen">
+                                        <input type="file" id="" name="imagen_contenidos_sindicales" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen">
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Archivo PDF</label>
-                                        <input type="file" class="form-control" id="" name="pdf_contenidos_sindicales" placeholder="Archivo PDF">
+                                        <input type="file" id="" name="pdf_contenidos_sindicales" class="filestyle" data-buttonName="btn-primary" data-buttonText="Archivo PDF">
                                     </div>
                                 </div>
                             </div>

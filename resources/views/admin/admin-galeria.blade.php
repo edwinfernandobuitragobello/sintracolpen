@@ -3,7 +3,7 @@
                     <div id="page-content">
                         <div class="block full">
                             <div class="block-title">
-                                <h2></h2>
+                                <h2>Galeria</h2>
                                 <h2 class="pull-right"><a href="#" data-toggle="modal" data-target="#crearGaleria"><u>Crear imagen</u></a></h2>
                             </div>
 
@@ -88,7 +88,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Imagen</label>
-                                        <input type="file" id="" name="imagen_galerias" class="form-control" placeholder="Imagen" required>
+                                        <input type="file" id="" name="imagen_galerias" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen">
                                     </div>
                                 </div>
                             </div>
@@ -127,7 +127,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Imagen</label>
-                                        <input type="file" id="" name="imagen_galerias" class="form-control" placeholder="Imagen">
+                                        <input type="file" id="" name="imagen_galerias" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen">
                                     </div>
                                 </div>
                             </div>

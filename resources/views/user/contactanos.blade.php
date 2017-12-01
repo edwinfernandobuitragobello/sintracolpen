@@ -62,10 +62,10 @@
                         <ul class="contact-list">
                         	<li><i>{{$contactanos->texto_descriptivo_contactenos}}</i></li>
                         	<br>
-                            <li><strong>Domicilio Principal: </strong>{{$contactanos->domicilio_principal_contactenos}}</li>
+                            <li><strong>Domicilio Principal: <br></strong>{{$contactanos->domicilio_principal_contactenos}}</li>
                             <li><strong>Oficina: </strong> {{$contactanos->oficina1_contactenos}}</li>
                             <br>
-                            <li><strong>Oficina Notificaciones: </strong>{{$contactanos->Notificaciones_contactenos}} </li>
+                            <li><strong>Oficina Notificaciones: <br></strong>{{$contactanos->Notificaciones_contactenos}} </li>
                             <li><strong>Oficina: </strong>{{$contactanos->oficina2_contactenos}}</li>
                             <br>
                             <li><strong>Correo: </strong> <a href="mailto:{{$contactanos->correo_contactenos}}">{{$contactanos->correo_contactenos}}</a></li>

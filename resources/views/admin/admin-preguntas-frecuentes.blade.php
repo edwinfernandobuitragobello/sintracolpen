@@ -25,7 +25,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Imagen</label>
-                                            <input type="file" id="" name="imagen_preguntas" class="form-control" placeholder="Imagen">
+                                            <input type="file" id="" name="imagen_preguntas" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen">
                                         </div>
                                     </div>
                                     <div class="col-md-4">

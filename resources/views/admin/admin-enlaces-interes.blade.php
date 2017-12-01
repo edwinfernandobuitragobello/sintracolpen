@@ -85,7 +85,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Logo</label>
-                                        <input type="file" id="" name="imagen_enlaces_interes" class="form-control" placeholder="Imagen" required>
+                                        <input type="file" id="" name="imagen_enlaces_interes" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen">
                                     </div>
                                 </div>
                             </div>
@@ -130,7 +130,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Logo</label>
-                                        <input type="file" id="" name="imagen_enlaces_interes" class="form-control" placeholder="Imagen">
+                                        <input type="file" id="" name="imagen_enlaces_interes" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen">
                                     </div>
                                 </div>
                             </div>

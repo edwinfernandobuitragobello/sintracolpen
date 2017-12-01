@@ -21,12 +21,11 @@
                             <div class="entry-media">
                                 <figure>
                                     <a href="#" data-toggle="modal" data-target="#verPDF">
-                                        <img src="{{url('uploads')}}/{{$boletines_generales1->imagen_boletines_generales}}" alt="Nombre del boletin">
+                                        <img src="{{url('uploads')}}/{{$boletines_generales1->imagen_boletines_generales}}" alt="">
                                     </a>
                                 </figure>
                             </div>
                             <div class="entry-content-wrapper">
-                                <!-- <span class="entry-date">24<span>Feb</span></span> -->
                                 <h2 class="entry-title"><a href="#" data-toggle="modal" data-target="#verPDF">{{$boletines_generales1->titulo_boletines_generales}}</a></h2>
                                 <div class="entry-content">
                                     <p>{{$boletines_generales1->descripcion_boletines_generales}}</p>
@@ -50,6 +49,7 @@
                     <div style="text-align: center">{{$boletines_generales1s->links()}}</div>
                 </nav>
             </div>
+
             <!-- Modal pdf -->
             <div id="verPDF" class="modal fade" role="dialog">
                 <div class="modal-dialog">
@@ -59,6 +59,7 @@
                 </div>
             </div>
 @include('user.footer')
+
 <script type="text/javascript">
     $(".editar").click(function(){
         $("#documento_pdf").attr("src", "{{url('uploads')}}/"+$(this).data("pdf"));

@@ -9809,7 +9809,7 @@ Onepage Homepages --------------------*/
 .entry-media img {
 	display:block;
 	width:100%;
-	height: auto;
+	height: 300px;
 }
 
 .entry-title {
@@ -14317,7 +14317,7 @@ white - custom - dark of your color scheme */
 }
 
 #footer {
-	font-size:14px;
+	font-size:15px;
 	font-family: 'Lato', Verdana, sans-serif;
 	background-color: #fff;
 	color:#505050;
@@ -15880,7 +15880,7 @@ styled buttons not container for vertical centered navs*/
 	font-size:24px;
 	border-radius:50%;
 	opacity:0;
-	background: #3a3a3a;
+	background: #009688;
 	transition: all 0.35s ease-in-out;
 	-webkit-transition: all 0.35s ease-in-out;
 	text-align:center;

@@ -17,7 +17,7 @@
             <div id="footer-inner">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="widget">
                                 <div class="corporate-widget">
                                     <a href=""><img src="{{ asset('imgUser/logoSintracolpen.png') }}"></a><br><br>
@@ -34,13 +34,13 @@
                                     
                                     <span class="social-icons-label">Síguenos en...</span>
                                     <div class="social-icons">
-                                        <a href="https://twitter.com/sintracolpen1?lang=es" target="_blank" class="social-icon icon-twitter" title="Twitter">
+                                        <a href="{{$contactanos->twitter_contactenos}}" target="_blank" class="social-icon icon-twitter" title="Twitter">
                                             <i class="fa fa-twitter sizeIcons-footer" ></i>
                                         </a>
-                                        <a href="https://www.instagram.com/sintracolpen/?hl=es" target="_blank" class="social-icon icon-instagram" title="Instagram">
+                                        <a href="{{$contactanos->instagram_contactenos}}" target="_blank" class="social-icon icon-instagram" title="Instagram">
                                             <i class="fa fa-instagram sizeIcons-footer"></i>
                                         </a>
-                                        <a href="https://www.youtube.com/channel/UCca6tePo-yD1tmmoQYJTn1g" target="_blank" class="social-icon icon-youtube" title="Youtube">
+                                        <a href="{{$contactanos->youtube_contactenos}}" target="_blank" class="social-icon icon-youtube" title="Youtube">
                                             <i class="fa fa-youtube-play sizeIcons-footer"></i>
                                         </a>
                                     </div>
@@ -48,7 +48,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <!-- <div class="col-md-4">
                             <div class="widget">
                                 <h4>Boletines Generales</h4>
                                 <ul class="latest-posts-list">
@@ -89,13 +89,14 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="widget">
-                                <a class="twitter-timeline" href="https://twitter.com/Sintracolpen1?ref_src=twsrc%5Etfw" height="450" data-chrome="nofooter">Tweets por Sintracolpen</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                <a class="twitter-timeline" href="{{$contactanos->twitter_contactenos}}?ref_src=twsrc%5Etfw" height="450" data-chrome="nofooter">Tweets por Sintracolpen</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                             </div>
                         </div>
+  
                     </div>
                 </div>
             </div>

@@ -40,7 +40,7 @@
                     </div>
                     <div class="mb30 visible-xs visible-sm"></div>
                     <div class="col-md-5">
-                        <img src="uploads/{{$preguntas_frecuentes->imagen_preguntas}}" alt="" class="wow zoomIn img-responsive center-block">
+                        <img src="uploads/{{$preguntas_frecuentes->imagen_preguntas}}" alt="" style="width: 300px; height: 320px;" class="wow zoomIn img-responsive center-block">
                     </div>
                 </div>
             </div>

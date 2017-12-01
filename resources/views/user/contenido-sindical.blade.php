@@ -26,7 +26,6 @@
                                 </figure>
                             </div>
                             <div class="entry-content-wrapper">
-                                <!-- <span class="entry-date">24<span>Feb</span></span> -->
                                 <h2 class="entry-title"><a href="#" data-toggle="modal" data-target="#verPDF">{{$contenidos_sindicales1->titulo_contenidos_sindicales}}</a></h2>
                                 <div class="entry-content">
                                     <p>{{$contenidos_sindicales1->descripcion_contenidos_sindicales}}</p>
@@ -50,6 +49,7 @@
                     <div style="text-align: center">{{$contenidos_sindicales1s->links()}}</div>
                 </nav>
             </div>
+
             <!-- Modal pdf -->
             <div id="verPDF" class="modal fade" role="dialog">
                 <div class="modal-dialog">
@@ -58,8 +58,8 @@
                     </div>
                 </div>
             </div>
-
 @include('user.footer')
+
 <script type="text/javascript">
     $(".editar").click(function(){
         $("#documento_pdf").attr("src", "{{url('uploads')}}/"+$(this).data("pdf"));
