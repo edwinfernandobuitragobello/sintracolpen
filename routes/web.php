@@ -13,7 +13,10 @@
 //ADMINISTRADOR
 Route::get('/admin/afiliate-ya', 'adminController@afiliate_ya');
 Route::get('/admin/boletines-generales', 'adminController@boletines_generales');
+
 Route::get('/admin/capacitaciones', 'adminController@capacitaciones');
+Route::post('/admin/capacitaciones_editar1', 'adminController@capacitaciones_editar1');
+
 Route::get('/admin/comunicados-oficiales', 'adminController@comunicados_oficiales');
 
 Route::get('/admin/contactanos', 'adminController@contactanos');
@@ -21,7 +24,13 @@ Route::post('/admin/contactanos_editar1', 'adminController@contactanos_editar1')
 Route::post('/admin/contactanos_editar2', 'adminController@contactanos_editar2');
 
 Route::get('/admin/contenidos-sindicales', 'adminController@contenidos_sindicales');
+
 Route::get('/admin/documentos-oficiales', 'adminController@documentos_oficiales');
+Route::post('/admin/documentos_oficiales_editar1', 'adminController@documentos_oficiales_editar1');
+Route::post('/admin/documentos_oficiales_crear', 'adminController@documentos_oficiales_crear');
+Route::post('/admin/documentos_oficiales_editar2', 'adminController@documentos_oficiales_editar2');
+Route::get('/admin/documentos_oficiales_eliminar/{id?}', 'adminController@documentos_oficiales_eliminar');
+
 
 Route::get('/admin/enlaces-interes', 'adminController@enlaces_interes');
 Route::post('/admin/enlaces_interes_editar', 'adminController@enlaces_interes_editar');
@@ -56,3 +65,4 @@ Route::get('contactanos', 'userController@contactanos');
 Route::get('preguntas-frecuentes', 'userController@preguntas_frecuentes');
 Route::get('videos', 'userController@videos');
 Route::get('galeria', 'userController@galeria');
+Route::get('documentos-oficiales', 'userController@documentos_oficiales');

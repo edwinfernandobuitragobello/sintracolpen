@@ -10,6 +10,9 @@ use App\Videos;
 use App\Videos1s;
 use App\Galerias;
 use App\Galerias1s;
+use App\capacitaciones;
+use App\documentos_oficiales;
+use App\documentos_oficiales1s;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use File;
@@ -22,9 +25,18 @@ class AdminController extends Controller
     public function boletines_generales(){
     	return view('admin.admin-boletines-generales');
     }
+    //TODO SOBRE CAPACITACIONES
     public function capacitaciones(){
-    	return view('admin.admin-capacitaciones');
+        $capacitaciones = capacitaciones::find('1');
+    	return view('admin.admin-capacitaciones', compact('capacitaciones'));
     }
+    public function capacitaciones_editar1(Request $request){
+        $capacitaciones = capacitaciones::find('1');
+        $capacitaciones->url_capacitaciones = $request->url_capacitaciones;
+        $capacitaciones->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+
     public function comunicados_oficiales(){
     	return view('admin.admin-comunicados-oficiales');
     }
@@ -58,8 +70,69 @@ class AdminController extends Controller
     public function contenidos_sindicales(){
     	return view('admin.admin-contenidos-sindicales');
     }
+    //TODO SOBRE SOCUMENTOS OFICIALES
     public function documentos_oficiales(){
-    	return view('admin.admin-documentos-oficiales');
+        $documentos_oficiales = documentos_oficiales::find(1);
+        $documentos_oficiales1s = documentos_oficiales1s::get();
+    	return view('admin.admin-documentos-oficiales',compact('documentos_oficiales','documentos_oficiales1s'));
+    }
+    public function documentos_oficiales_editar1(Request $request){
+        $documentos_oficiales = documentos_oficiales::find(1);
+        $documentos_oficiales->titulo_documentos_oficiales = $request->titulo_documentos_oficiales;
+        $documentos_oficiales->descripcion_documentos_oficiales = $request->descripcion_documentos_oficiales;
+        $documentos_oficiales->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function documentos_oficiales_crear(Request $request){
+        $documentos_oficiales = new documentos_oficiales1s();
+        if($request->hasFile('imagen_documentos_oficiales')){
+            $filename = 'imagen_documentos_oficiales'.str_random(40).".".$request->file('imagen_documentos_oficiales')->getClientOriginalExtension();
+            $request->file('imagen_documentos_oficiales')->move('uploads/', $filename);
+            File::delete('uploads/'.$documentos_oficiales->imagen_documentos_oficiales);
+            $documentos_oficiales->imagen_documentos_oficiales = $filename;
+        }else{
+            return redirect()->back()->with('success', 'No fue creado con exito');
+        }
+        $documentos_oficiales->titulo_documentos_oficiales = $request->titulo_documentos_oficiales;
+        $documentos_oficiales->descripcion_documentos_oficiales = $request->descripcion_documentos_oficiales;
+        $documentos_oficiales->autor_documentos_oficiales = $request->autor_documentos_oficiales;
+        $documentos_oficiales->ano_documentos_oficiales = $request->ano_documentos_oficiales;
+        if($request->hasFile('pdf_documentos_oficiales')){
+            $filename = 'pdf_documentos_oficiales'.str_random(30).".".$request->file('pdf_documentos_oficiales')->getClientOriginalExtension();
+            $request->file('pdf_documentos_oficiales')->move('uploads/', $filename);
+            $documentos_oficiales->pdf_documentos_oficiales = $filename;
+        }
+        $documentos_oficiales->save();
+        return redirect()->back()->with('success', 'Creado con exito');
+    }
+    public function documentos_oficiales_editar2(Request $request){
+        $documentos_oficiales = documentos_oficiales1s::find($request->id);
+        if($request->hasFile('imagen_documentos_oficiales')){
+            $filename = 'imagen_documentos_oficiales'.str_random(40).".".$request->file('imagen_documentos_oficiales')->getClientOriginalExtension();
+            $request->file('imagen_documentos_oficiales')->move('uploads/', $filename);
+            File::delete('uploads/'.$documentos_oficiales->imagen_documentos_oficiales);
+            $documentos_oficiales->imagen_documentos_oficiales = $filename;
+        }
+        $documentos_oficiales->titulo_documentos_oficiales = $request->titulo_documentos_oficiales;
+        $documentos_oficiales->descripcion_documentos_oficiales = $request->descripcion_documentos_oficiales;
+        $documentos_oficiales->autor_documentos_oficiales = $request->autor_documentos_oficiales;
+        $documentos_oficiales->ano_documentos_oficiales = $request->ano_documentos_oficiales;
+        if($request->hasFile('pdf_documentos_oficiales')){
+            $filename = 'pdf_documentos_oficiales'.str_random(30).".".$request->file('pdf_documentos_oficiales')->getClientOriginalExtension();
+            $request->file('pdf_documentos_oficiales')->move('uploads/', $filename);
+             File::delete('uploads/'.$documentos_oficiales->pdf_documentos_oficiales);
+            $documentos_oficiales->pdf_documentos_oficiales = $filename;
+        }
+        $documentos_oficiales->save();
+        return redirect()->back()->with('success', 'Creado con exito');
+    }
+    public function documentos_oficiales_eliminar($id){
+        //eliminar categoria
+        $documentos_oficiales1s = documentos_oficiales1s::find($id);
+        File::delete('uploads/'.$documentos_oficiales1s->imagen_documentos_oficiales);
+        File::delete('uploads/'.$documentos_oficiales1s->pdf_documentos_oficiales);
+        $documentos_oficiales1s->delete();
+        return redirect()->back()->with('success', 'Eliminado con exito');
     }
     //TODO SOBRE ENLACES DE INTERES
     public function enlaces_interes(){

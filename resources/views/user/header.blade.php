@@ -117,7 +117,7 @@
                                                 <a href="contenido-sindical.html">Contenido Sindical</a>
                                             </li>
                                             <li class="dropdown sub-dropdown">
-                                                <a href="documentos-oficiales.html">Documentos Oficiales</a>
+                                                <a href="{{url('documentos-oficiales')}}">Documentos Oficiales</a>
                                             </li>
                                             <li class="dropdown sub-dropdown">
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Multimedia<span class="angle"></span></a>
@@ -127,7 +127,7 @@
                                                 </ul>
                                             </li>
                                             <li class="dropdown sub-dropdown">
-                                                <a href="http://cursosvirtualesintracolpen.com/" target="blank">Capacitaciones</a>
+                                                <a href="{{$capacitaciones->url_capacitaciones}}" target="blank">Capacitaciones</a>
                                             </li>
                                         </ul>
                                     </li>
