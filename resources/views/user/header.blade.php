@@ -107,14 +107,14 @@
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contenidos<span class="angle"></span></a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li class="dropdown sub-dropdown">
-                                                <a href="boletines-generales.html">Boletines Generales</a>
+                                                <a href="{{url('boletines-generales')}}">Boletines Generales</a>
                                             </li>
                                             <li class="dropdown sub-dropdown">
-                                                <a href="comunicados-oficiales.html">Comunicados Oficiales</a>
+                                                <a href="{{url('comunicados-oficiales')}}">Comunicados Oficiales</a>
                                             </li>
                                             <li class="dropdown sub-dropdown">
                                             <li class="dropdown sub-dropdown">
-                                                <a href="contenido-sindical.html">Contenido Sindical</a>
+                                                <a href="{{url('contenido-sindical')}}">Contenido Sindical</a>
                                             </li>
                                             <li class="dropdown sub-dropdown">
                                                 <a href="{{url('documentos-oficiales')}}">Documentos Oficiales</a>

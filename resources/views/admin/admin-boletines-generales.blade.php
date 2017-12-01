@@ -1,25 +1,5 @@
 @include('admin.admin-header')
 
-                <div id="main-container">
-                    <header class="navbar navbar-inverse navbar-fixed-top">
-                        <ul class="nav navbar-nav-custom">
-                            <li>
-                                <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar');this.blur();">
-                                    <i class="fa fa-ellipsis-v fa-fw animation-fadeInRight" id="sidebar-toggle-mini"></i>
-                                    <i class="fa fa-bars fa-fw animation-fadeInRight" id="sidebar-toggle-full"></i>
-                                </a>
-                            </li>
-                        </ul>
-
-                        <ul class="nav navbar-nav-custom pull-right">
-                            <li class="dropdown">
-                                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" style="padding-right: 20px">
-                                    Cerrar Sesión
-                                </a>
-                            </li>
-                        </ul>
-                    </header>
-
                     <div id="page-content">
                         <div class="block full">
                             <div class="block-title">
@@ -28,17 +8,18 @@
                             </div>
 
                             <div class="row">
-                                <form action="" method="">
+                                <form action="{{ url('/admin/boletines_generales_editar1') }}" method="POST" role="form">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Título</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Título">
+                                            <input type="text" id="" name="titulo_boletines_generales" class="form-control" value="{{$boletines_generales->titulo_boletines_generales}}" placeholder="Título">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Descripción</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Descripción">
+                                            <input type="text" id="" name="descripcion_boletines_generales" class="form-control" placeholder="Descripción" value="{{$boletines_generales->descripcion_boletines_generales}}">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -63,18 +44,20 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="text-center"><img src="img/logoCUT-Bogota.jpg" width="80%"></td>
-                                            <td>Ipsa quasi praesentium eos officiis nam molestiae facere.</td>
-                                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum condimentum erat, quis imperdiet dolor maximus nec. Etiam felis erat, suscipit in ante ut, tincidunt tempor justo...</td>
-                                            <td class="text-center">Jonathan Velandia</td>
-                                            <td class="text-center">2017</td>
-                                            <td class="text-center">nombre.pdf</td>
-                                            <td class="text-center">
-                                                <a href="#" data-toggle="modal" data-target="#editarBoletin" title="Editar Boletin" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" title="Eliminar Boletin" class="btn btn-effect-ripple btn-sm btn-danger"><i class="fa fa-times"></i></a>
-                                            </td>
-                                        </tr>
+                                        @foreach($boletines_generales1s as $boletines_generales1)
+                                            <tr>
+                                                <td class="text-center"><img src="{{url('uploads')}}/{{$boletines_generales1->imagen_boletines_generales}}" width="80%"></td>
+                                                <td>{{$boletines_generales1->titulo_boletines_generales}}</td>
+                                                <td>{{$boletines_generales1->descripcion_boletines_generales}}</td>
+                                                <td class="text-center">{{$boletines_generales1->autor_boletines_generales}}</td>
+                                                <td class="text-center">{{$boletines_generales1->ano_boletines_generales}}</td>
+                                                <td class="text-center">{{$boletines_generales1->pdf_boletines_generales}}</td>
+                                                <td class="text-center">
+                                                    <a href="#" data-id="{!!$boletines_generales1->id!!}" data-titulo_boletines_generales="{!!$boletines_generales1->titulo_boletines_generales!!}" data-descripcion_boletines_generales="{!!$boletines_generales1->descripcion_boletines_generales!!}" data-autor_boletines_generales="{!!$boletines_generales1->autor_boletines_generales!!}" data-ano_boletines_generales="{!!$boletines_generales1->ano_boletines_generales!!}"  data-toggle="modal" data-target="#editarBoletin" title="Editar Boletin" class="btn btn-effect-ripple btn-sm btn-success editar"><i class="fa fa-pencil"></i></a>
+                                                    <a href="{{url('/admin/boletines_generales_eliminar')}}/{{$boletines_generales1->id}}" title="Eliminar Documento" class="btn btn-effect-ripple btn-sm btn-danger"><i class="fa fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -86,7 +69,8 @@
 
         <!--Modal Crear Boletin-->
         <div class="modal fade" id="crearBoletin" tabindex="-1" role="dialog" aria-labelledby="crearBoletin" aria-hidden="true">
-            <form action="#" method="">
+            <form action="{{ url('/admin/boletines_generales_crear') }}" method="POST" role="form" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -100,35 +84,40 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Título</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Título del boletin" required>
+                                        <input type="text" class="form-control" id="" name="titulo_boletines_generales" placeholder="Título del documento" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Descripción</label>
-                                        <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción del boletin" required></textarea>
+                                        <textarea class="form-control textArea" rows="4" id="" name="descripcion_boletines_generales" placeholder="Descripción del documento" required></textarea>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="input-desc">Autor</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Autor del boletin" required>
+                                        <input type="text" class="form-control" id="" name="autor_boletines_generales" placeholder="Autor del documento" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="input-desc">Año</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Año de publicación" required>
+                                        <input type="text" class="form-control" id="" name="ano_boletines_generales" placeholder="Año de publicación" required>
                                     </div>
                                 </div>
-
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="input-desc">Imagen</label>
+                                        <input type="file" class="form-control" id="" name="imagen_boletines_generales" placeholder="Imagen" required>
+                                    </div>
+                                </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Archivo PDF</label>
-                                        <input type="file" class="form-control" id="" name="" placeholder="Archivo PDF" required>
+                                        <input type="file" class="form-control" id="" name="pdf_boletines_generales" placeholder="Archivo PDF" required>
                                     </div>
                                 </div>
                             </div>
@@ -144,49 +133,58 @@
 
         <!--Modal Editar Boletin-->
         <div class="modal fade" id="editarBoletin" tabindex="-1" role="dialog" aria-labelledby="editarBoletin" aria-hidden="true">
-            <form action="" method="">
+            <form action="{{ url('/admin/boletines_generales_editar2') }}" method="POST" role="form" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="hidden" id="id" name="id">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">
                                 <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                             </button>
-                            <h3 class="modal-title">Editar Boletin</h3>
+                            <h3 class="modal-title">Editar Documento</h3>
                         </div>
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Título</label>
-                                        <input type="text" class="form-control" id="tituloBoletin" name="tituloBoletin" placeholder="Título del boletin">
+                                        <input type="text" class="form-control" id="titulo_boletines_generales" name="titulo_boletines_generales" placeholder="Título del documento">
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Descripción</label>
-                                        <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción del boletin"></textarea>
+                                        <textarea class="form-control textArea" rows="4" id="descripcion_boletines_generales" name="descripcion_boletines_generales" placeholder="Descripción del documento"></textarea>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="input-desc">Autor</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Autor del boletin">
+                                        <input type="text" class="form-control" id="autor_boletines_generales" name="autor_boletines_generales" placeholder="Autor del documento">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="input-desc">Año</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Año de publicación">
+                                        <input type="text" class="form-control" id="ano_boletines_generales" name="ano_boletines_generales" placeholder="Año de publicación">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="input-desc">Imagen</label>
+                                        <input type="file" class="form-control" id="" name="imagen_boletines_generales" placeholder="Imagen" >
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Archivo PDF</label>
-                                        <input type="file" class="form-control" id="" name="" placeholder="Archivo PDF">
+                                        <input type="file" class="form-control" id="" name="pdf_boletines_generales" placeholder="Archivo PDF" >
                                     </div>
                                 </div>
                             </div>
@@ -201,3 +199,12 @@
         </div>
 
 @include('admin.admin-footer')
+<script type="text/javascript">
+    $(".editar").click(function(){
+        $("#id").val($(this).data("id"));
+        $("#titulo_boletines_generales").val($(this).data("titulo_boletines_generales"));
+        $("#descripcion_boletines_generales").val($(this).data("descripcion_boletines_generales"));
+        $("#autor_boletines_generales").val($(this).data("autor_boletines_generales"));
+        $("#ano_boletines_generales").val($(this).data("ano_boletines_generales"));
+    });
+</script>

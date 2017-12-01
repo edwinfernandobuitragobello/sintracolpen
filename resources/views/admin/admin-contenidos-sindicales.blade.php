@@ -1,25 +1,4 @@
 @include('admin.admin-header')
-
-                <div id="main-container">
-                    <header class="navbar navbar-inverse navbar-fixed-top">
-                        <ul class="nav navbar-nav-custom">
-                            <li>
-                                <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar');this.blur();">
-                                    <i class="fa fa-ellipsis-v fa-fw animation-fadeInRight" id="sidebar-toggle-mini"></i>
-                                    <i class="fa fa-bars fa-fw animation-fadeInRight" id="sidebar-toggle-full"></i>
-                                </a>
-                            </li>
-                        </ul>
-
-                        <ul class="nav navbar-nav-custom pull-right">
-                            <li class="dropdown">
-                                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" style="padding-right: 20px">
-                                    Cerrar Sesión
-                                </a>
-                            </li>
-                        </ul>
-                    </header>
-
                     <div id="page-content">
                         <div class="block full">
                             <div class="block-title">
@@ -28,17 +7,18 @@
                             </div>
 
                             <div class="row">
-                                <form action="" method="">
+                                <form action="{{ url('/admin/contenidos_sindicales_editar1') }}" method="POST" role="form">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Título</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Título">
+                                            <input type="text" id="" name="titulo_contenidos_sindicales" class="form-control" placeholder="Título" value="{{$contenidos_sindicales->titulo_contenidos_sindicales}}">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Descripción</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Descripción">
+                                            <input type="text" id="" name="descripcion_contenidos_sindicales" class="form-control" placeholder="Descripción" value="{{$contenidos_sindicales->descripcion_contenidos_sindicales}}">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -63,18 +43,20 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="text-center"><img src="img/logoCUT-Bogota.jpg" width="80%"></td>
-                                            <td>Ipsa quasi praesentium eos officiis nam molestiae facere.</td>
-                                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum condimentum erat, quis imperdiet dolor maximus nec. Etiam felis erat, suscipit in ante ut, tincidunt tempor justo...</td>
-                                            <td class="text-center">Jonathan Velandia</td>
-                                            <td class="text-center">2017</td>
-                                            <td class="text-center">nombre.pdf</td>
-                                            <td class="text-center">
-                                                <a href="#" data-toggle="modal" data-target="#editarContenidoS" title="Editar Contenido" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" title="Eliminar Contenido" class="btn btn-effect-ripple btn-sm btn-danger"><i class="fa fa-times"></i></a>
-                                            </td>
-                                        </tr>
+                                        @foreach($contenidos_sindicales1s as $contenidos_sindicales1)
+                                            <tr>
+                                                <td class="text-center"><img src="{{url('uploads')}}/{{$contenidos_sindicales1->imagen_contenidos_sindicales}}" width="80%"></td>
+                                                <td>{{$contenidos_sindicales1->titulo_contenidos_sindicales}}</td>
+                                                <td>{{$contenidos_sindicales1->descripcion_contenidos_sindicales}}</td>
+                                                <td class="text-center">{{$contenidos_sindicales1->autor_contenidos_sindicales}}</td>
+                                                <td class="text-center">{{$contenidos_sindicales1->ano_contenidos_sindicales}}</td>
+                                                <td class="text-center">{{$contenidos_sindicales1->pdf_contenidos_sindicales}}</td>
+                                                <td class="text-center">
+                                                    <a href="#" data-id="{!!$contenidos_sindicales1->id!!}" data-titulo_contenidos_sindicales="{!!$contenidos_sindicales1->titulo_contenidos_sindicales!!}" data-descripcion_contenidos_sindicales="{!!$contenidos_sindicales1->descripcion_contenidos_sindicales!!}" data-autor_contenidos_sindicales="{!!$contenidos_sindicales1->autor_contenidos_sindicales!!}" data-ano_contenidos_sindicales="{!!$contenidos_sindicales1->ano_contenidos_sindicales!!}"  data-toggle="modal" data-target="#editarContenidoS" title="Editar Documento" class="btn btn-effect-ripple btn-sm btn-success editar"><i class="fa fa-pencil"></i></a>
+                                                    <a href="{{url('/admin/contenidos_sindicales_eliminar')}}/{{$contenidos_sindicales1->id}}" title="Eliminar Documento" class="btn btn-effect-ripple btn-sm btn-danger"><i class="fa fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -86,7 +68,8 @@
 
         <!--Modal Crear Contenido Sindical-->
         <div class="modal fade" id="crearContenidoS" tabindex="-1" role="dialog" aria-labelledby="crearContenidoS" aria-hidden="true">
-            <form action="" method="">
+            <form action="{{ url('/admin/contenidos_sindicales_crear') }}" method="POST" role="form" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -100,35 +83,42 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Título</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Título del contenido" required>
+                                        <input type="text" class="form-control" id="" name="titulo_contenidos_sindicales" placeholder="Título del contenido" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Descripción</label>
-                                        <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción del contenido" required></textarea>
+                                        <textarea class="form-control textArea" rows="4" id="" name="descripcion_contenidos_sindicales" placeholder="Descripción del contenido" required></textarea>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="input-desc">Autor</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Autor del contenido" required>
+                                        <input type="text" class="form-control" id="" name="autor_contenidos_sindicales" placeholder="Autor del contenido" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="input-desc">Año</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Año de publicación" required>
+                                        <input type="text" class="form-control" id="" name="ano_contenidos_sindicales" placeholder="Año de publicación" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="input-desc">Imagen</label>
+                                        <input type="file" class="form-control" id="" name="imagen_contenidos_sindicales" placeholder="Imagen" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Archivo PDF</label>
-                                        <input type="file" class="form-control" id="" name="" placeholder="Archivo PDF" required>
+                                        <input type="file" class="form-control" id="" name="pdf_contenidos_sindicales" placeholder="Archivo PDF" required>
                                     </div>
                                 </div>
                             </div>
@@ -144,7 +134,9 @@
 
         <!--Modal Editar Boletin-->
         <div class="modal fade" id="editarContenidoS" tabindex="-1" role="dialog" aria-labelledby="editarContenidoS" aria-hidden="true">
-            <form action="" method="">
+            <form action="{{ url('/admin/contenidos_sindicales_editar2') }}" method="POST" role="form" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="hidden" id="id" name="id">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -158,35 +150,42 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Título</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Título del contenido">
+                                        <input type="text" class="form-control" id="titulo_contenidos_sindicales" name="titulo_contenidos_sindicales" placeholder="Título del contenido">
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Descripción</label>
-                                        <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción del contenido"></textarea>
+                                        <textarea class="form-control textArea" rows="4" id="descripcion_contenidos_sindicales" name="descripcion_contenidos_sindicales" placeholder="Descripción del contenido"></textarea>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="input-desc">Autor</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Autor del contenido">
+                                        <input type="text" class="form-control" id="autor_contenidos_sindicales" name="autor_contenidos_sindicales" placeholder="Autor del contenido">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="input-desc">Año</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Año de publicación">
+                                        <input type="text" class="form-control" id="ano_contenidos_sindicales" name="ano_contenidos_sindicales" placeholder="Año de publicación">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="input-desc">Imagen</label>
+                                        <input type="file" class="form-control" id="" name="imagen_contenidos_sindicales" placeholder="Imagen">
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Archivo PDF</label>
-                                        <input type="file" class="form-control" id="" name="" placeholder="Archivo PDF">
+                                        <input type="file" class="form-control" id="" name="pdf_contenidos_sindicales" placeholder="Archivo PDF">
                                     </div>
                                 </div>
                             </div>
@@ -201,3 +200,12 @@
         </div>
 
 @include('admin.admin-footer')
+<script type="text/javascript">
+    $(".editar").click(function(){
+        $("#id").val($(this).data("id"));
+        $("#titulo_contenidos_sindicales").val($(this).data("titulo_contenidos_sindicales"));
+        $("#descripcion_contenidos_sindicales").val($(this).data("descripcion_contenidos_sindicales"));
+        $("#autor_contenidos_sindicales").val($(this).data("autor_contenidos_sindicales"));
+        $("#ano_contenidos_sindicales").val($(this).data("ano_contenidos_sindicales"));
+    });
+</script>

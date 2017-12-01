@@ -111,7 +111,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Imagen</label>
-                                        <input type="file" class="form-control" id="" name="imagen_documentos_oficiales" placeholder="Archivo PDF" required>
+                                        <input type="file" class="form-control" id="" name="imagen_documentos_oficiales" placeholder="Imagen" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -177,7 +177,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Imagen</label>
-                                        <input type="file" class="form-control" id="" name="imagen_documentos_oficiales" placeholder="Archivo PDF" >
+                                        <input type="file" class="form-control" id="" name="imagen_documentos_oficiales" placeholder="Imagen" >
                                     </div>
                                 </div>
 

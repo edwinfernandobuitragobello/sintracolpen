@@ -5,8 +5,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1>{{$documentos_oficiales->titulo_documentos_oficiales}}</h1>
-                            <p class="page-header-desc">{{$documentos_oficiales->descripcion_documentos_oficiales}}</p>
+                            <h1>{{$comunicados_oficiales->titulo_comunicados_oficiales}}</h1>
+                            <p class="page-header-desc">{{$comunicados_oficiales->descripcion_comunicados_oficiales}}</p>
                         </div>
                     </div>
                 </div>
@@ -16,26 +16,26 @@
 
             <div class="container">
                 <div class="max-col-3" id="blog-item-container">
-                    @foreach($documentos_oficiales1s as $documentos_oficiales1)
+                    @foreach($comunicados_oficiales1s as $comunicados_oficiales1)
                         <article class="entry entry-box wow fadeInUp">
                             <div class="entry-media">
                                 <figure>
                                     <a href="#" data-toggle="modal" data-target="#verPDF">
-                                        <img src="{{url('uploads')}}/{{$documentos_oficiales1->imagen_documentos_oficiales}}" alt="Nombre del boletin">
+                                        <img src="{{url('uploads')}}/{{$comunicados_oficiales1->imagen_comunicados_oficiales}}" alt="Nombre del boletin">
                                     </a>
                                 </figure>
                             </div>
                             <div class="entry-content-wrapper">
                                 <!-- <span class="entry-date">24<span>Feb</span></span> -->
-                                <h2 class="entry-title"><a href="#" data-toggle="modal" data-target="#verPDF">{{$documentos_oficiales1->titulo_documentos_oficiales}}</a></h2>
+                                <h2 class="entry-title"><a href="#" data-toggle="modal" data-target="#verPDF">{{$comunicados_oficiales1->titulo_comunicados_oficiales}}</a></h2>
                                 <div class="entry-content">
-                                    <p>{{$documentos_oficiales1->descripcion_documentos_oficiales}}</p>
+                                    <p>{{$comunicados_oficiales1->descripcion_comunicados_oficiales}}</p>
                                 </div>
                                 <footer class="entry-footer clearfix">
                                     <span class="entry-cats">
-                                        <span class="entry-label"></span>Por <b>{{$documentos_oficiales1->autor_documentos_oficiales}}</b>
+                                        <span class="entry-label"></span>Por <b>{{$comunicados_oficiales1->autor_comunicados_oficiales}}</b>
                                     </span>
-                                    <a href="#" class="entry-readmore text-right editar" data-pdf="{{$documentos_oficiales1->pdf_documentos_oficiales}}" data-toggle="modal" data-target="#verPDF">Ver PDF<i class="fa fa-eye"></i></a>
+                                    <a href="#" class="entry-readmore text-right editar" data-pdf="{{$comunicados_oficiales1->pdf_comunicados_oficiales}}" data-toggle="modal" data-target="#verPDF">Ver PDF<i class="fa fa-eye"></i></a>
                                 </footer>
                             </div>
                         </article>
@@ -47,7 +47,7 @@
 
             <div class="container">
                 <nav class="pagination-container text-right">
-                    <div style="text-align: center">{{$documentos_oficiales1s->links()}}</div>
+                    <div style="text-align: center">{{$comunicados_oficiales1s->links()}}</div>
                 </nav>
             </div>
             <!-- Modal pdf -->

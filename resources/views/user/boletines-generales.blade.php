@@ -5,8 +5,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1>{{$documentos_oficiales->titulo_documentos_oficiales}}</h1>
-                            <p class="page-header-desc">{{$documentos_oficiales->descripcion_documentos_oficiales}}</p>
+                            <h1>{{$boletines_generales->titulo_boletines_generales}}</h1>
+                            <p class="page-header-desc">{{$boletines_generales->descripcion_boletines_generales}}</p>
                         </div>
                     </div>
                 </div>
@@ -16,26 +16,26 @@
 
             <div class="container">
                 <div class="max-col-3" id="blog-item-container">
-                    @foreach($documentos_oficiales1s as $documentos_oficiales1)
+                    @foreach($boletines_generales1s as $boletines_generales1)
                         <article class="entry entry-box wow fadeInUp">
                             <div class="entry-media">
                                 <figure>
                                     <a href="#" data-toggle="modal" data-target="#verPDF">
-                                        <img src="{{url('uploads')}}/{{$documentos_oficiales1->imagen_documentos_oficiales}}" alt="Nombre del boletin">
+                                        <img src="{{url('uploads')}}/{{$boletines_generales1->imagen_boletines_generales}}" alt="Nombre del boletin">
                                     </a>
                                 </figure>
                             </div>
                             <div class="entry-content-wrapper">
                                 <!-- <span class="entry-date">24<span>Feb</span></span> -->
-                                <h2 class="entry-title"><a href="#" data-toggle="modal" data-target="#verPDF">{{$documentos_oficiales1->titulo_documentos_oficiales}}</a></h2>
+                                <h2 class="entry-title"><a href="#" data-toggle="modal" data-target="#verPDF">{{$boletines_generales1->titulo_boletines_generales}}</a></h2>
                                 <div class="entry-content">
-                                    <p>{{$documentos_oficiales1->descripcion_documentos_oficiales}}</p>
+                                    <p>{{$boletines_generales1->descripcion_boletines_generales}}</p>
                                 </div>
                                 <footer class="entry-footer clearfix">
                                     <span class="entry-cats">
-                                        <span class="entry-label"></span>Por <b>{{$documentos_oficiales1->autor_documentos_oficiales}}</b>
+                                        <span class="entry-label"></span>Por <b>{{$boletines_generales1->autor_boletines_generales}}</b>
                                     </span>
-                                    <a href="#" class="entry-readmore text-right editar" data-pdf="{{$documentos_oficiales1->pdf_documentos_oficiales}}" data-toggle="modal" data-target="#verPDF">Ver PDF<i class="fa fa-eye"></i></a>
+                                    <a href="#" class="entry-readmore text-right editar" data-pdf="{{$boletines_generales1->pdf_boletines_generales}}" data-toggle="modal" data-target="#verPDF">Ver PDF<i class="fa fa-eye"></i></a>
                                 </footer>
                             </div>
                         </article>
@@ -47,7 +47,7 @@
 
             <div class="container">
                 <nav class="pagination-container text-right">
-                    <div style="text-align: center">{{$documentos_oficiales1s->links()}}</div>
+                    <div style="text-align: center">{{$boletines_generales1s->links()}}</div>
                 </nav>
             </div>
             <!-- Modal pdf -->
@@ -64,5 +64,6 @@
         $("#documento_pdf").attr("src", "{{url('uploads')}}/"+$(this).data("pdf"));
     });
 </script>
+
 
 

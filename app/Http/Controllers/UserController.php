@@ -14,6 +14,12 @@ use App\Galerias1s;
 use App\capacitaciones;
 use App\documentos_oficiales;
 use App\documentos_oficiales1s;
+use App\contenidos_sindicales;
+use App\contenidos_sindicales1s;
+use App\comunicados_oficiales;
+use App\comunicados_oficiales1s;
+use App\boletines_generales;
+use App\boletines_generales1s;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -66,5 +72,35 @@ class UserController extends Controller
         $documentos_oficiales = documentos_oficiales::find(1);
         $documentos_oficiales1s = documentos_oficiales1s::paginate(6);
         return view('user.documentos-oficiales', compact('contactanos','enlaces_interes','enlaces_interes1s','documentos_oficiales','documentos_oficiales1s','capacitaciones'));
+    }
+    // TODO SOBRE CONTENIDO SINDICAL
+    public function contenido_sindical(){
+        $contactanos = Contactenos::find(1);
+        $enlaces_interes = Enlaces_interes::find(1);
+        $enlaces_interes1s = Enlaces_interes1s::get();
+        $capacitaciones = capacitaciones::find(1);
+        $contenidos_sindicales = contenidos_sindicales::find(1);
+        $contenidos_sindicales1s = contenidos_sindicales1s::paginate(6);
+        return view('user.contenido-sindical', compact('contactanos','enlaces_interes','enlaces_interes1s','contenidos_sindicales','contenidos_sindicales1s','capacitaciones'));
+    }
+    // TODO SOBRE CONTENIDO SINDICAL
+    public function comunicados_oficiales(){
+        $contactanos = Contactenos::find(1);
+        $enlaces_interes = Enlaces_interes::find(1);
+        $enlaces_interes1s = Enlaces_interes1s::get();
+        $capacitaciones = capacitaciones::find(1);
+        $comunicados_oficiales = comunicados_oficiales::find(1);
+        $comunicados_oficiales1s = comunicados_oficiales1s::paginate(6);
+        return view('user.comunicados-oficiales', compact('contactanos','enlaces_interes','enlaces_interes1s','comunicados_oficiales','comunicados_oficiales1s','capacitaciones'));
+    }
+    // TODO SOBRE CONTENIDO SINDICAL
+    public function boletines_generales(){
+        $contactanos = Contactenos::find(1);
+        $enlaces_interes = Enlaces_interes::find(1);
+        $enlaces_interes1s = Enlaces_interes1s::get();
+        $capacitaciones = capacitaciones::find(1);
+        $boletines_generales = boletines_generales::find(1);
+        $boletines_generales1s = boletines_generales1s::paginate(6);
+        return view('user.boletines-generales', compact('contactanos','enlaces_interes','enlaces_interes1s','boletines_generales','boletines_generales1s','capacitaciones'));
     }
 }

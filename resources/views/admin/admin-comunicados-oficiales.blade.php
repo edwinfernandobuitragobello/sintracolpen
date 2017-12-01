@@ -1,25 +1,4 @@
 @include('admin.admin-header')
-
-                <div id="main-container">
-                    <header class="navbar navbar-inverse navbar-fixed-top">
-                        <ul class="nav navbar-nav-custom">
-                            <li>
-                                <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar');this.blur();">
-                                    <i class="fa fa-ellipsis-v fa-fw animation-fadeInRight" id="sidebar-toggle-mini"></i>
-                                    <i class="fa fa-bars fa-fw animation-fadeInRight" id="sidebar-toggle-full"></i>
-                                </a>
-                            </li>
-                        </ul>
-
-                        <ul class="nav navbar-nav-custom pull-right">
-                            <li class="dropdown">
-                                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" style="padding-right: 20px">
-                                    Cerrar Sesión
-                                </a>
-                            </li>
-                        </ul>
-                    </header>
-
                     <div id="page-content">
                         <div class="block full">
                             <div class="block-title">
@@ -28,17 +7,18 @@
                             </div>
 
                             <div class="row">
-                                <form action="" method="">
+                                <form action="{{ url('/admin/comunicados_oficiales_editar1') }}" method="POST" role="form">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Título</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Título">
+                                            <input type="text" id="" name="titulo_comunicados_oficiales" class="form-control" value="{{$comunicados_oficiales->titulo_comunicados_oficiales}}" placeholder="Título">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Descripción</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Descripción">
+                                            <input type="text" id="" name="descripcion_comunicados_oficiales" class="form-control" placeholder="Descripción" value="{{$comunicados_oficiales->descripcion_comunicados_oficiales}}">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -63,18 +43,20 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="text-center"><img src="img/logoCUT-Bogota.jpg" width="80%"></td>
-                                            <td>Ipsa quasi praesentium eos officiis nam molestiae facere.</td>
-                                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum condimentum erat, quis imperdiet dolor maximus nec. Etiam felis erat, suscipit in ante ut, tincidunt tempor justo...</td>
-                                            <td class="text-center">Jonathan Velandia</td>
-                                            <td class="text-center">2017</td>
-                                            <td class="text-center">nombre.pdf</td>
-                                            <td class="text-center">
-                                                <a href="#" data-toggle="modal" data-target="#editarComunicado" title="Editar Comunicado" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" title="Eliminar Comunicado" class="btn btn-effect-ripple btn-sm btn-danger"><i class="fa fa-times"></i></a>
-                                            </td>
-                                        </tr>
+                                        @foreach($comunicados_oficiales1s as $comunicados_oficiales1)
+                                            <tr>
+                                                <td class="text-center"><img src="{{url('uploads')}}/{{$comunicados_oficiales1->imagen_comunicados_oficiales}}" width="80%"></td>
+                                                <td>{{$comunicados_oficiales1->titulo_comunicados_oficiales}}</td>
+                                                <td>{{$comunicados_oficiales1->descripcion_comunicados_oficiales}}</td>
+                                                <td class="text-center">{{$comunicados_oficiales1->autor_comunicados_oficiales}}</td>
+                                                <td class="text-center">{{$comunicados_oficiales1->ano_comunicados_oficiales}}</td>
+                                                <td class="text-center">{{$comunicados_oficiales1->pdf_comunicados_oficiales}}</td>
+                                                <td class="text-center">
+                                                    <a href="#" data-id="{!!$comunicados_oficiales1->id!!}" data-titulo_comunicados_oficiales="{!!$comunicados_oficiales1->titulo_comunicados_oficiales!!}" data-descripcion_comunicados_oficiales="{!!$comunicados_oficiales1->descripcion_comunicados_oficiales!!}" data-autor_comunicados_oficiales="{!!$comunicados_oficiales1->autor_comunicados_oficiales!!}" data-ano_comunicados_oficiales="{!!$comunicados_oficiales1->ano_comunicados_oficiales!!}"  data-toggle="modal" data-target="#editarComunicado" title="Editar Comunicado" class="btn btn-effect-ripple btn-sm btn-success editar"><i class="fa fa-pencil"></i></a>
+                                                    <a href="{{url('/admin/comunicados_oficiales_eliminar')}}/{{$comunicados_oficiales1->id}}" title="Eliminar Documento" class="btn btn-effect-ripple btn-sm btn-danger"><i class="fa fa-times"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -85,8 +67,9 @@
         </div>
 
         <!--Modal Crear Boletin-->
-        <div class="modal fade" id="crearComunicado" tabindex="-1" role="dialog" aria-labelledby="crearComunicado" aria-hidden="true">
-            <form action="" method="">
+        <div class="modal fade" id="crearComunicado" tabindex="-1" role="dialog" aria-labelledby="crearDocumentos" aria-hidden="true">
+            <form action="{{ url('/admin/comunicados_oficiales_crear') }}" method="POST" role="form" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -100,35 +83,40 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Título</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Título del comunicado" required>
+                                        <input type="text" class="form-control" id="" name="titulo_comunicados_oficiales" placeholder="Título del documento" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Descripción</label>
-                                        <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción del comunicado" required></textarea>
+                                        <textarea class="form-control textArea" rows="4" id="" name="descripcion_comunicados_oficiales" placeholder="Descripción del documento" required></textarea>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="input-desc">Autor</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Autor del comunicado" required>
+                                        <input type="text" class="form-control" id="" name="autor_comunicados_oficiales" placeholder="Autor del documento" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="input-desc">Año</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Año de publicación" required>
+                                        <input type="text" class="form-control" id="" name="ano_comunicados_oficiales" placeholder="Año de publicación" required>
                                     </div>
                                 </div>
-
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="input-desc">Imagen</label>
+                                        <input type="file" class="form-control" id="" name="imagen_comunicados_oficiales" placeholder="Imagen" required>
+                                    </div>
+                                </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Archivo PDF</label>
-                                        <input type="file" class="form-control" id="" name="" placeholder="Archivo PDF" required>
+                                        <input type="file" class="form-control" id="" name="pdf_comunicados_oficiales" placeholder="Archivo PDF" required>
                                     </div>
                                 </div>
                             </div>
@@ -144,49 +132,58 @@
 
         <!--Modal Editar Boletin-->
         <div class="modal fade" id="editarComunicado" tabindex="-1" role="dialog" aria-labelledby="editarComunicado" aria-hidden="true">
-            <form action="" method="">
+            <form action="{{ url('/admin/comunicados_oficiales_editar2') }}" method="POST" role="form" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="hidden" id="id" name="id">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">
                                 <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                             </button>
-                            <h3 class="modal-title">Editar Comunicado</h3>
+                            <h3 class="modal-title">Editar Documento</h3>
                         </div>
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Título</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Título del comunicado">
+                                        <input type="text" class="form-control" id="titulo_comunicados_oficiales" name="titulo_comunicados_oficiales" placeholder="Título del documento">
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Descripción</label>
-                                        <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción del comunicado"></textarea>
+                                        <textarea class="form-control textArea" rows="4" id="descripcion_comunicados_oficiales" name="descripcion_comunicados_oficiales" placeholder="Descripción del documento"></textarea>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="input-desc">Autor</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Autor del comunicado">
+                                        <input type="text" class="form-control" id="autor_comunicados_oficiales" name="autor_comunicados_oficiales" placeholder="Autor del documento">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="input-desc">Año</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Año de publicación">
+                                        <input type="text" class="form-control" id="ano_comunicados_oficiales" name="ano_comunicados_oficiales" placeholder="Año de publicación">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="input-desc">Imagen</label>
+                                        <input type="file" class="form-control" id="" name="imagen_comunicados_oficiales" placeholder="Imagen" >
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Archivo PDF</label>
-                                        <input type="file" class="form-control" id="" name="" placeholder="Archivo PDF">
+                                        <input type="file" class="form-control" id="" name="pdf_comunicados_oficiales" placeholder="Archivo PDF" >
                                     </div>
                                 </div>
                             </div>
@@ -201,3 +198,12 @@
         </div>
 
 @include('admin.admin-footer')
+<script type="text/javascript">
+    $(".editar").click(function(){
+        $("#id").val($(this).data("id"));
+        $("#titulo_comunicados_oficiales").val($(this).data("titulo_comunicados_oficiales"));
+        $("#descripcion_comunicados_oficiales").val($(this).data("descripcion_comunicados_oficiales"));
+        $("#autor_comunicados_oficiales").val($(this).data("autor_comunicados_oficiales"));
+        $("#ano_comunicados_oficiales").val($(this).data("ano_comunicados_oficiales"));
+    });
+</script>

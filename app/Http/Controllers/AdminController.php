@@ -13,6 +13,12 @@ use App\Galerias1s;
 use App\capacitaciones;
 use App\documentos_oficiales;
 use App\documentos_oficiales1s;
+use App\contenidos_sindicales;
+use App\contenidos_sindicales1s;
+use App\comunicados_oficiales;
+use App\comunicados_oficiales1s;
+use App\boletines_generales;
+use App\boletines_generales1s;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use File;
@@ -22,8 +28,69 @@ class AdminController extends Controller
     public function afiliate_ya(){
     	return view('admin.admin-afiliate-ya');
     }
+    //TODO SOBRE BOLETINES GENERALES
     public function boletines_generales(){
-    	return view('admin.admin-boletines-generales');
+        $boletines_generales = boletines_generales::find(1);
+        $boletines_generales1s = boletines_generales1s::get();
+    	return view('admin.admin-boletines-generales',compact('boletines_generales','boletines_generales1s'));
+    }
+    public function boletines_generales_editar1(Request $request){
+        $boletines_generales = boletines_generales::find(1);
+        $boletines_generales->titulo_boletines_generales = $request->titulo_boletines_generales;
+        $boletines_generales->descripcion_boletines_generales = $request->descripcion_boletines_generales;
+        $boletines_generales->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function boletines_generales_crear(Request $request){
+        $boletines_generales = new boletines_generales1s();
+        if($request->hasFile('imagen_boletines_generales')){
+            $filename = 'imagen_boletines_generales'.str_random(40).".".$request->file('imagen_boletines_generales')->getClientOriginalExtension();
+            $request->file('imagen_boletines_generales')->move('uploads/', $filename);
+            File::delete('uploads/'.$boletines_generales->imagen_boletines_generales);
+            $boletines_generales->imagen_boletines_generales = $filename;
+        }else{
+            return redirect()->back()->with('success', 'No fue creado con exito');
+        }
+        $boletines_generales->titulo_boletines_generales = $request->titulo_boletines_generales;
+        $boletines_generales->descripcion_boletines_generales = $request->descripcion_boletines_generales;
+        $boletines_generales->autor_boletines_generales = $request->autor_boletines_generales;
+        $boletines_generales->ano_boletines_generales = $request->ano_boletines_generales;
+        if($request->hasFile('pdf_boletines_generales')){
+            $filename = 'pdf_boletines_generales'.str_random(30).".".$request->file('pdf_boletines_generales')->getClientOriginalExtension();
+            $request->file('pdf_boletines_generales')->move('uploads/', $filename);
+            $boletines_generales->pdf_boletines_generales = $filename;
+        }
+        $boletines_generales->save();
+        return redirect()->back()->with('success', 'Creado con exito');
+    }
+    public function boletines_generales_editar2(Request $request){
+        $boletines_generales = boletines_generales1s::find($request->id);
+        if($request->hasFile('imagen_boletines_generales')){
+            $filename = 'imagen_boletines_generales'.str_random(40).".".$request->file('imagen_boletines_generales')->getClientOriginalExtension();
+            $request->file('imagen_boletines_generales')->move('uploads/', $filename);
+            File::delete('uploads/'.$boletines_generales->imagen_boletines_generales);
+            $boletines_generales->imagen_boletines_generales = $filename;
+        }
+        $boletines_generales->titulo_boletines_generales = $request->titulo_boletines_generales;
+        $boletines_generales->descripcion_boletines_generales = $request->descripcion_boletines_generales;
+        $boletines_generales->autor_boletines_generales = $request->autor_boletines_generales;
+        $boletines_generales->ano_boletines_generales = $request->ano_boletines_generales;
+        if($request->hasFile('pdf_boletines_generales')){
+            $filename = 'pdf_boletines_generales'.str_random(30).".".$request->file('pdf_boletines_generales')->getClientOriginalExtension();
+            $request->file('pdf_boletines_generales')->move('uploads/', $filename);
+             File::delete('uploads/'.$boletines_generales->pdf_boletines_generales);
+            $boletines_generales->pdf_boletines_generales = $filename;
+        }
+        $boletines_generales->save();
+        return redirect()->back()->with('success', 'Creado con exito');
+    }
+    public function boletines_generales_eliminar($id){
+        //eliminar categoria
+        $boletines_generales1s = boletines_generales1s::find($id);
+        File::delete('uploads/'.$boletines_generales1s->imagen_boletines_generales);
+        File::delete('uploads/'.$boletines_generales1s->pdf_boletines_generales);
+        $boletines_generales1s->delete();
+        return redirect()->back()->with('success', 'Eliminado con exito');
     }
     //TODO SOBRE CAPACITACIONES
     public function capacitaciones(){
@@ -36,9 +103,69 @@ class AdminController extends Controller
         $capacitaciones->save();
         return redirect()->back()->with('success', 'Actualizado con exito');
     }
-
+    //TODO SOBRE COMUNICADOS OFICIALES
     public function comunicados_oficiales(){
-    	return view('admin.admin-comunicados-oficiales');
+        $comunicados_oficiales = comunicados_oficiales::find(1);
+        $comunicados_oficiales1s = comunicados_oficiales1s::get();
+    	return view('admin.admin-comunicados-oficiales',compact('comunicados_oficiales','comunicados_oficiales1s'));
+    }
+    public function comunicados_oficiales_editar1(Request $request){
+        $comunicados_oficiales = comunicados_oficiales::find(1);
+        $comunicados_oficiales->titulo_comunicados_oficiales = $request->titulo_comunicados_oficiales;
+        $comunicados_oficiales->descripcion_comunicados_oficiales = $request->descripcion_comunicados_oficiales;
+        $comunicados_oficiales->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function comunicados_oficiales_crear(Request $request){
+        $comunicados_oficiales = new comunicados_oficiales1s();
+        if($request->hasFile('imagen_comunicados_oficiales')){
+            $filename = 'imagen_comunicados_oficiales'.str_random(40).".".$request->file('imagen_comunicados_oficiales')->getClientOriginalExtension();
+            $request->file('imagen_comunicados_oficiales')->move('uploads/', $filename);
+            File::delete('uploads/'.$comunicados_oficiales->imagen_comunicados_oficiales);
+            $comunicados_oficiales->imagen_comunicados_oficiales = $filename;
+        }else{
+            return redirect()->back()->with('success', 'No fue creado con exito');
+        }
+        $comunicados_oficiales->titulo_comunicados_oficiales = $request->titulo_comunicados_oficiales;
+        $comunicados_oficiales->descripcion_comunicados_oficiales = $request->descripcion_comunicados_oficiales;
+        $comunicados_oficiales->autor_comunicados_oficiales = $request->autor_comunicados_oficiales;
+        $comunicados_oficiales->ano_comunicados_oficiales = $request->ano_comunicados_oficiales;
+        if($request->hasFile('pdf_comunicados_oficiales')){
+            $filename = 'pdf_comunicados_oficiales'.str_random(30).".".$request->file('pdf_comunicados_oficiales')->getClientOriginalExtension();
+            $request->file('pdf_comunicados_oficiales')->move('uploads/', $filename);
+            $comunicados_oficiales->pdf_comunicados_oficiales = $filename;
+        }
+        $comunicados_oficiales->save();
+        return redirect()->back()->with('success', 'Creado con exito');
+    }
+    public function comunicados_oficiales_editar2(Request $request){
+        $comunicados_oficiales = comunicados_oficiales1s::find($request->id);
+        if($request->hasFile('imagen_comunicados_oficiales')){
+            $filename = 'imagen_comunicados_oficiales'.str_random(40).".".$request->file('imagen_comunicados_oficiales')->getClientOriginalExtension();
+            $request->file('imagen_comunicados_oficiales')->move('uploads/', $filename);
+            File::delete('uploads/'.$comunicados_oficiales->imagen_comunicados_oficiales);
+            $comunicados_oficiales->imagen_comunicados_oficiales = $filename;
+        }
+        $comunicados_oficiales->titulo_comunicados_oficiales = $request->titulo_comunicados_oficiales;
+        $comunicados_oficiales->descripcion_comunicados_oficiales = $request->descripcion_comunicados_oficiales;
+        $comunicados_oficiales->autor_comunicados_oficiales = $request->autor_comunicados_oficiales;
+        $comunicados_oficiales->ano_comunicados_oficiales = $request->ano_comunicados_oficiales;
+        if($request->hasFile('pdf_comunicados_oficiales')){
+            $filename = 'pdf_comunicados_oficiales'.str_random(30).".".$request->file('pdf_comunicados_oficiales')->getClientOriginalExtension();
+            $request->file('pdf_comunicados_oficiales')->move('uploads/', $filename);
+             File::delete('uploads/'.$comunicados_oficiales->pdf_comunicados_oficiales);
+            $comunicados_oficiales->pdf_comunicados_oficiales = $filename;
+        }
+        $comunicados_oficiales->save();
+        return redirect()->back()->with('success', 'Creado con exito');
+    }
+    public function comunicados_oficiales_eliminar($id){
+        //eliminar categoria
+        $comunicados_oficiales1s = comunicados_oficiales1s::find($id);
+        File::delete('uploads/'.$comunicados_oficiales1s->imagen_comunicados_oficiales);
+        File::delete('uploads/'.$comunicados_oficiales1s->pdf_comunicados_oficiales);
+        $comunicados_oficiales1s->delete();
+        return redirect()->back()->with('success', 'Eliminado con exito');
     }
     // TODO SOBRE CONTACTENOS
     public function contactanos(){
@@ -68,9 +195,69 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Actualizado con exito');
     }
     public function contenidos_sindicales(){
-    	return view('admin.admin-contenidos-sindicales');
+        $contenidos_sindicales = contenidos_sindicales::find(1);
+        $contenidos_sindicales1s = contenidos_sindicales1s::get();
+    	return view('admin.admin-contenidos-sindicales',compact('contenidos_sindicales','contenidos_sindicales1s'));
     }
-    //TODO SOBRE SOCUMENTOS OFICIALES
+    public function contenidos_sindicales_editar1(Request $request){
+        $contenidos_sindicales = contenidos_sindicales::find(1);
+        $contenidos_sindicales->titulo_contenidos_sindicales = $request->titulo_contenidos_sindicales;
+        $contenidos_sindicales->descripcion_contenidos_sindicales = $request->descripcion_contenidos_sindicales;
+        $contenidos_sindicales->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function contenidos_sindicales_crear(Request $request){
+        $contenidos_sindicales = new contenidos_sindicales1s();
+        if($request->hasFile('imagen_contenidos_sindicales')){
+            $filename = 'imagen_contenidos_sindicales'.str_random(40).".".$request->file('imagen_contenidos_sindicales')->getClientOriginalExtension();
+            $request->file('imagen_contenidos_sindicales')->move('uploads/', $filename);
+            File::delete('uploads/'.$contenidos_sindicales->imagen_contenidos_sindicales);
+            $contenidos_sindicales->imagen_contenidos_sindicales = $filename;
+        }else{
+            return redirect()->back()->with('success', 'No fue creado con exito');
+        }
+        $contenidos_sindicales->titulo_contenidos_sindicales = $request->titulo_contenidos_sindicales;
+        $contenidos_sindicales->descripcion_contenidos_sindicales = $request->descripcion_contenidos_sindicales;
+        $contenidos_sindicales->autor_contenidos_sindicales = $request->autor_contenidos_sindicales;
+        $contenidos_sindicales->ano_contenidos_sindicales = $request->ano_contenidos_sindicales;
+        if($request->hasFile('pdf_contenidos_sindicales')){
+            $filename = 'pdf_contenidos_sindicales'.str_random(30).".".$request->file('pdf_contenidos_sindicales')->getClientOriginalExtension();
+            $request->file('pdf_contenidos_sindicales')->move('uploads/', $filename);
+            $contenidos_sindicales->pdf_contenidos_sindicales = $filename;
+        }
+        $contenidos_sindicales->save();
+        return redirect()->back()->with('success', 'Creado con exito');
+    }
+    public function contenidos_sindicales_editar2(Request $request){
+        $contenidos_sindicales = contenidos_sindicales1s::find($request->id);
+        if($request->hasFile('imagen_contenidos_sindicales')){
+            $filename = 'imagen_contenidos_sindicales'.str_random(40).".".$request->file('imagen_contenidos_sindicales')->getClientOriginalExtension();
+            $request->file('imagen_contenidos_sindicales')->move('uploads/', $filename);
+            File::delete('uploads/'.$contenidos_sindicales->imagen_contenidos_sindicales);
+            $contenidos_sindicales->imagen_contenidos_sindicales = $filename;
+        }
+        $contenidos_sindicales->titulo_contenidos_sindicales = $request->titulo_contenidos_sindicales;
+        $contenidos_sindicales->descripcion_contenidos_sindicales = $request->descripcion_contenidos_sindicales;
+        $contenidos_sindicales->autor_contenidos_sindicales = $request->autor_contenidos_sindicales;
+        $contenidos_sindicales->ano_contenidos_sindicales = $request->ano_contenidos_sindicales;
+        if($request->hasFile('pdf_contenidos_sindicales')){
+            $filename = 'pdf_contenidos_sindicales'.str_random(30).".".$request->file('pdf_contenidos_sindicales')->getClientOriginalExtension();
+            $request->file('pdf_contenidos_sindicales')->move('uploads/', $filename);
+             File::delete('uploads/'.$contenidos_sindicales->pdf_contenidos_sindicales);
+            $contenidos_sindicales->pdf_contenidos_sindicales = $filename;
+        }
+        $contenidos_sindicales->save();
+        return redirect()->back()->with('success', 'Creado con exito');
+    }
+    public function contenidos_sindicales_eliminar($id){
+        //eliminar categoria
+        $contenidos_sindicales1s = contenidos_sindicales1s::find($id);
+        File::delete('uploads/'.$contenidos_sindicales1s->imagen_contenidos_sindicales);
+        File::delete('uploads/'.$contenidos_sindicales1s->pdf_contenidos_sindicales);
+        $contenidos_sindicales1s->delete();
+        return redirect()->back()->with('success', 'Eliminado con exito');
+    }
+    //TODO SOBRE DOCUMENTOS OFICIALES
     public function documentos_oficiales(){
         $documentos_oficiales = documentos_oficiales::find(1);
         $documentos_oficiales1s = documentos_oficiales1s::get();
