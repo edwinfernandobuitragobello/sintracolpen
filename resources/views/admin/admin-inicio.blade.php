@@ -3,42 +3,42 @@
                     <div id="page-content">
                         <!--Banners-->
                         <div class="block">
+                            <div class="block-title">
+                                <h2>Banners</h2>
+                            </div>
                             <div class="table-responsive">
                                 <table id="general-table" class="table table-striped table-bordered table-vcenter">
                                     <thead>
                                         <tr>
-                                            <th width="20%">Titulo</th>
+                                            <th width="15%">Titulo</th>
+                                            <th width="30%">Descripción</th>
                                             <th width="25%">Link o Url</th>
-                                            <th width="40%">Descripción</th>
-                                            <th width="15%" class="text-center"><i class="fa fa-flash"></i></th>
+                                            <th width="5%" class="text-center"><i class="fa fa-flash"></i></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>Título del banner</td>
-                                            <td>Link o url del banner</td>
                                             <td>Descripción del banner</td>
+                                            <td>Link o url del banner</td>
                                             <td class="text-center">
                                                 <a href="#" data-toggle="modal" data-target="#editarBanner" title="Editar Banner" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" title="Eliminar Banner" class="btn btn-effect-ripple btn-sm btn-danger"><i class="fa fa-times"></i></a>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Título del banner</td>
-                                            <td>Link o url del banner</td>
                                             <td>Descripción del banner</td>
+                                            <td>Link o url del banner</td>
                                             <td class="text-center">
                                                 <a href="#" data-toggle="modal" data-target="#editarBanner" title="Editar Banner" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" title="Eliminar Banner" class="btn btn-effect-ripple btn-sm btn-danger"><i class="fa fa-times"></i></a>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Título del banner</td>
-                                            <td>Link o url del banner</td>
                                             <td>Descripción del banner</td>
+                                            <td>Link o url del banner</td>
                                             <td class="text-center">
                                                 <a href="#" data-toggle="modal" data-target="#editarBanner" title="Editar Banner" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" title="Eliminar Banner" class="btn btn-effect-ripple btn-sm btn-danger"><i class="fa fa-times"></i></a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -59,15 +59,15 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Icono</label>
-                                                    <input type="file" id="" name="" class="form-control" placeholder="Icono">
+                                                    <input type="file" id="" name="imagen_boletines_generales" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Título</label>
-                                                    <input type="text" id="" name="" class="form-control" placeholder="Título primer item">
+                                                    <input type="text" id="" name="" class="form-control" placeholder="Título primer item" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Descripción</label>
-                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción primer item"></textarea>
+                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción primer item" required></textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <button type="submit" class="btn btn-effect-ripple btn-primary floatRight">Guardar</button>
@@ -90,15 +90,15 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Icono</label>
-                                                    <input type="file" id="" name="" class="form-control" placeholder="Icono">
+                                                    <input type="file" id="" name="imagen_boletines_generales" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Título</label>
-                                                    <input type="text" id="" name="" class="form-control" placeholder="Título segundo item">
+                                                    <input type="text" id="" name="" class="form-control" placeholder="Título segundo item" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Descripción</label>
-                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción segundo item"></textarea>
+                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción segundo item" required></textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <button type="submit" class="btn btn-effect-ripple btn-primary floatRight">Guardar</button>
@@ -120,15 +120,15 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Icono</label>
-                                                    <input type="file" id="" name="" class="form-control" placeholder="Icono">
+                                                    <input type="file" id="" name="imagen_boletines_generales" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Título</label>
-                                                    <input type="text" id="" name="" class="form-control" placeholder="Título tercer item">
+                                                    <input type="text" id="" name="" class="form-control" placeholder="Título tercer item" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Descripción</label>
-                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción tercer item"></textarea>
+                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción tercer item" required></textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <button type="submit" class="btn btn-effect-ripple btn-primary floatRight">Guardar</button>
@@ -151,19 +151,19 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Título</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Título de la sección">
+                                            <input type="text" id="" name="" class="form-control" placeholder="Título de la sección" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Imagen</label>
-                                            <input type="file" id="" name="" class="form-control" placeholder="Imagen de la sección">
+                                            <input type="file" id="" name="imagen_boletines_generales" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Descripción</label>
-                                            <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción de la sección"></textarea>
+                                            <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción de la sección" required></textarea>
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-effect-ripple btn-primary floatRight">Guardar</button>
@@ -184,31 +184,31 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Título</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Título de la sección">
+                                            <input type="text" id="" name="" class="form-control" placeholder="Título de la sección" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Video 1</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Url del video 1">
+                                            <input type="url" id="" name="" class="form-control" placeholder="Url del video 1" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Video 2</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Url del video 2">
+                                            <input type="url" id="" name="" class="form-control" placeholder="Url del video 2" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Video 3</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Url del video 3">
+                                            <input type="url" id="" name="" class="form-control" placeholder="Url del video 3" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Descripción</label>
-                                            <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción de la sección"></textarea>
+                                            <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción de la sección" required></textarea>
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-effect-ripple btn-primary floatRight">Guardar</button>
@@ -220,6 +220,9 @@
 
                         <!--Enlaces de interés-->
                         <div class="block">
+                            <div class="block-title">
+                                <h2>Testimonios</h2>
+                            </div>
                             <div class="table-responsive">
                                 <table id="general-table" class="table table-striped table-bordered table-vcenter">
                                     <thead>
@@ -239,7 +242,6 @@
                                             <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum condimentum erat, quis imperdiet dolor maximus nec. Etiam felis erat, suscipit in ante ut, tincidunt tempor justo...</td>
                                             <td class="text-center">
                                                 <a href="#" data-toggle="modal" data-target="#editarTestimonio" title="Editar Testimonio" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" title="Eliminar Testimonio" class="btn btn-effect-ripple btn-sm btn-danger"><i class="fa fa-times"></i></a>
                                             </td>
                                         </tr>
                                         <tr>
@@ -249,7 +251,6 @@
                                             <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum condimentum erat, quis imperdiet dolor maximus nec. Etiam felis erat, suscipit in ante ut, tincidunt tempor justo...</td>
                                             <td class="text-center">
                                                 <a href="#" data-toggle="modal" data-target="#editarTestimonio" title="Editar Testimonio" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" title="Eliminar Testimonio" class="btn btn-effect-ripple btn-sm btn-danger"><i class="fa fa-times"></i></a>
                                             </td>
                                         </tr>
                                         <tr>
@@ -259,7 +260,6 @@
                                             <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum condimentum erat, quis imperdiet dolor maximus nec. Etiam felis erat, suscipit in ante ut, tincidunt tempor justo...</td>
                                             <td class="text-center">
                                                 <a href="#" data-toggle="modal" data-target="#editarTestimonio" title="Editar Testimonio" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" title="Eliminar Testimonio" class="btn btn-effect-ripple btn-sm btn-danger"><i class="fa fa-times"></i></a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -287,23 +287,23 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Nombre</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Nombre del banner">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label class="input-desc">Descripción</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Descripción del banner">
+                                        <input type="text" class="form-control" id="" name="" placeholder="Nombre del banner" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Link o url</label>
-                                        <textarea class="form-control textArea" rows="5" id="" name="" placeholder="Link o url del banner"></textarea>
+                                        <input type="link" class="form-control" id="" name="" placeholder="Link o url del banner" required>
                                     </div>
                                 </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="input-desc">Descripción</label>
+                                        <textarea class="form-control textArea" rows="5" id="" name="" placeholder="Descripción del banner" required></textarea>
+                                    </div>
+                                </div>  
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -331,21 +331,28 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Nombre</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Nombre del testimonio">
+                                        <input type="text" class="form-control" id="" name="" placeholder="Nombre de la persona" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label class="input-desc">Icono</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Icono del testimonio">
+                                        <label class="input-desc">Cargo</label>
+                                        <input type="text" class="form-control" id="" name="" placeholder="Cargo de la persona" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="input-desc">Imagen</label>
+                                        <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen">
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Descripción</label>
-                                        <textarea class="form-control textArea" rows="5" id="" name="" placeholder="Descripción del testimonio"></textarea>
+                                        <textarea class="form-control textArea" rows="5" id="" name="" placeholder="Descripción del testimonio" required></textarea>
                                     </div>
                                 </div>
                             </div>

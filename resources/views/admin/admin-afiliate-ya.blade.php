@@ -10,13 +10,13 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Título</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Título">
+                                            <input type="text" id="" name="" class="form-control" placeholder="Título" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Descripción</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Descripción">
+                                            <input type="text" id="" name="" class="form-control" placeholder="Descripción" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -36,13 +36,13 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Imagen (Pasos)</label>
-                                            <input type="file" id="" name="" class="form-control" placeholder="Imagen (Pasos)">
+                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Imagen (Pasos)">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Imagen (Formulario)</label>
-                                            <input type="file" id="" name="" class="form-control" placeholder="Imagen (Formulario)">
+                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Imagen (Formulario)">
                                         </div>
                                     </div>
                                 </div>
@@ -50,13 +50,13 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Pdf (Formulario)</label>
-                                            <input type="file" id="" name="" class="form-control" placeholder="Imagen (Formulario)">
+                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Pdf (Formulario)">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Correo de envío</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Correo de envío">
+                                            <input type="email" id="" name="" class="form-control" placeholder="Correo de envío">
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-effect-ripple btn-primary floatRight">Guardar</button>

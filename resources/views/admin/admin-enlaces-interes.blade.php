@@ -79,7 +79,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Dirección URL</label>
-                                        <input type="text" class="form-control" id="" name="enlace_enlaces_interes" placeholder="Dirección url del enlace" required>
+                                        <input type="link" class="form-control" id="" name="enlace_enlaces_interes" placeholder="Dirección url del enlace" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -124,7 +124,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Dirección URL</label>
-                                        <input type="text" class="form-control" id="enlace_enlaces_interes" name="enlace_enlaces_interes" placeholder="Dirección url del enlace">
+                                        <input type="link" class="form-control" id="enlace_enlaces_interes" name="enlace_enlaces_interes" placeholder="Dirección url del enlace">
                                     </div>
                                 </div>
                                 <div class="col-md-12">

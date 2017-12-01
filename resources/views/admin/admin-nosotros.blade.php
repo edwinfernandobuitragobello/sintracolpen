@@ -11,13 +11,13 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Título</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Título">
+                                            <input type="text" id="" name="" class="form-control" placeholder="Título" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Descripción</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Descripción">
+                                            <input type="text" id="" name="" class="form-control" placeholder="Descripción" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -38,31 +38,31 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Descripción 1</label>
-                                            <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción 1"></textarea>
+                                            <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción 1" required></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Descripción 2</label>
-                                            <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción 2"></textarea>
+                                            <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción 2" required></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Imagen 1</label>
-                                            <input type="file" id="" name="" class="form-control" placeholder="Imagen 1">
+                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Imagen 2</label>
-                                            <input type="file" id="" name="" class="form-control" placeholder="Imagen 2">
+                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Imagen 3</label>
-                                            <input type="file" id="" name="" class="form-control" placeholder="Imagen 3">
+                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen" required>
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-effect-ripple btn-primary floatRight">Guardar</button>
@@ -85,7 +85,7 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Descripción</label>
-                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción"></textarea>
+                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción" required></textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <button type="submit" class="btn btn-effect-ripple btn-primary floatRight">Guardar</button>
@@ -108,7 +108,7 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Descripción</label>
-                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción"></textarea>
+                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción" required></textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <button type="submit" class="btn btn-effect-ripple btn-primary floatRight">Guardar</button>
@@ -131,7 +131,7 @@
                                     <div class="col-md-9">
                                         <div class="form-group">
                                             <label>Descripción</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Descripción">
+                                            <input type="text" id="" name="" class="form-control" placeholder="Descripción" required>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -157,7 +157,46 @@
                                             <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
                                             <td class="text-center">
                                                 <a href="#" data-toggle="modal" data-target="#editarPrincipio" title="Editar Principio" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Eliminar Principio" class="btn btn-effect-ripple btn-sm btn-danger"><i class="fa fa-times"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center"><i class="fa fa-plus"></i></td>
+                                            <td class="text-center">Empatía</td>
+                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
+                                            <td class="text-center">
+                                                <a href="#" data-toggle="modal" data-target="#editarPrincipio" title="Editar Principio" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center"><i class="fa fa-plus"></i></td>
+                                            <td class="text-center">Empatía</td>
+                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
+                                            <td class="text-center">
+                                                <a href="#" data-toggle="modal" data-target="#editarPrincipio" title="Editar Principio" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center"><i class="fa fa-plus"></i></td>
+                                            <td class="text-center">Empatía</td>
+                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
+                                            <td class="text-center">
+                                                <a href="#" data-toggle="modal" data-target="#editarPrincipio" title="Editar Principio" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center"><i class="fa fa-plus"></i></td>
+                                            <td class="text-center">Empatía</td>
+                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
+                                            <td class="text-center">
+                                                <a href="#" data-toggle="modal" data-target="#editarPrincipio" title="Editar Principio" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center"><i class="fa fa-plus"></i></td>
+                                            <td class="text-center">Empatía</td>
+                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
+                                            <td class="text-center">
+                                                <a href="#" data-toggle="modal" data-target="#editarPrincipio" title="Editar Principio" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -176,7 +215,7 @@
                                     <div class="col-md-9">
                                         <div class="form-group">
                                             <label>Descripción</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Descripción">
+                                            <input type="text" id="" name="" class="form-control" placeholder="Descripción" required>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -202,7 +241,46 @@
                                             <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
                                             <td class="text-center">
                                                 <a href="#" data-toggle="modal" data-target="#editarValor" title="Editar Valor" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                                <a href="javascript:void(0)" data-toggle="tooltip" title="Eliminar Valor" class="btn btn-effect-ripple btn-sm btn-danger"><i class="fa fa-times"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center"><i class="fa fa-plus"></i></td>
+                                            <td class="text-center">Empatía</td>
+                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
+                                            <td class="text-center">
+                                                <a href="#" data-toggle="modal" data-target="#editarValor" title="Editar Valor" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center"><i class="fa fa-plus"></i></td>
+                                            <td class="text-center">Empatía</td>
+                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
+                                            <td class="text-center">
+                                                <a href="#" data-toggle="modal" data-target="#editarValor" title="Editar Valor" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center"><i class="fa fa-plus"></i></td>
+                                            <td class="text-center">Empatía</td>
+                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
+                                            <td class="text-center">
+                                                <a href="#" data-toggle="modal" data-target="#editarValor" title="Editar Valor" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center"><i class="fa fa-plus"></i></td>
+                                            <td class="text-center">Empatía</td>
+                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
+                                            <td class="text-center">
+                                                <a href="#" data-toggle="modal" data-target="#editarValor" title="Editar Valor" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center"><i class="fa fa-plus"></i></td>
+                                            <td class="text-center">Empatía</td>
+                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
+                                            <td class="text-center">
+                                                <a href="#" data-toggle="modal" data-target="#editarValor" title="Editar Valor" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -222,20 +300,24 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
+                                                    <label>Título</label>
+                                                <input type="text" id="" name="" class="form-control" placeholder="Título" required>
+                                                </div>
+                                                <div class="form-group">
                                                     <label>Descripción</label>
-                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción"></textarea>
+                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción" required></textarea>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Icono</label>
-                                                            <input type="text" id="" name="" class="form-control" placeholder="Sintaxis icono">
+                                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Imagen</label>
-                                                            <input type="file" id="" name="" class="form-control" placeholder="Imagen">
+                                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen">
                                                         </div>
                                                     </div>
                                                 </div>     
@@ -260,20 +342,24 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
+                                                    <label>Título</label>
+                                                    <input type="text" id="" name="" class="form-control" placeholder="Título" required>
+                                                </div>
+                                                <div class="form-group">
                                                     <label>Descripción</label>
-                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción"></textarea>
+                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción" required></textarea>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Icono</label>
-                                                            <input type="text" id="" name="" class="form-control" placeholder="Sintaxis icono">
+                                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Imagen</label>
-                                                            <input type="file" id="" name="" class="form-control" placeholder="Imagen">
+                                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -299,20 +385,24 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
+                                                    <label>Título</label>
+                                                    <input type="text" id="" name="" class="form-control" placeholder="Título" required>
+                                                </div>
+                                                <div class="form-group">
                                                     <label>Descripción</label>
-                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción"></textarea>
+                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción" required></textarea>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Icono</label>
-                                                            <input type="text" id="" name="" class="form-control" placeholder="Sintaxis icono">
+                                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Imagen</label>
-                                                            <input type="file" id="" name="" class="form-control" placeholder="Imagen">
+                                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -336,20 +426,24 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
+                                                    <label>Título</label>
+                                                    <input type="text" id="" name="" class="form-control" placeholder="Título" required>
+                                                </div>
+                                                <div class="form-group">
                                                     <label>Descripción</label>
-                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción"></textarea>
+                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción" required></textarea>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Icono</label>
-                                                            <input type="text" id="" name="" class="form-control" placeholder="Sintaxis icono">
+                                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Imagen</label>
-                                                            <input type="file" id="" name="" class="form-control" placeholder="Imagen">
+                                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -390,7 +484,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Icono</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Sintaxis del icono" required>
+                                        <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono" required>
                                     </div>
                                 </div>
 
@@ -434,7 +528,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Icono</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Sintaxis del icono" required>
+                                        <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono" required>
                                     </div>
                                 </div>
 

@@ -90,19 +90,19 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Twitter</label>
-                                            <input type="text" id="" name="twitter_contactenos" class="form-control" placeholder="URL Twitter" value="{{$contactanos->twitter_contactenos}}">
+                                            <input type="link" id="" name="twitter_contactenos" class="form-control" placeholder="URL Twitter" value="{{$contactanos->twitter_contactenos}}">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Instagram</label>
-                                            <input type="text" id="" name="instagram_contactenos" class="form-control" placeholder="URL Instagram" value="{{$contactanos->instagram_contactenos}}">
+                                            <input type="link" id="" name="instagram_contactenos" class="form-control" placeholder="URL Instagram" value="{{$contactanos->instagram_contactenos}}">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Youtube</label>
-                                            <input type="text" id="" name="youtube_contactenos" class="form-control" placeholder="URL Youtube" value="{{$contactanos->youtube_contactenos}}">
+                                            <input type="link" id="" name="youtube_contactenos" class="form-control" placeholder="URL Youtube" value="{{$contactanos->youtube_contactenos}}">
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-effect-ripple btn-primary floatRight">Guardar</button>
