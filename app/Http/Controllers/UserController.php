@@ -20,6 +20,10 @@ use App\comunicados_oficiales;
 use App\comunicados_oficiales1s;
 use App\boletines_generales;
 use App\boletines_generales1s;
+use App\nuestros_afiliados;
+use App\nuestros_afiliados1s;
+use App\afiliate_yas;
+use App\afiliate_yas1s;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -102,5 +106,25 @@ class UserController extends Controller
         $boletines_generales = boletines_generales::find(1);
         $boletines_generales1s = boletines_generales1s::paginate(6);
         return view('user.boletines-generales', compact('contactanos','enlaces_interes','enlaces_interes1s','boletines_generales','boletines_generales1s','capacitaciones'));
+    }
+    // TODO SOBRE NUESTROS AFILIADOS
+    public function nuestros_afiliados(){
+        $contactanos = Contactenos::find(1);
+        $enlaces_interes = Enlaces_interes::find(1);
+        $enlaces_interes1s = Enlaces_interes1s::get();
+        $capacitaciones = capacitaciones::find(1);
+        $nuestros_afiliados = nuestros_afiliados::find(1);
+        $nuestros_afiliados1s = nuestros_afiliados1s::get();
+        return view('user.nuestros-afiliados', compact('contactanos','enlaces_interes','enlaces_interes1s','nuestros_afiliados','nuestros_afiliados1s','capacitaciones'));
+    }
+    // TODO SOBRE AFILIATE YA
+    public function afiliate_ya(){
+        $contactanos = Contactenos::find(1);
+        $enlaces_interes = Enlaces_interes::find(1);
+        $enlaces_interes1s = Enlaces_interes1s::get();
+        $capacitaciones = capacitaciones::find(1);
+        $afiliate_yas = afiliate_yas::find(1);
+        $afiliate_yas1s = afiliate_yas1s::find(1);
+        return view('user.afiliate-ya', compact('contactanos','enlaces_interes','enlaces_interes1s','afiliate_yas','afiliate_yas1s','capacitaciones'));
     }
 }

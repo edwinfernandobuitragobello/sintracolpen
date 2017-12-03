@@ -96,10 +96,10 @@
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Afiliaciones<span class="angle"></span></a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li class="dropdown sub-dropdown">
-                                                <a href="afiliate-ya.html">Afiliate ya!</a>
+                                                <a href="{{url('afiliate-ya')}}">Afiliate ya!</a>
                                             </li>
                                             <li class="dropdown sub-dropdown">
-                                                <a href="nuestros-afiliados.html">Nuestros afiliados</a>
+                                                <a href="{{url('nuestros-afiliados')}}">Nuestros afiliados</a>
                                             </li>
                                         </ul>
                                     </li>

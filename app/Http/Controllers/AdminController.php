@@ -19,6 +19,10 @@ use App\comunicados_oficiales;
 use App\comunicados_oficiales1s;
 use App\boletines_generales;
 use App\boletines_generales1s;
+use App\nuestros_afiliados;
+use App\nuestros_afiliados1s;
+use App\afiliate_yas;
+use App\afiliate_yas1s;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use File;
@@ -26,7 +30,40 @@ use File;
 class AdminController extends Controller
 {
     public function afiliate_ya(){
-    	return view('admin.admin-afiliate-ya');
+        $afiliate_yas = afiliate_yas::find(1);
+        $afiliate_yas1s = afiliate_yas1s::find(1);
+    	return view('admin.admin-afiliate-ya',compact('afiliate_yas','afiliate_yas1s'));
+    }
+    public function afiliate_ya_editar1(Request $request){
+        $afiliate_ya = afiliate_yas::find(1);
+        $afiliate_ya->titulo_afiliate_ya = $request->titulo_afiliate_ya;
+        $afiliate_ya->descripcion_afiliate_ya = $request->descripcion_afiliate_ya;
+        $afiliate_ya->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function afiliate_ya_editar2(Request $request){
+        $afiliate_ya = afiliate_yas1s::find(1);
+        if($request->hasFile('imagen1_afiliate_ya')){
+            $filename = 'imagen1_afiliate_ya'.str_random(40).".".$request->file('imagen1_afiliate_ya')->getClientOriginalExtension();
+            $request->file('imagen1_afiliate_ya')->move('uploads/', $filename);
+            File::delete('uploads/'.$afiliate_ya->imagen1_afiliate_ya);
+            $afiliate_ya->imagen1_afiliate_ya = $filename;
+        }
+        if($request->hasFile('imagen2_afiliate_ya')){
+            $filename = 'imagen2_afiliate_ya'.str_random(40).".".$request->file('imagen2_afiliate_ya')->getClientOriginalExtension();
+            $request->file('imagen2_afiliate_ya')->move('uploads/', $filename);
+            File::delete('uploads/'.$afiliate_ya->imagen2_afiliate_ya);
+            $afiliate_ya->imagen2_afiliate_ya = $filename;
+        }
+        if($request->hasFile('pfd_afiliate_ya')){
+            $filename = 'pfd_afiliate_ya'.str_random(30).".".$request->file('pfd_afiliate_ya')->getClientOriginalExtension();
+            $request->file('pfd_afiliate_ya')->move('uploads/', $filename);
+             File::delete('uploads/'.$afiliate_ya->pfd_afiliate_ya);
+            $afiliate_ya->pfd_afiliate_ya = $filename;
+        }
+        $afiliate_ya->correo_afiliate_ya = $request->correo_afiliate_ya;
+        $afiliate_ya->save();
+        return redirect()->back()->with('success', 'Creado con exito');
     }
     //TODO SOBRE BOLETINES GENERALES
     public function boletines_generales(){
@@ -417,8 +454,41 @@ class AdminController extends Controller
     public function nosotros(){
     	return view('admin.admin-nosotros');
     }
+    //TODO SOBRE NUESTROS AFILIADOS
     public function nuestros_afiliados(){
-    	return view('admin.admin-nuestros-afiliados');
+        $nuestros_afiliados = nuestros_afiliados::find('1');
+        $nuestros_afiliados1s = nuestros_afiliados1s::get();
+    	return view('admin.admin-nuestros-afiliados', compact('nuestros_afiliados','nuestros_afiliados1s'));
+    }
+    public function nuestros_afiliados_editar1(Request $request){
+        $nuestros_afiliados = nuestros_afiliados::find(1);
+        $nuestros_afiliados->titulo_nuestros_afiliados = $request->titulo_nuestros_afiliados;
+        $nuestros_afiliados->descripcion_nuestros_afiliados = $request->descripcion_nuestros_afiliados;
+        $nuestros_afiliados->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function nuestros_afiliados_crear(Request $request){
+        $nuestros_afiliados = new nuestros_afiliados1s();
+        $nuestros_afiliados->afiliado_nuestros_afiliados = $request->afiliado_nuestros_afiliados;
+        $nuestros_afiliados->cantidad_nuestros_afiliados = $request->cantidad_nuestros_afiliados;
+        $nuestros_afiliados->latitud_nuestros_afiliados = $request->latitud_nuestros_afiliados;
+        $nuestros_afiliados->longitud_nuestros_afiliados = $request->longitud_nuestros_afiliados;
+        $nuestros_afiliados->save();
+        return redirect()->back()->with('success', 'Creado con exito');
+    }
+    public function nuestros_afiliados_editar2(Request $request){
+        $nuestros_afiliados = nuestros_afiliados1s::find($request->id);
+        $nuestros_afiliados->afiliado_nuestros_afiliados = $request->afiliado_nuestros_afiliados;
+        $nuestros_afiliados->cantidad_nuestros_afiliados = $request->cantidad_nuestros_afiliados;
+        $nuestros_afiliados->latitud_nuestros_afiliados = $request->latitud_nuestros_afiliados;
+        $nuestros_afiliados->longitud_nuestros_afiliados = $request->longitud_nuestros_afiliados;
+        $nuestros_afiliados->save();
+        return redirect()->back()->with('success', 'Creado con exito');
+    }
+    public function nuestros_afiliados_eliminar($id){
+        $nuestros_afiliados = nuestros_afiliados1s::find($id);
+        $nuestros_afiliados->delete();
+        return redirect()->back()->with('success', 'Eliminado con exito');
     }
     //TODO SOBRE PREGUNTAS FRECUENTES
     public function preguntas_frecuentes(){

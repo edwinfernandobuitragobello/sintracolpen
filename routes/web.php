@@ -12,6 +12,10 @@
 */
 //ADMINISTRADOR
 Route::get('/admin/afiliate-ya', 'adminController@afiliate_ya');
+Route::post('/admin/afiliate_ya_editar1', 'adminController@afiliate_ya_editar1');
+Route::post('/admin/afiliate_ya_crear', 'adminController@afiliate_ya_crear');
+Route::post('/admin/afiliate_ya_editar2', 'adminController@afiliate_ya_editar2');
+Route::get('/admin/afiliate_ya_eliminar/{id?}', 'adminController@afiliate_ya_eliminar');
 
 Route::get('/admin/boletines-generales', 'adminController@boletines_generales');
 Route::post('/admin/boletines_generales_editar1', 'adminController@boletines_generales_editar1');
@@ -59,7 +63,12 @@ Route::get('/admin/galerias_eliminar/{id?}', 'adminController@galerias_eliminar'
 
 Route::get('/admin/inicio', 'adminController@inicio');
 Route::get('/admin/nosotros', 'adminController@nosotros');
+
 Route::get('/admin/nuestros-afiliados', 'adminController@nuestros_afiliados');
+Route::post('/admin/nuestros_afiliados_editar1', 'adminController@nuestros_afiliados_editar1');
+Route::post('/admin/nuestros_afiliados_crear', 'adminController@nuestros_afiliados_crear');
+Route::post('/admin/nuestros_afiliados_editar2', 'adminController@nuestros_afiliados_editar2');
+Route::get('/admin/nuestros_afiliados_eliminar/{id?}', 'adminController@nuestros_afiliados_eliminar');
 
 Route::get('/admin/preguntas-frecuentes', 'adminController@preguntas_frecuentes');
 Route::post('/admin/preguntas_frecuentes_editar1', 'adminController@preguntas_frecuentes_editar1');
@@ -82,3 +91,5 @@ Route::get('documentos-oficiales', 'userController@documentos_oficiales');
 Route::get('contenido-sindical', 'userController@contenido_sindical');
 Route::get('comunicados-oficiales', 'userController@comunicados_oficiales');
 Route::get('boletines-generales', 'userController@boletines_generales');
+Route::get('nuestros-afiliados', 'userController@nuestros_afiliados');
+Route::get('afiliate-ya', 'userController@afiliate_ya');
