@@ -13,7 +13,6 @@
 //ADMINISTRADOR
 Route::get('/admin/afiliate-ya', 'adminController@afiliate_ya');
 Route::post('/admin/afiliate_ya_editar1', 'adminController@afiliate_ya_editar1');
-Route::post('/admin/afiliate_ya_crear', 'adminController@afiliate_ya_crear');
 Route::post('/admin/afiliate_ya_editar2', 'adminController@afiliate_ya_editar2');
 Route::get('/admin/afiliate_ya_eliminar/{id?}', 'adminController@afiliate_ya_eliminar');
 
@@ -62,7 +61,16 @@ Route::post('/admin/galerias_editar', 'adminController@galerias_editar');
 Route::get('/admin/galerias_eliminar/{id?}', 'adminController@galerias_eliminar');
 
 Route::get('/admin/inicio', 'adminController@inicio');
+
 Route::get('/admin/nosotros', 'adminController@nosotros');
+Route::post('/admin/nosotros_editar1', 'adminController@nosotros_editar1');
+Route::post('/admin/nosotros_editar2', 'adminController@nosotros_editar2');
+Route::post('/admin/nosotros_editar3', 'adminController@nosotros_editar3');
+Route::post('/admin/nosotros_editar4', 'adminController@nosotros_editar4');
+Route::post('/admin/nosotros_editar5', 'adminController@nosotros_editar5');
+Route::post('/admin/nosotros_editar6', 'adminController@nosotros_editar6');
+Route::post('/admin/nosotros_editar7', 'adminController@nosotros_editar7');
+Route::post('/admin/nosotros_editar8', 'adminController@nosotros_editar8');
 
 Route::get('/admin/nuestros-afiliados', 'adminController@nuestros_afiliados');
 Route::post('/admin/nuestros_afiliados_editar1', 'adminController@nuestros_afiliados_editar1');
@@ -93,3 +101,4 @@ Route::get('comunicados-oficiales', 'userController@comunicados_oficiales');
 Route::get('boletines-generales', 'userController@boletines_generales');
 Route::get('nuestros-afiliados', 'userController@nuestros_afiliados');
 Route::get('afiliate-ya', 'userController@afiliate_ya');
+Route::get('nosotros', 'userController@nosotros');

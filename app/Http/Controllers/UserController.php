@@ -24,6 +24,14 @@ use App\nuestros_afiliados;
 use App\nuestros_afiliados1s;
 use App\afiliate_yas;
 use App\afiliate_yas1s;
+use App\nosotros;
+use App\nosotros1s;
+use App\nosotros2s;
+use App\nosotros3s;
+use App\nosotros4s;
+use App\nosotros5s;
+use App\nosotros6s;
+use App\nosotros7s;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -126,5 +134,21 @@ class UserController extends Controller
         $afiliate_yas = afiliate_yas::find(1);
         $afiliate_yas1s = afiliate_yas1s::find(1);
         return view('user.afiliate-ya', compact('contactanos','enlaces_interes','enlaces_interes1s','afiliate_yas','afiliate_yas1s','capacitaciones'));
+    }
+    // TODO SOBRE AFILIATE YA
+    public function nosotros(){
+        $contactanos = Contactenos::find(1);
+        $enlaces_interes = Enlaces_interes::find(1);
+        $enlaces_interes1s = Enlaces_interes1s::get();
+        $capacitaciones = capacitaciones::find(1);
+        $nosotros = nosotros::find(1);
+        $nosotros1s = nosotros1s::find(1);
+        $nosotros2s = nosotros2s::find(1);
+        $nosotros3s = nosotros3s::find(1);
+        $nosotros4s = nosotros4s::find(1);
+        $nosotros5s = nosotros5s::get();
+        $nosotros6s = nosotros6s::find(1);
+        $nosotros7s = nosotros7s::get();
+        return view('user.nosotros', compact('contactanos','enlaces_interes','enlaces_interes1s','nosotros','nosotros1s','nosotros2s','nosotros3s','nosotros4s','nosotros5s','nosotros6s','nosotros7s','capacitaciones'));
     }
 }

@@ -23,6 +23,14 @@ use App\nuestros_afiliados;
 use App\nuestros_afiliados1s;
 use App\afiliate_yas;
 use App\afiliate_yas1s;
+use App\nosotros;
+use App\nosotros1s;
+use App\nosotros2s;
+use App\nosotros3s;
+use App\nosotros4s;
+use App\nosotros5s;
+use App\nosotros6s;
+use App\nosotros7s;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use File;
@@ -451,8 +459,99 @@ class AdminController extends Controller
     public function inicio(){
     	return view('admin.admin-inicio');
     }
+    //TODO SOBRE NOSOTROS
     public function nosotros(){
-    	return view('admin.admin-nosotros');
+    	$nosotros = nosotros::find(1);
+        $nosotros1s = nosotros1s::find(1);
+        $nosotros2s = nosotros2s::find(1);
+        $nosotros3s = nosotros3s::find(1);
+        $nosotros4s = nosotros4s::find(1);
+        $nosotros5s = nosotros5s::get();
+        $nosotros6s = nosotros6s::find(1);
+        $nosotros7s = nosotros7s::get();
+        return view('admin.admin-nosotros',compact('nosotros','nosotros1s','nosotros2s','nosotros3s','nosotros4s','nosotros5s','nosotros6s','nosotros7s'));
+    }
+    public function nosotros_editar1(Request $request){
+        $nosotros = nosotros::find(1);
+        $nosotros->titulo_nosotros = $request->titulo_nosotros;
+        $nosotros->descripcion_nosotros = $request->descripcion_nosotros;
+        $nosotros->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function nosotros_editar2(Request $request){
+        $nosotros = nosotros1s::find(1);
+        if($request->hasFile('imagen1_nosotros')){
+            $filename = 'imagen1_nosotros'.str_random(40).".".$request->file('imagen1_nosotros')->getClientOriginalExtension();
+            $request->file('imagen1_nosotros')->move('uploads/', $filename);
+            File::delete('uploads/'.$nosotros->imagen1_nosotros);
+            $nosotros->imagen1_nosotros = $filename;
+        }
+        if($request->hasFile('imagen2_nosotros')){
+            $filename = 'imagen2_nosotros'.str_random(40).".".$request->file('imagen2_nosotros')->getClientOriginalExtension();
+            $request->file('imagen2_nosotros')->move('uploads/', $filename);
+            File::delete('uploads/'.$nosotros->imagen2_nosotros);
+            $nosotros->imagen2_nosotros = $filename;
+        }
+        if($request->hasFile('imagen3_nosotros')){
+            $filename = 'imagen3_nosotros'.str_random(40).".".$request->file('imagen3_nosotros')->getClientOriginalExtension();
+            $request->file('imagen3_nosotros')->move('uploads/', $filename);
+            File::delete('uploads/'.$nosotros->imagen3_nosotros);
+            $nosotros->imagen3_nosotros = $filename;
+        }
+        $nosotros->descripcion1_nosotros = $request->descripcion1_nosotros;
+        $nosotros->descripcion2_nosotros = $request->descripcion2_nosotros;
+        $nosotros->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function nosotros_editar3(Request $request){
+        $nosotros = nosotros3s::find(1);
+        $nosotros->mision_nosotros = $request->mision_nosotros;
+        $nosotros->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function nosotros_editar4(Request $request){
+        $nosotros = nosotros3s::find(1);
+        $nosotros->vision_nosotros = $request->vision_nosotros;
+        $nosotros->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function nosotros_editar5(Request $request){
+        $nosotros = nosotros4s::find(1);
+        $nosotros->principios_nosotros = $request->principios_nosotros;
+        $nosotros->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function nosotros_editar6(Request $request){
+        $nosotros = nosotros5s::find($request->id);
+        $nosotros->nombre_principios_nosotros = $request->nombre_principios_nosotros;
+        $nosotros->descripcion_principios_nosotros = $request->descripcion_principios_nosotros;
+        if($request->hasFile('icono_principios_nosotros')){
+            $filename = 'icono_principios_nosotros'.str_random(40).".".$request->file('icono_principios_nosotros')->getClientOriginalExtension();
+            $request->file('icono_principios_nosotros')->move('uploads/', $filename);
+            File::delete('uploads/'.$nosotros->icono_principios_nosotros);
+            $nosotros->icono_principios_nosotros = $filename;
+        }
+        $nosotros->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function nosotros_editar7(Request $request){
+        $nosotros = nosotros6s::find(1);
+        $nosotros->valores_nosotros = $request->valores_nosotros;
+        $nosotros->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function nosotros_editar8(Request $request){
+        $nosotros = nosotros7s::find($request->id);
+        $nosotros->nombre_valores_nosotros = $request->nombre_valores_nosotros;
+        $nosotros->descripcion_valores_nosotros = $request->descripcion_valores_nosotros;
+        if($request->hasFile('icono_valores_nosotros')){
+            $filename = 'icono_valores_nosotros'.str_random(40).".".$request->file('icono_valores_nosotros')->getClientOriginalExtension();
+            $request->file('icono_valores_nosotros')->move('uploads/', $filename);
+            File::delete('uploads/'.$nosotros->icono_valores_nosotros);
+            $nosotros->icono_valores_nosotros = $filename;
+        }
+        $nosotros->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
     }
     //TODO SOBRE NUESTROS AFILIADOS
     public function nuestros_afiliados(){

@@ -73,22 +73,22 @@
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Nosotros<span class="angle"></span></a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li class="dropdown sub-dropdown">
-                                                <a href="nosotros.html">Misión - Visión</a>
+                                                <a href="{{url('nosotros')}}">Misión - Visión</a>
                                             </li>
                                             <li class="dropdown sub-dropdown">
-                                                <a href="nosotros.html">¿Quiénes somos?</a>
+                                                <a href="{{url('nosotros')}}">¿Quiénes somos?</a>
                                             </li>
                                             <li class="dropdown sub-dropdown">
-                                                <a href="nosotros.html">¿Qué hacemos?</a>
+                                                <a href="{{url('nosotros')}}">¿Qué hacemos?</a>
                                             </li>
                                             <li class="dropdown sub-dropdown">
-                                                <a href="nosotros.html">Principios Organizacionales</a>
+                                                <a href="{{url('nosotros')}}">Principios Organizacionales</a>
                                             </li>
                                             <li class="dropdown sub-dropdown">
-                                                <a href="nosotros.html">Valores Organizacionales</a>
+                                                <a href="{{url('nosotros')}}">Valores Organizacionales</a>
                                             </li>
                                             <li class="dropdown sub-dropdown">
-                                                <a href="nosotros.html">Comites, juntas y organismos</a>
+                                                <a href="{{url('nosotros')}}">Comites, juntas y organismos</a>
                                             </li>
                                         </ul>
                                     </li>

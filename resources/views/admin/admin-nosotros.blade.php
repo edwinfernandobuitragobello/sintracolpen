@@ -7,17 +7,18 @@
                             </div>
 
                             <div class="row">
-                                <form action="" method="">
+                                <form action="{{ url('/admin/nosotros_editar1') }}" method="POST" role="form">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Título</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Título" required>
+                                            <input type="text" id="" name="titulo_nosotros" class="form-control" value="{{$nosotros->titulo_nosotros}}" placeholder="Título">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Descripción</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Descripción" required>
+                                            <input type="text" id="" name="descripcion_nosotros" class="form-control" placeholder="Descripción" value="{{$nosotros->descripcion_nosotros}}">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -33,36 +34,37 @@
                                 <h2>¿Qué somos y qué hacemos?</h2>
                             </div>
 
-                            <form action="" method="">
+                            <form action="{{ url('/admin/nosotros_editar2') }}" method="POST" role="form" enctype="multipart/form-data">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Descripción 1</label>
-                                            <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción 1" required></textarea>
+                                            <textarea class="form-control textArea" rows="4" id="" name="descripcion1_nosotros" placeholder="Descripción 1" required>{{$nosotros1s->descripcion1_nosotros}}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Descripción 2</label>
-                                            <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción 2" required></textarea>
+                                            <textarea class="form-control textArea" rows="4" id="" name="descripcion2_nosotros" placeholder="Descripción 2" required>{{$nosotros1s->descripcion2_nosotros}}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Imagen 1</label>
-                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen" required>
+                                            <input type="file" id="" name="imagen1_nosotros" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen" >
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Imagen 2</label>
-                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen" required>
+                                            <input type="file" id="" name="imagen2_nosotros" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen" >
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Imagen 3</label>
-                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen" required>
+                                            <input type="file" id="" name="imagen3_nosotros" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen" >
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-effect-ripple btn-primary floatRight">Guardar</button>
@@ -80,12 +82,13 @@
                                         <h2>Misión</h2>
                                     </div>
 
-                                    <form action="" method="">
+                                    <form action="{{ url('/admin/nosotros_editar3') }}" method="POST" role="form">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Descripción</label>
-                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción" required></textarea>
+                                                    <textarea class="form-control textArea" rows="4" id="" name="mision_nosotros" placeholder="Descripción" required>{{$nosotros2s->mision_nosotros}}</textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <button type="submit" class="btn btn-effect-ripple btn-primary floatRight">Guardar</button>
@@ -103,12 +106,13 @@
                                         <h2>Visión</h2>
                                     </div>
 
-                                    <form action="" method="">
+                                    <form action="{{ url('/admin/nosotros_editar4') }}" method="POST" role="form">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Descripción</label>
-                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción" required></textarea>
+                                                    <textarea class="form-control textArea" rows="4" id="" name="vision_nosotros" placeholder="Descripción" required>{{$nosotros3s->vision_nosotros}}</textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <button type="submit" class="btn btn-effect-ripple btn-primary floatRight">Guardar</button>
@@ -127,11 +131,12 @@
                             </div>
                             
                             <div class="row">
-                                <form action="" method="">
+                                <form action="{{ url('/admin/nosotros_editar5') }}" method="POST" role="form">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="col-md-9">
                                         <div class="form-group">
                                             <label>Descripción</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Descripción" required>
+                                            <input type="text" id="" name="principios_nosotros" class="form-control" placeholder="Descripción" value="{{$nosotros4s->principios_nosotros}}" required>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -151,54 +156,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="text-center"><i class="fa fa-plus"></i></td>
-                                            <td class="text-center">Empatía</td>
-                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
-                                            <td class="text-center">
-                                                <a href="#" data-toggle="modal" data-target="#editarPrincipio" title="Editar Principio" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center"><i class="fa fa-plus"></i></td>
-                                            <td class="text-center">Empatía</td>
-                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
-                                            <td class="text-center">
-                                                <a href="#" data-toggle="modal" data-target="#editarPrincipio" title="Editar Principio" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center"><i class="fa fa-plus"></i></td>
-                                            <td class="text-center">Empatía</td>
-                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
-                                            <td class="text-center">
-                                                <a href="#" data-toggle="modal" data-target="#editarPrincipio" title="Editar Principio" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center"><i class="fa fa-plus"></i></td>
-                                            <td class="text-center">Empatía</td>
-                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
-                                            <td class="text-center">
-                                                <a href="#" data-toggle="modal" data-target="#editarPrincipio" title="Editar Principio" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center"><i class="fa fa-plus"></i></td>
-                                            <td class="text-center">Empatía</td>
-                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
-                                            <td class="text-center">
-                                                <a href="#" data-toggle="modal" data-target="#editarPrincipio" title="Editar Principio" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center"><i class="fa fa-plus"></i></td>
-                                            <td class="text-center">Empatía</td>
-                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
-                                            <td class="text-center">
-                                                <a href="#" data-toggle="modal" data-target="#editarPrincipio" title="Editar Principio" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                            </td>
-                                        </tr>
+                                        @foreach($nosotros5s as $nosotros5)
+                                            <tr>
+                                                <td class="text-center"><img src="{{url('uploads')}}/{{$nosotros5->icono_principios_nosotros}}" alt="" class="wow zoomIn img-responsive center-block"></i></td>
+                                                <td class="text-center">{{$nosotros5->nombre_principios_nosotros}}</td>
+                                                <td>{{$nosotros5->descripcion_principios_nosotros}}</td>
+                                                <td class="text-center">
+                                                    <a href="#" data-id_principios="{{$nosotros5->id}}" data-nombre_principios_nosotros="{{$nosotros5->nombre_principios_nosotros}}" data-descripcion_principios_nosotros="{{$nosotros5->descripcion_principios_nosotros}}" data-toggle="modal" data-target="#editarPrincipio" title="Editar Principio" class="btn btn-effect-ripple btn-sm btn-success editar"><i class="fa fa-pencil"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -211,11 +178,12 @@
                             </div>
 
                             <div class="row">
-                                <form action="" method="">
+                                <form action="{{ url('/admin/nosotros_editar7') }}" method="POST" role="form">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="col-md-9">
                                         <div class="form-group">
                                             <label>Descripción</label>
-                                            <input type="text" id="" name="" class="form-control" placeholder="Descripción" required>
+                                            <input type="text" id="" name="valores_nosotros" class="form-control" placeholder="Descripción" value="{{$nosotros6s->valores_nosotros}}" required>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -235,54 +203,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="text-center"><i class="fa fa-plus"></i></td>
-                                            <td class="text-center">Empatía</td>
-                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
-                                            <td class="text-center">
-                                                <a href="#" data-toggle="modal" data-target="#editarValor" title="Editar Valor" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center"><i class="fa fa-plus"></i></td>
-                                            <td class="text-center">Empatía</td>
-                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
-                                            <td class="text-center">
-                                                <a href="#" data-toggle="modal" data-target="#editarValor" title="Editar Valor" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center"><i class="fa fa-plus"></i></td>
-                                            <td class="text-center">Empatía</td>
-                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
-                                            <td class="text-center">
-                                                <a href="#" data-toggle="modal" data-target="#editarValor" title="Editar Valor" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center"><i class="fa fa-plus"></i></td>
-                                            <td class="text-center">Empatía</td>
-                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
-                                            <td class="text-center">
-                                                <a href="#" data-toggle="modal" data-target="#editarValor" title="Editar Valor" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center"><i class="fa fa-plus"></i></td>
-                                            <td class="text-center">Empatía</td>
-                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
-                                            <td class="text-center">
-                                                <a href="#" data-toggle="modal" data-target="#editarValor" title="Editar Valor" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center"><i class="fa fa-plus"></i></td>
-                                            <td class="text-center">Empatía</td>
-                                            <td>Es la capacidad de ponernos en la situación del otro y actuar de conformidad con el interés general y no con el interés personal.</td>
-                                            <td class="text-center">
-                                                <a href="#" data-toggle="modal" data-target="#editarValor" title="Editar Valor" class="btn btn-effect-ripple btn-sm btn-success"><i class="fa fa-pencil"></i></a>
-                                            </td>
-                                        </tr>
+                                        @foreach($nosotros7s as $nosotros7)
+                                            <tr>
+                                                <td class="text-center"><img src="{{url('uploads')}}/{{$nosotros7->icono_valores_nosotros}}" alt="" class="wow zoomIn img-responsive center-block"></td>
+                                                <td class="text-center">{{$nosotros7->nombre_valores_nosotros}}</td>
+                                                <td>{{$nosotros7->descripcion_valores_nosotros}}</td>
+                                                <td class="text-center">
+                                                    <a href="#" data-id_valores="{{$nosotros7->id}}" data-nombre_valores_nosotros="{{$nosotros7->nombre_valores_nosotros}}" data-descripcion_valores_nosotros="{{$nosotros7->descripcion_valores_nosotros}}" data-toggle="modal" data-target="#editarPrincipio" title="Editar Principio" class="btn btn-effect-ripple btn-sm btn-success editar1"><i class="fa fa-pencil"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -463,7 +393,9 @@
 
         <!--Modal Editar Principio Organizacional-->
         <div class="modal fade" id="editarPrincipio" tabindex="-1" role="dialog" aria-labelledby="editarPrincipio" aria-hidden="true">
-            <form action="" method="">
+            <form action="{{ url('/admin/nosotros_editar6') }}" method="POST" role="form" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="hidden" id="id_principios" name="id">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -477,21 +409,21 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Nombre</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Nombre del principio organizacional" required>
+                                        <input type="text" class="form-control" id="nombre_principios_nosotros" name="nombre_principios_nosotros" placeholder="Nombre del principio organizacional" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Icono</label>
-                                        <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono" required>
+                                        <input type="file" id="" name="icono_principios_nosotros" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono">
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Descripción</label>
-                                        <textarea class="form-control textArea" rows="5" id="" name="" placeholder="Descripción del principio organizacional" required></textarea>
+                                        <textarea class="form-control textArea" rows="5" id="descripcion_principios_nosotros" name="descripcion_principios_nosotros" placeholder="Descripción del principio organizacional" required></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -507,7 +439,9 @@
 
         <!--Modal Editar Valor Organizacional-->
         <div class="modal fade" id="editarValor" tabindex="-1" role="dialog" aria-labelledby="editarValor" aria-hidden="true">
-            <form action="" method="">
+            <form action="{{ url('/admin/nosotros_editar8') }}" method="POST" role="form" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="hidden" id="id_valores" name="id">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -521,21 +455,21 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Nombre</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="Nombre del valor organizacional" required>
+                                        <input type="text" class="form-control" id="nombre_valores_nosotros" name="nombre_valores_nosotros" placeholder="Nombre del valor organizacional" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Icono</label>
-                                        <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono" required>
+                                        <input type="file" id="icono_valores_nosotros" name="icono_valores_nosotros" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono">
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="input-desc">Descripción</label>
-                                        <textarea class="form-control textArea" rows="5" id="" name="" placeholder="Descripción del valor organizacional" required></textarea>
+                                        <textarea class="form-control textArea" rows="5" id="descripcion_valores_nosotros" name="descripcion_valores_nosotros" placeholder="Descripción del valor organizacional" required></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -550,3 +484,17 @@
         </div>
 
 @include('admin.admin-footer')
+<script type="text/javascript">
+    $(".editar").click(function(){
+        $("#id_principios").val($(this).data("id_principios"));
+        $("#nombre_principios_nosotros").val($(this).data("nombre_principios_nosotros"));
+        $("#descripcion_principios_nosotros").val($(this).data("descripcion_principios_nosotros"));
+    });
+</script>
+<script type="text/javascript">
+    $(".editar1").click(function(){
+        $("#id_valores").val($(this).data("id_valores"));
+        $("#nombre_valores_nosotros").val($(this).data("nombre_valores_nosotros"));
+        $("#descripcion_valores_nosotros").val($(this).data("descripcion_valores_nosotros"));
+    });
+</script>
