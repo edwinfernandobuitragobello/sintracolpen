@@ -99,7 +99,7 @@
 
                         <ul class="nav navbar-nav-custom pull-right">
                             <li class="dropdown">
-                                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" style="padding-right: 20px">
+                                <a href="{{url('/admin/logeo_fin')}}" class="dropdown-toggle" style="padding-right: 20px">
                                     Cerrar Sesión
                                 </a>
                             </li>

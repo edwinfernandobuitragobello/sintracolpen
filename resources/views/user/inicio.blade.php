@@ -5,7 +5,7 @@
                     <div id="revslider">
                         <ul>
                             <li data-transition="slideleft" data-slotamount="8" data-masterspeed="800">
-                                <img data-lazyload="img/banners/banner-1.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+                                <img data-lazyload="{{url('uploads')}}/{{$inicio1->imagen_banners_inicio}}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
 
                                 <div class="tp-caption rev-title lfl ltl"
                                     data-x="center"
@@ -14,7 +14,7 @@
                                     data-start="1000"
                                     data-easing="Power3.easeInOut"
                                     data-endspeed="600"
-                                    style="z-index: 6">Nuestra organización
+                                    style="z-index: 6">{{$inicio1->titulo_banners_inicio}}
                                 </div>
 
                                 <div class="tp-caption rev-text text-center lfr ltr"
@@ -26,7 +26,7 @@
                                     data-start="1200"
                                     data-easing="Power3.easeInOut"
                                     data-endspeed="700"
-                                    style="z-index: 12"><b>En Sintracolpen trabajamos en la  promoción de la dignidad, el respeto, el trabajo decente y el bienestar laboral de los trabajadores.</b>
+                                    style="z-index: 12"><b>{!!$inicio1->descripcion_banners_inicio!!}</b>
                                 </div>
 
                                 <div class="tp-caption rev-btn lfb ltb"
@@ -42,9 +42,8 @@
                                         <a href="javascript:void()" onclick="llamarModal();" class="btn btn-success no-radius min-width">Ingresa aquí y conócenos</a>
                                 </div>
                             </li>
-
                             <li data-transition="slideleft" data-slotamount="8" data-masterspeed="800">
-                                <img data-lazyload="img/banners/banner-2.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+                                <img data-lazyload="{{url('uploads')}}/{{$inicio2->imagen_banners_inicio}}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
 
                                 <div class="tp-caption rev-title customin customout"
                                     data-x="right"
@@ -56,7 +55,7 @@
                                     data-start="1300"
                                     data-easing="Power3.easeInOut"
                                     data-endspeed="600"
-                                    style="z-index: 6">Afiliate ya!
+                                    style="z-index: 6">{{$inicio2->titulo_banners_inicio}}
                                 </div>
 
                                 <div class="tp-caption rev-text text-right customin customout"
@@ -69,7 +68,7 @@
                                     data-start="1600"
                                     data-easing="Power3.easeInOut"
                                     data-endspeed="700"
-                                    style="z-index: 12; text-align: right;"><b>Por condiciones dignas de igualdad y crecimiento, <br>afíliate a nuestra organización.</b>
+                                    style="z-index: 12; text-align: right;"><b>{!!$inicio2->descripcion_banners_inicio!!}</b>
                                 </div>
 
                                 <div class="tp-caption rev-btn customin customout"
@@ -83,12 +82,12 @@
                                     data-easing="Power3.easeInOut"
                                     data-endspeed="800"
                                     style="z-index: 14">
-                                        <a href="afiliate-ya.html" class="btn btn-success no-radius min-width">Descargar formulario</a>
+                                        <a href="{{$inicio2->link_banners_inicio}}" class="btn btn-success no-radius min-width">Descargar formulario</a>
                                 </div>
                             </li>
                             
                             <li data-transition="slideleft" data-slotamount="8" data-masterspeed="800">
-                                <img data-lazyload="img/banners/banner-3.jpeg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+                                <img data-lazyload="{{url('uploads')}}/{{$inicio3->imagen_banners_inicio}}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
 
                                 <div class="tp-caption rev-title customin customout"
                                     data-x="50"
@@ -99,7 +98,7 @@
                                     data-start="1300"
                                     data-easing="Power3.easeInOut"
                                     data-endspeed="600"
-                                    style="z-index: 6">¿En qué vamos?
+                                    style="z-index: 6">{{$inicio3->titulo_banners_inicio}}
                                 </div>
 
                                 <div class="tp-caption rev-text customin customout"
@@ -111,7 +110,7 @@
                                     data-start="1600"
                                     data-easing="Power3.easeInOut"
                                     data-endspeed="700"
-                                    style="z-index: 12; text-align: left;"><b>Sintracolpen celebra, participa y reconoce de la mano de nuestro empleador los acuerdos obtenidos.</b>
+                                    style="z-index: 12; text-align: left;"><b>{!!$inicio3->descripcion_banners_inicio!!}</b>
                                 </div>
 
                                 <div class="tp-caption rev-btn customin customout"
@@ -134,33 +133,17 @@
                 <div class="info-line-section custom">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-4">
-                                <div class="service">
-                                    <span class="service-icon"><i class="icon-plane"></i></span>
-                                    <div class="service-content">
-                                        <h3 class="service-title text-uppercase">Free Shipping</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ipsam soluta</p>
+                            @foreach($inicios1s as $inicios1_item)
+                                <div class="col-md-4">
+                                    <div class="service">
+                                        <span class="service-icon"><img src="{{url('uploads')}}/{{$inicios1_item->imagen_items_inicio}}" alt="" class="wow zoomIn img-responsive center-block"></span>
+                                        <div class="service-content">
+                                            <h3 class="service-title text-uppercase">{{$inicios1_item->titulo_items_inicio}}</h3>
+                                            <p>{!!$inicios1_item->descripcion_items_inicio!!}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="service">
-                                    <span class="service-icon"><i class="icon-credit-card"></i></span>
-                                    <div class="service-content">
-                                        <h3 class="service-title text-uppercase">100% Secure Payment</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ipsam soluta</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="service">
-                                    <span class="service-icon"><i class="icon-badge"></i></span>
-                                    <div class="service-content">
-                                        <h3 class="service-title text-uppercase">Fast Services</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ipsam soluta</p>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -170,15 +153,15 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7">
-                            <h3 class="title-border custom text-uppercase mb30">More About Us</h3>
-                            <p class="ancho">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias velit doloremque eaque ea optio, incidunt, sint maiores omnis, cumque et illum deserunt repellat laudantium, natus iusto architecto aliquid dicta sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias velit doloremque eaque ea optio, incidunt, sint maiores omnis, cumque et illum deserunt repellat laudantium, natus iusto architecto aliquid dicta sapiente.</p>
+                            <h3 class="title-border custom text-uppercase mb30">{{$inicios_primera->titulo_primera_inicio}}</h3>
+                            <p class="ancho">{!!$inicios_primera->descripcion_primera_inicio!!}</p>
                         </div>
 
                         <div class="mb50-sm visible-xs visible-sm"></div>
 
                         <div class="col-md-5">
                             <div class="item">
-                                <img src="img/galeria/FB_IMG_1508897720617.jpg" class="img-responsive" alt="">
+                                <img src="{{url('uploads')}}/{{$inicios_primera->imagen_primera_inicio}}" class="img-responsive" alt="">
                             </div>
                         </div>
                     </div>
@@ -187,8 +170,8 @@
 
                     <div class="row">
                         <div class="col-md-7 col-md-push-5">
-                            <h3 class="title-border custom text-uppercase mb30 wow fadeInUp">Videos Informativos</h3>
-                            <p class="ancho">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias velit doloremque eaque ea optio, incidunt, sint maiores omnis, cumque et illum deserunt repellat laudantium, natus iusto architecto aliquid dicta sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias velit doloremque eaque ea optio, incidunt, sint maiores omnis, cumque et illum deserunt repellat laudantium, natus iusto architecto aliquid dicta sapiente.</p>
+                            <h3 class="title-border custom text-uppercase mb30 wow fadeInUp">{{$inicios_segunda->titulo_segunda_inicio}}</h3>
+                            <p class="ancho">{!!$inicios_segunda->descripcion_segunda_inicio!!}</p>
                         </div>
 
                         <div class="mb35-sm visible-xs visible-sm"></div>
@@ -196,17 +179,12 @@
                         <div class="col-md-5 col-md-pull-7">
                             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="7000">
                                 <div class="carousel-inner">
-                                    <div class="item active">
-                                        <iframe width="100%" height="300" src="https://www.youtube.com/embed/V9kXJzeQFaU" frameborder="0" allowfullscreen></iframe>
-                                    </div>
-
-                                    <div class="item">
-                                        <iframe width="100%" height="300" src="https://www.youtube.com/embed/V9kXJzeQFaU" frameborder="0" allowfullscreen></iframe>
-                                    </div>
-
-                                    <div class="item">
-                                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/V9kXJzeQFaU" frameborder="0" allowfullscreen></iframe>
-                                    </div>
+                                    <?php $i=0; ?>
+                                    @foreach($videos1s as $videos1)
+                                        <div class="item <?php if($i==0){ echo "active"; $i++; } ?>">
+                                            <iframe width="100%" height="300" src="{{$videos1->url_videos}}" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    @endforeach
                                 </div>
                                 <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>
                                 <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a>
@@ -220,51 +198,26 @@
                 <div class="bg-lightergray pt40 pb20">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-9">
-                                <h2 class="title-underblock custom mb30">Testimonios</h2>
-                                <div class="owl-carousel testimonial-slider">
-                                    <div class="testimonial">
-                                        <figure>
-                                            <img src="images/testimonials/dean.jpg" alt="Dean">
-                                        </figure>
-                                        <div class="testimonial-content">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias velit doloremque eaque ea optio, incidunt, sint maiores omnis, cumque et illum deserunt repellat laudantium, natus iusto architecto aliquid dicta sapiente.</p>
-                                            <h5>Dean Sam Winchester - <span style="color: #009688;">Diseñador</span></h5>
-                                        </div>
-                                    </div>
-                                    <div class="testimonial">
-                                        <figure>
-                                            <img src="images/testimonials/john.jpg" alt="John">
-                                        </figure>
-                                        <div class="testimonial-content">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias velit doloremque eaque ea optio, incidunt, sint maiores omnis, cumque et illum deserunt repellat laudantium, natus iusto architecto aliquid dicta sapiente.</p>
-                                            <h5>Dean Sam Winchester - <span style="color: #009688;">Diseñador</span></h5>
-                                        </div>
-                                    </div>
-                                    <div class="testimonial">
-                                        <figure>
-                                            <img src="images/testimonials/sarah.jpg" alt="Dean">
-                                        </figure>
-                                        <div class="testimonial-content">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias velit doloremque eaque ea optio, incidunt, sint maiores omnis, cumque et illum deserunt repellat laudantium, natus iusto architecto aliquid dicta sapiente.</p>
-                                            <h5>Dean Sam Winchester - <span style="color: #009688;">Diseñador</span></h5>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="col-md-4">
+                                <center>
+                                    <a href="{{$contactanos->twitter_contactenos}}" target="_blank">
+                                        <img src="imgUser/twitter.png">
+                                    </a>
+                                </center>
                             </div>
-
-                            <div class="col-md-3">
-                                <a href="https://twitter.com/sintracolpen1?lang=es" target="_blank">
-                                    <img src="img/twitter.png">
-                                </a>
-                                <br><br>
-                                <a href="https://www.instagram.com/sintracolpen/?hl=es" target="_blank">
-                                    <img src="img/instagram.png">
-                                </a>
-                                <br><br>
-                                <a href="https://www.youtube.com/channel/UCca6tePo-yD1tmmoQYJTn1g" target="_blank">
-                                    <img src="img/youtube.png">
-                                </a>
+                            <div class="col-md-4">
+                                <center>
+                                    <a href="{{$contactanos->instagram_contactenos}}" target="_blank">
+                                        <img src="imgUser/instagram.png">
+                                    </a>
+                                </center>
+                            </div>
+                            <div class="col-md-4">
+                                <center>
+                                    <a href="{{$contactanos->youtube_contactenos}}" target="_blank">
+                                        <img src="imgUser/youtube.png">
+                                    </a>
+                                </center>
                             </div>
                         </div>
                     </div>
@@ -403,7 +356,7 @@
         <div id="verPDF" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <iframe src="https://docs.google.com/viewer?url=http://brasilia.cervantes.es/imagenes/file/biblioteca/pdf/carlos_fuentes_aura.pdf&embedded=true" width="600" height="780"></iframe>
+                    <iframe src="{{$inicio3->link_banners_inicio}}" width="600" height="780"></iframe>
                 </div>
             </div>
         </div>
@@ -425,27 +378,28 @@
             </div>
         </div>
     </div>
-
-    <script src="{{ asset('jsUser/smoothscroll.js') }}"></script>
-    <script src="{{ asset('jsUser/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('jsUser/jquery.hoverIntent.min.js') }}"></script>
-    <script src="{{ asset('jsUser/jquery.nicescroll.min.js') }}"></script>
-    <script src="{{ asset('jsUser/waypoints.min.js') }}"></script>
-    <script src="{{ asset('jsUser/waypoints-sticky.min.js') }}"></script>
-    <script src="{{ asset('jsUser/jquery.debouncedresize.js') }}"></script>
-    <script src="{{ asset('jsUser/retina.min.js') }}"></script>
-    <script src="{{ asset('jsUser/twitter/jquery.tweet.min.js') }}"></script>
-    <script src="{{ asset('jsUser/jflickrfeed.min.js') }}"></script>
-    <script src="{{ asset('jsUser/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('jsUser/jquery.kwicks.min.js') }}"></script>
-    <script src="{{ asset('jsUser/skrollr.min.js') }}"></script>
-    <script src="{{ asset('jsUser/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('jsUser/wow.min.js') }}"></script>
-    <script src="{{ asset('jsUser/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('jsUser/mediaelement-and-player.min.js') }}"></script>
-    <script src="{{ asset('jsUser/main.js') }}"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsBJuX7MUGkO38AxIIn0K4rIZV5kba7M0&callback=initMap"></script>
-
+        <script src="{{ asset('jsUser/smoothscroll.js') }}"></script>
+        <script src="{{ asset('jsUser/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('jsUser/jquery.hoverIntent.min.js') }}"></script>
+        <script src="{{ asset('jsUser/jquery.nicescroll.min.js') }}"></script>
+        <script src="{{ asset('jsUser/waypoints.min.js') }}"></script>
+        <script src="{{ asset('jsUser/waypoints-sticky.min.js') }}"></script>
+        <script src="{{ asset('jsUser/jquery.debouncedresize.js') }}"></script>
+        <script src="{{ asset('jsUser/retina.min.js') }}"></script>
+        <script src="{{ asset('jsUser/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('jsUser/jflickrfeed.min.js') }}"></script>
+        <script src="{{ asset('jsUser/twitter/jquery.tweet.min.js') }}"></script>
+        <script src="{{ asset('jsUser/jquery.themepunch.tools.min.js') }}"></script>
+        <script src="{{ asset('jsUser/jquery.themepunch.revolution.min.js') }}"></script>
+        <script src="{{ asset('jsUsers/isotope.pkgd.min.js') }}"></script>
+        <script src="{{ asset('jsUser/skrollr.min.js') }}"></script>
+        <script src="{{ asset('jsUser/jquery.magnific-popup.min.js') }}"></script>
+        <script src="{{ asset('jsUser/jquery.knob.min.js') }}"></script>
+        <script src="{{ asset('jsUser/jquery.countTo.js') }}"></script>
+        <script src="{{ asset('jsUser/jquery.validate.min.js') }}"></script>
+        <script src="{{ asset('jsUser/contact.js') }}"></script>
+        <script src="{{ asset('jsUser/main.js') }}"></script>
+        <script src="{{ asset('jsUser/wow.min.js') }}"></script>
         <script>
             (function () {
                 "use strict";
@@ -479,7 +433,7 @@
 
         <script type="text/javascript">
             function llamarModal(){
-                $('#iframe1').attr('src', 'https://www.youtube.com/embed/videoseries?list=PLnB1zHr--B8IWhxJTczVF7kuH1boRiAOR');
+                $('#iframe1').attr('src', '{{$inicio1->link_banners_inicio}}');
                 $('#verVideo').modal('show'); 
             }
             function cerrarVideos(){

@@ -25,7 +25,8 @@
                 <h2>Login</h2>
             </div>
 
-            <form action="" class="form-horizontal" id="form-login" method="post" accept-charset="utf-8">
+            <form class="form-horizontal" id="form-login" method="post" accept-charset="utf-8" action="{{ url('/admin/logeo') }}" method="POST" role="form">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group">
                     <div class="col-xs-12">
                         <input type="text" id="email" name="email" class="form-control" placeholder="usuario@sintracolpen.com" required>

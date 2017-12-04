@@ -36,6 +36,10 @@ use App\nosotros8s;
 use App\nosotros9s;
 use App\nosotros10s;
 use App\nosotros11s;
+use App\inicios;
+use App\inicios1s;
+use App\inicios2s;
+use App\inicios3s;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -165,18 +169,13 @@ class UserController extends Controller
         $enlaces_interes = Enlaces_interes::find(1);
         $enlaces_interes1s = Enlaces_interes1s::get();
         $capacitaciones = capacitaciones::find(1);
-        $nosotros = nosotros::find(1);
-        $nosotros1s = nosotros1s::find(1);
-        $nosotros2s = nosotros2s::find(1);
-        $nosotros3s = nosotros3s::find(1);
-        $nosotros4s = nosotros4s::find(1);
-        $nosotros5s = nosotros5s::get();
-        $nosotros6s = nosotros6s::find(1);
-        $nosotros7s = nosotros7s::get();
-        $nosotros8s = nosotros8s::find(1);
-        $nosotros9s = nosotros9s::find(1);
-        $nosotros10s = nosotros10s::find(1);
-        $nosotros11s = nosotros11s::find(1);
-        return view('user.inicio', compact('contactanos','enlaces_interes','enlaces_interes1s','nosotros','nosotros1s','nosotros2s','nosotros3s','nosotros4s','nosotros5s','nosotros6s','nosotros7s','nosotros8s','nosotros9s','nosotros10s','nosotros11s','capacitaciones'));
+        $inicio1 = inicios::find(1);
+        $inicio2 = inicios::find(2);
+        $inicio3 = inicios::find(3);
+        $inicios1s = inicios1s::get();
+        $inicios_primera = inicios2s::find(1);
+        $videos1s = Videos1s::get();
+        $inicios_segunda = inicios3s::find(1);
+        return view('user.inicio', compact('contactanos','enlaces_interes','enlaces_interes1s','inicio1','inicio2','inicio3','inicios1s','inicios_primera','videos1s','inicios_segunda','capacitaciones'));
     }
 }

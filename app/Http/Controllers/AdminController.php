@@ -35,6 +35,11 @@ use App\nosotros8s;
 use App\nosotros9s;
 use App\nosotros10s;
 use App\nosotros11s;
+use App\inicios;
+use App\inicios1s;
+use App\inicios2s;
+use App\inicios3s;
+use App\usuarios;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use File;
@@ -44,7 +49,27 @@ class AdminController extends Controller
     public function login(){
         return view('admin.admin_login');
     }
+    public function logeo(Request $request){
+        $posibles = usuarios::where('email',$request->email)->where('password',$request->password)->get();
+        if (count($posibles)==0) {
+            return redirect('/admin/login');
+        }else{
+            session_start();
+            $_SESSION['id_login'] = $posibles[0]['id'];
+            return redirect('/admin/inicio');
+        }
+    }
+    public function logeo_fin(Request $request){
+        session_start();
+        session_destroy();
+        return redirect('/admin/login');
+    }
+    //TODO SOBRE AFILIATE YA
     public function afiliate_ya(){
+        session_start();
+        if ((!isset($_SESSION['id_login']))) {
+            return redirect('/admin/login');
+        }
         $afiliate_yas = afiliate_yas::find(1);
         $afiliate_yas1s = afiliate_yas1s::find(1);
     	return view('admin.admin-afiliate-ya',compact('afiliate_yas','afiliate_yas1s'));
@@ -82,6 +107,10 @@ class AdminController extends Controller
     }
     //TODO SOBRE BOLETINES GENERALES
     public function boletines_generales(){
+        session_start();
+        if ((!isset($_SESSION['id_login']))) {
+            return redirect('/admin/login');
+        }
         $boletines_generales = boletines_generales::find(1);
         $boletines_generales1s = boletines_generales1s::get();
     	return view('admin.admin-boletines-generales',compact('boletines_generales','boletines_generales1s'));
@@ -146,6 +175,10 @@ class AdminController extends Controller
     }
     //TODO SOBRE CAPACITACIONES
     public function capacitaciones(){
+        session_start();
+        if ((!isset($_SESSION['id_login']))) {
+            return redirect('/admin/login');
+        }
         $capacitaciones = capacitaciones::find('1');
     	return view('admin.admin-capacitaciones', compact('capacitaciones'));
     }
@@ -157,6 +190,10 @@ class AdminController extends Controller
     }
     //TODO SOBRE COMUNICADOS OFICIALES
     public function comunicados_oficiales(){
+        session_start();
+        if ((!isset($_SESSION['id_login']))) {
+            return redirect('/admin/login');
+        }
         $comunicados_oficiales = comunicados_oficiales::find(1);
         $comunicados_oficiales1s = comunicados_oficiales1s::get();
     	return view('admin.admin-comunicados-oficiales',compact('comunicados_oficiales','comunicados_oficiales1s'));
@@ -221,6 +258,10 @@ class AdminController extends Controller
     }
     // TODO SOBRE CONTACTENOS
     public function contactanos(){
+        session_start();
+        if ((!isset($_SESSION['id_login']))) {
+            return redirect('/admin/login');
+        }
     	$contactanos = Contactenos::find('1');
     	return view('admin.admin-contactanos', compact('contactanos'));
     }
@@ -247,6 +288,10 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Actualizado con exito');
     }
     public function contenidos_sindicales(){
+        session_start();
+        if ((!isset($_SESSION['id_login']))) {
+            return redirect('/admin/login');
+        }
         $contenidos_sindicales = contenidos_sindicales::find(1);
         $contenidos_sindicales1s = contenidos_sindicales1s::get();
     	return view('admin.admin-contenidos-sindicales',compact('contenidos_sindicales','contenidos_sindicales1s'));
@@ -311,6 +356,10 @@ class AdminController extends Controller
     }
     //TODO SOBRE DOCUMENTOS OFICIALES
     public function documentos_oficiales(){
+        session_start();
+        if ((!isset($_SESSION['id_login']))) {
+            return redirect('/admin/login');
+        }
         $documentos_oficiales = documentos_oficiales::find(1);
         $documentos_oficiales1s = documentos_oficiales1s::get();
     	return view('admin.admin-documentos-oficiales',compact('documentos_oficiales','documentos_oficiales1s'));
@@ -375,6 +424,10 @@ class AdminController extends Controller
     }
     //TODO SOBRE ENLACES DE INTERES
     public function enlaces_interes(){
+        session_start();
+        if ((!isset($_SESSION['id_login']))) {
+            return redirect('/admin/login');
+        }
     	$enlaces_interes = Enlaces_interes::find(1);
     	$enlaces_interes1s = Enlaces_interes1s::get();
     	return view('admin.admin-enlaces-interes',compact('enlaces_interes','enlaces_interes1s'));
@@ -421,6 +474,10 @@ class AdminController extends Controller
     }
     //TODO SOBRE GALERIAS
     public function galerias(){
+        session_start();
+        if ((!isset($_SESSION['id_login']))) {
+            return redirect('/admin/login');
+        }
     	$galerias = Galerias::find('1');
     	$galerias1s = Galerias1s::paginate(10);
     	return view('admin.admin-galeria',compact('galerias','galerias1s'));
@@ -464,10 +521,71 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Eliminado con exito');
     }
     public function inicio(){
-    	return view('admin.admin-inicio');
+        session_start();
+        if ((!isset($_SESSION['id_login']))) {
+            return redirect('/admin/login');
+        }
+        $inicios = inicios::get();
+        $inicios_item1 = inicios1s::find(1);
+        $inicios_item2 = inicios1s::find(2);
+        $inicios_item3 = inicios1s::find(3);
+        $inicios_primera = inicios2s::find(1);
+        $inicios_segunda = inicios3s::find(1);
+    	return view('admin.admin-inicio',compact('inicios','inicios_item1','inicios_item2','inicios_item3','inicios_primera','inicios_segunda'));
+    }
+    public function inicio_editar1(Request $request){
+        $inicio = inicios::find($request->id);
+        $inicio->titulo_banners_inicio = $request->titulo_banners_inicio;
+        $inicio->descripcion_banners_inicio = $request->descripcion_banners_inicio;
+        $inicio->link_banners_inicio = $request->link_banners_inicio;
+        if($request->hasFile('imagen_banners_inicio')){
+            $filename = 'imagen_banners_inicio'.str_random(40).".".$request->file('imagen_banners_inicio')->getClientOriginalExtension();
+            $request->file('imagen_banners_inicio')->move('uploads/', $filename);
+            File::delete('uploads/'.$inicio->imagen_banners_inicio);
+            $inicio->imagen_banners_inicio = $filename;
+        }
+        $inicio->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function inicio_editar_item1(Request $request){
+        $inicio = inicios1s::find($request->id);
+        $inicio->titulo_items_inicio = $request->titulo_items_inicio;
+        $inicio->descripcion_items_inicio = $request->descripcion_items_inicio;
+        if($request->hasFile('imagen_items_inicio')){
+            $filename = 'imagen_items_inicio'.str_random(40).".".$request->file('imagen_items_inicio')->getClientOriginalExtension();
+            $request->file('imagen_items_inicio')->move('uploads/', $filename);
+            File::delete('uploads/'.$inicio->imagen_items_inicio);
+            $inicio->imagen_items_inicio = $filename;
+        }
+        $inicio->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function inicio_primera1(Request $request){
+        $inicio = inicios2s::find(1);
+        $inicio->titulo_primera_inicio = $request->titulo_primera_inicio;
+        $inicio->descripcion_primera_inicio = $request->descripcion_primera_inicio;
+        if($request->hasFile('imagen_primera_inicio')){
+            $filename = 'imagen_primera_inicio'.str_random(40).".".$request->file('imagen_primera_inicio')->getClientOriginalExtension();
+            $request->file('imagen_primera_inicio')->move('uploads/', $filename);
+            File::delete('uploads/'.$inicio->imagen_primera_inicio);
+            $inicio->imagen_primera_inicio = $filename;
+        }
+        $inicio->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function inicio_segunda1(Request $request){
+        $inicio = inicios3s::find(1);
+        $inicio->titulo_segunda_inicio = $request->titulo_segunda_inicio;
+        $inicio->descripcion_segunda_inicio = $request->descripcion_segunda_inicio;
+        $inicio->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
     }
     //TODO SOBRE NOSOTROS
     public function nosotros(){
+        session_start();
+        if ((!isset($_SESSION['id_login']))) {
+            return redirect('/admin/login');
+        }
     	$nosotros = nosotros::find(1);
         $nosotros1s = nosotros1s::find(1);
         $nosotros2s = nosotros2s::find(1);
@@ -642,6 +760,10 @@ class AdminController extends Controller
     }
     //TODO SOBRE NUESTROS AFILIADOS
     public function nuestros_afiliados(){
+        session_start();
+        if ((!isset($_SESSION['id_login']))) {
+            return redirect('/admin/login');
+        }
         $nuestros_afiliados = nuestros_afiliados::find('1');
         $nuestros_afiliados1s = nuestros_afiliados1s::get();
     	return view('admin.admin-nuestros-afiliados', compact('nuestros_afiliados','nuestros_afiliados1s'));
@@ -678,6 +800,10 @@ class AdminController extends Controller
     }
     //TODO SOBRE PREGUNTAS FRECUENTES
     public function preguntas_frecuentes(){
+        session_start();
+        if ((!isset($_SESSION['id_login']))) {
+            return redirect('/admin/login');
+        }
     	$preguntas_frecuentes = Preguntas_frecuentes::find('1');
     	$preguntas_frecuentes1s = Preguntas_frecuentes1s::get();
     	return view('admin.admin-preguntas-frecuentes', compact('preguntas_frecuentes','preguntas_frecuentes1s'));
@@ -716,6 +842,10 @@ class AdminController extends Controller
     }
     //TODO SOBRE VIDEOS
     public function videos(){
+        session_start();
+        if ((!isset($_SESSION['id_login']))) {
+            return redirect('/admin/login');
+        }
     	$videos = Videos::find('1');
     	$videos1s = Videos1s::get();
     	return view('admin.admin-videos', compact('videos','videos1s'));

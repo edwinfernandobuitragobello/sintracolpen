@@ -12,6 +12,8 @@
 */
 //ADMINISTRADOR
 Route::get('/admin/login', 'adminController@login');
+Route::post('/admin/logeo', 'adminController@logeo');
+Route::get('/admin/logeo_fin', 'adminController@logeo_fin');
 
 Route::get('/admin/afiliate-ya', 'adminController@afiliate_ya');
 Route::post('/admin/afiliate_ya_editar1', 'adminController@afiliate_ya_editar1');
@@ -63,6 +65,10 @@ Route::post('/admin/galerias_editar', 'adminController@galerias_editar');
 Route::get('/admin/galerias_eliminar/{id?}', 'adminController@galerias_eliminar');
 
 Route::get('/admin/inicio', 'adminController@inicio');
+Route::post('/admin/inicio_editar1', 'adminController@inicio_editar1');
+Route::post('/admin/inicio_editar_item1', 'adminController@inicio_editar_item1');
+Route::post('/admin/inicio_primera1', 'adminController@inicio_primera1');
+Route::post('/admin/inicio_segunda1', 'adminController@inicio_segunda1');
 
 Route::get('/admin/nosotros', 'adminController@nosotros');
 Route::post('/admin/nosotros_editar1', 'adminController@nosotros_editar1');
