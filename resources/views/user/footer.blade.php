@@ -105,10 +105,10 @@
                     <div class="row">
                         <div class="col-md-6 col-md-push-6">
                             <ul class="footer-menu">
-                                <li><a href="inicio.html">Inicio</a></li>
-                                <li><a href="nosotros.html">Nosotros</a></li>
-                                <li><a href="afiliate-ya.html">Afiliaciones</a></li>
-                                <li><a href="contenidos.html">Contenidos</a></li>
+                                <li><a href="{{url('/')}}">Inicio</a></li>
+                                <li><a href="{{url('nosotros')}}">Nosotros</a></li>
+                                <li><a href="#">Afiliaciones</a></li>
+                                <li><a href="#">Contenidos</a></li>
                                 <li><a href="{{url('preguntas-frecuentes')}}">Preguntas</a></li>
                                 <li><a href="{{url('contactanos')}}">Contáctanos</a></li>
                             </ul>

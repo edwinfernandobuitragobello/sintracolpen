@@ -31,12 +31,19 @@ use App\nosotros4s;
 use App\nosotros5s;
 use App\nosotros6s;
 use App\nosotros7s;
+use App\nosotros8s;
+use App\nosotros9s;
+use App\nosotros10s;
+use App\nosotros11s;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use File;
 
 class AdminController extends Controller
 {
+    public function login(){
+        return view('admin.admin_login');
+    }
     public function afiliate_ya(){
         $afiliate_yas = afiliate_yas::find(1);
         $afiliate_yas1s = afiliate_yas1s::find(1);
@@ -469,7 +476,11 @@ class AdminController extends Controller
         $nosotros5s = nosotros5s::get();
         $nosotros6s = nosotros6s::find(1);
         $nosotros7s = nosotros7s::get();
-        return view('admin.admin-nosotros',compact('nosotros','nosotros1s','nosotros2s','nosotros3s','nosotros4s','nosotros5s','nosotros6s','nosotros7s'));
+        $nosotros8s = nosotros8s::find(1);
+        $nosotros9s = nosotros9s::find(1);
+        $nosotros10s = nosotros10s::find(1);
+        $nosotros11s = nosotros11s::find(1);
+        return view('admin.admin-nosotros',compact('nosotros','nosotros1s','nosotros2s','nosotros3s','nosotros4s','nosotros5s','nosotros6s','nosotros7s','nosotros8s','nosotros9s','nosotros10s','nosotros11s'));
     }
     public function nosotros_editar1(Request $request){
         $nosotros = nosotros::find(1);
@@ -549,6 +560,82 @@ class AdminController extends Controller
             $request->file('icono_valores_nosotros')->move('uploads/', $filename);
             File::delete('uploads/'.$nosotros->icono_valores_nosotros);
             $nosotros->icono_valores_nosotros = $filename;
+        }
+        $nosotros->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function nosotros_editar9(Request $request){
+        $nosotros = nosotros8s::find(1);
+        $nosotros->titulo_organismos_nosotros = $request->titulo_organismos_nosotros;
+        $nosotros->descripcion_organismos_nosotros = $request->descripcion_organismos_nosotros;
+        if($request->hasFile('icono_organismos_nosotros')){
+            $filename = 'icono_organismos_nosotros'.str_random(40).".".$request->file('icono_organismos_nosotros')->getClientOriginalExtension();
+            $request->file('icono_organismos_nosotros')->move('uploads/', $filename);
+            File::delete('uploads/'.$nosotros->icono_organismos_nosotros);
+            $nosotros->icono_organismos_nosotros = $filename;
+        }
+        if($request->hasFile('imagen_organismos_nosotros')){
+            $filename = 'imagen_organismos_nosotros'.str_random(40).".".$request->file('imagen_organismos_nosotros')->getClientOriginalExtension();
+            $request->file('imagen_organismos_nosotros')->move('uploads/', $filename);
+            File::delete('uploads/'.$nosotros->imagen_organismos_nosotros);
+            $nosotros->imagen_organismos_nosotros = $filename;
+        }
+        $nosotros->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function nosotros_editar10(Request $request){
+        $nosotros = nosotros9s::find(1);
+        $nosotros->titulo_junta_nosotros = $request->titulo_junta_nosotros;
+        $nosotros->descripcion_junta_nosotros = $request->descripcion_junta_nosotros;
+        if($request->hasFile('icono_junta_nosotros')){
+            $filename = 'icono_junta_nosotros'.str_random(40).".".$request->file('icono_junta_nosotros')->getClientOriginalExtension();
+            $request->file('icono_junta_nosotros')->move('uploads/', $filename);
+            File::delete('uploads/'.$nosotros->icono_junta_nosotros);
+            $nosotros->icono_junta_nosotros = $filename;
+        }
+        if($request->hasFile('imagen_junta_nosotros')){
+            $filename = 'imagen_junta_nosotros'.str_random(40).".".$request->file('imagen_junta_nosotros')->getClientOriginalExtension();
+            $request->file('imagen_junta_nosotros')->move('uploads/', $filename);
+            File::delete('uploads/'.$nosotros->imagen_junta_nosotros);
+            $nosotros->imagen_junta_nosotros = $filename;
+        }
+        $nosotros->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function nosotros_editar11(Request $request){
+        $nosotros = nosotros10s::find(1);
+        $nosotros->titulo_comite_nosotros = $request->titulo_comite_nosotros;
+        $nosotros->descripcion_comite_nosotros = $request->descripcion_comite_nosotros;
+        if($request->hasFile('icono_comite_nosotros')){
+            $filename = 'icono_comite_nosotros'.str_random(40).".".$request->file('icono_comite_nosotros')->getClientOriginalExtension();
+            $request->file('icono_comite_nosotros')->move('uploads/', $filename);
+            File::delete('uploads/'.$nosotros->icono_comite_nosotros);
+            $nosotros->icono_comite_nosotros = $filename;
+        }
+        if($request->hasFile('imagen_comite_nosotros')){
+            $filename = 'imagen_comite_nosotros'.str_random(40).".".$request->file('imagen_comite_nosotros')->getClientOriginalExtension();
+            $request->file('imagen_comite_nosotros')->move('uploads/', $filename);
+            File::delete('uploads/'.$nosotros->imagen_comite_nosotros);
+            $nosotros->imagen_comite_nosotros = $filename;
+        }
+        $nosotros->save();
+        return redirect()->back()->with('success', 'Actualizado con exito');
+    }
+    public function nosotros_editar12(Request $request){
+        $nosotros = nosotros11s::find(1);
+        $nosotros->titulo_bogota_nosotros = $request->titulo_bogota_nosotros;
+        $nosotros->descripcion_bogota_nosotros = $request->descripcion_bogota_nosotros;
+        if($request->hasFile('icono_bogota_nosotros')){
+            $filename = 'icono_bogota_nosotros'.str_random(40).".".$request->file('icono_bogota_nosotros')->getClientOriginalExtension();
+            $request->file('icono_bogota_nosotros')->move('uploads/', $filename);
+            File::delete('uploads/'.$nosotros->icono_bogota_nosotros);
+            $nosotros->icono_bogota_nosotros = $filename;
+        }
+        if($request->hasFile('imagen_bogota_nosotros')){
+            $filename = 'imagen_bogota_nosotros'.str_random(40).".".$request->file('imagen_bogota_nosotros')->getClientOriginalExtension();
+            $request->file('imagen_bogota_nosotros')->move('uploads/', $filename);
+            File::delete('uploads/'.$nosotros->imagen_bogota_nosotros);
+            $nosotros->imagen_bogota_nosotros = $filename;
         }
         $nosotros->save();
         return redirect()->back()->with('success', 'Actualizado con exito');

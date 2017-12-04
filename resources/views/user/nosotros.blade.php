@@ -126,20 +126,20 @@
                         <!-- Indicators -->
                         <ol class="carousel-indicators mb45">
                             <li data-target="#carousel-tabs" data-slide-to="0" class="active">
-                                <i class="icon-inicio"></i>
-                                <span>Organismos<br> de Dirección</span>
+                                <img src="{{url('uploads')}}/{{$nosotros8s->icono_organismos_nosotros}}" alt="Organismos de Dirección" class="img-responsive center-block wow fadeInUp mb30">
+                                <span>{{$nosotros8s->titulo_organismos_nosotros}}</span>
                             </li>
                             <li data-target="#carousel-tabs" data-slide-to="1">
-                                <i class="icon-bubbles"></i>
-                                <span>Junta Directiva<br> Nacional</span>
+                                <img src="{{url('uploads')}}/{{$nosotros9s->icono_junta_nosotros}}" alt="junta de Dirección" class="img-responsive center-block wow fadeInUp mb30">
+                                <span>{{$nosotros9s->titulo_junta_nosotros}}</span>
                             </li>
                             <li data-target="#carousel-tabs" data-slide-to="2">
-                                <i class="icon-badge"></i>
-                                <span>Cómite Seccional<br> Bucaramanga</span>
+                                <img src="{{url('uploads')}}/{{$nosotros10s->icono_comite_nosotros}}" alt="comite de Dirección" class="img-responsive center-block wow fadeInUp mb30">
+                                <span>{{$nosotros10s->titulo_comite_nosotros}}</span>
                             </li>
                             <li data-target="#carousel-tabs" data-slide-to="3">
-                                <i class="icon-action-redo"></i>
-                                <span>Junta Directiva<br> Seccional Bogotá</span>
+                                <img src="{{url('uploads')}}/{{$nosotros11s->icono_bogota_nosotros}}" alt="comite de Dirección" class="img-responsive center-block wow fadeInUp mb30">
+                                <span>{{$nosotros11s->titulo_bogota_nosotros}}</span>
                             </li>
                         </ol>
                         
@@ -148,19 +148,12 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="visible-md visible-lg"></div>
-                                        <img src="img/juntadirectiva.jpg" alt="Organismos de Dirección" class="img-responsive center-block wow fadeInUp mb30">
+                                        <img src="{{url('uploads')}}/{{$nosotros8s->imagen_organismos_nosotros}}" alt="Organismos de Dirección" class="img-responsive center-block wow fadeInUp mb30">
                                     </div>
                                     <div class="col-md-6">
-                                        <h2 class="title-border title-bg-line gray"><span>Organismos de Dirección</span></h2>
+                                        <h2 class="title-border title-bg-line gray"><span>{{$nosotros8s->titulo_organismos_nosotros}}</span></h2>
                                         <p>
-                                            Los organismos de dirección de nuestra organización sindical, en su orden jerárquico son:<br><br>
-                                            1.  Asamblea General de Afiliados <br>
-                                            2.  Junta Directiva Nacional <br>
-                                            3.  Asambleas Subdirectivas Seccionales <br>
-                                            4.  Juntas Directivas Seccionales <br>
-                                            5.  Asambleas Comités Seccionales <br>
-                                            6.  Juntas Directivas Comités Seccionales <br>
-                                            7.  Comisión Nacional de Reclamos
+                                            {!!$nosotros8s->descripcion_organismos_nosotros!!}
                                         </p>
                                     </div>
                                 </div>
@@ -170,14 +163,12 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="visible-md visible-lg"></div>
-                                        <img src="img/juntadirectiva.jpg" alt="Junta Directiva Nacional" width="80%" class="img-responsive center-block wow fadeInUp mb30">
+                                        <img src="{{url('uploads')}}/{{$nosotros9s->imagen_junta_nosotros}}" alt="Junta Directiva Nacional" width="80%" class="img-responsive center-block wow fadeInUp mb30">
                                     </div>
                                     <div class="col-md-6">
-                                        <h2 class="title-border title-bg-line gray"><span>Junta Directiva Nacional</span></h2>
+                                        <h2 class="title-border title-bg-line gray"><span>{{$nosotros9s->titulo_junta_nosotros}}</span></h2>
                                         <p>
-                                           Según los Estatutos del Sindicato de Trabajadores de la Administradora de Pensiones COLPENSIONES – SINTRACOLPEN – la Junta Directiva se encuentra organizada de acuerdo a lo establecido en el ARTÍCULO 14º, integrada por diez (10) miembros (1) Presidente, (1) Vicepresidente, (1) Secretaria General, (1) Tesorero General, (1) Fiscal Nacional, (1) Coordinador(a) de Asuntos Jurídicos y Bienestar Laboral, (1) Coordinación(a) de Gestión Administrativa y Bienestar, (1) Coordinador(a) de Comunicaciones, (1) Coordinador(a) de Capacitación Sindical y  Derechos Humanos, (1) Coordinador(a) Nacional de afiliaciones y la Comisión de Reclamos integrada por dos (2) miembros.<br><br>
-
-                                           <b>Propósito:</b> Establecer los criterios y procesos para el manejo de las relaciones con los afiliados, trabajadores, empleador, las diferentes instancias del sindicato y con otras organizaciones sindicales y sociales.
+                                            {!!$nosotros9s->descripcion_junta_nosotros!!}
                                         </p>
                                     </div>
                                 </div>
@@ -187,14 +178,12 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="visible-md visible-lg"></div>
-                                        <img src="img/juntadirectiva.jpg" alt="Junta Directiva Nacional" width="80%" class="img-responsive center-block wow fadeInUp mb30">
+                                        <img src="{{url('uploads')}}/{{$nosotros10s->imagen_comite_nosotros}}" alt="comite de Dirección" class="img-responsive center-block wow fadeInUp mb30">
                                     </div>
                                     <div class="col-md-6">
-                                        <h2 class="title-border title-bg-line gray"><span>Junta Directiva Nacional</span></h2>
-                                         <p>
-                                            La Junta Directiva Seccional Bogotá, integrada por diez (10) miembros un (1) Presidente, un (1) Vicepresidente, un (1) Secretario General, un (1) Tesorero, uno (1) fiscal, y cinco (5) miembros suplentes quienes serán organizados internamente conforme sus necesidades a través de coordinaciones.<br><br>
-                                            <b>Propósito:</b> Promover espacios de acompañamiento, seguimiento y apoyo en las relaciones con el empleador, encaminadas a lograr el bienestar general de los trabajadores y sus familias.
-
+                                        <h2 class="title-border title-bg-line gray"><span>{{$nosotros10s->titulo_comite_nosotros}}</span></h2>
+                                        <p>
+                                            {!!$nosotros10s->descripcion_comite_nosotros!!}
                                         </p>
                                     </div>
                                 </div>
@@ -204,17 +193,12 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="visible-md visible-lg"></div>
-                                        <img src="img/juntadirectiva.jpg" alt="Cómite Seccional Bucaramanga" class="img-responsive center-block wow fadeInUp mb30">
+                                        <img src="{{url('uploads')}}/{{$nosotros11s->imagen_bogota_nosotros}}" alt="comite de Dirección" class="img-responsive center-block wow fadeInUp mb30">
                                     </div>
                                     <div class="col-md-6">
-                                        <h2 class="title-border title-bg-line gray"><span>Cómite Seccional Bucaramanga</span></h2>
+                                        <h2 class="title-border title-bg-line gray"><span>{{$nosotros11s->titulo_bogota_nosotros}}</span></h2>
                                         <p>
-                                            El comité Seccional de Bucaramanga integrado por cinco (5) miembros:<br><br>
-                                            1. Un Presidente <br>
-                                            2. Un Vicepresidente <br>
-                                            3. Un Tesorero <br>
-                                            4. Un Secretario General <br>
-                                            5. Un Fiscal
+                                            {!!$nosotros11s->descripcion_bogota_nosotros!!}
                                         </p>
                                     </div>
                                 </div>

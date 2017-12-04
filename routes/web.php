@@ -11,6 +11,8 @@
 |
 */
 //ADMINISTRADOR
+Route::get('/admin/login', 'adminController@login');
+
 Route::get('/admin/afiliate-ya', 'adminController@afiliate_ya');
 Route::post('/admin/afiliate_ya_editar1', 'adminController@afiliate_ya_editar1');
 Route::post('/admin/afiliate_ya_editar2', 'adminController@afiliate_ya_editar2');
@@ -71,6 +73,10 @@ Route::post('/admin/nosotros_editar5', 'adminController@nosotros_editar5');
 Route::post('/admin/nosotros_editar6', 'adminController@nosotros_editar6');
 Route::post('/admin/nosotros_editar7', 'adminController@nosotros_editar7');
 Route::post('/admin/nosotros_editar8', 'adminController@nosotros_editar8');
+Route::post('/admin/nosotros_editar9', 'adminController@nosotros_editar9');
+Route::post('/admin/nosotros_editar10', 'adminController@nosotros_editar10');
+Route::post('/admin/nosotros_editar11', 'adminController@nosotros_editar11');
+Route::post('/admin/nosotros_editar12', 'adminController@nosotros_editar12');
 
 Route::get('/admin/nuestros-afiliados', 'adminController@nuestros_afiliados');
 Route::post('/admin/nuestros_afiliados_editar1', 'adminController@nuestros_afiliados_editar1');
@@ -102,3 +108,6 @@ Route::get('boletines-generales', 'userController@boletines_generales');
 Route::get('nuestros-afiliados', 'userController@nuestros_afiliados');
 Route::get('afiliate-ya', 'userController@afiliate_ya');
 Route::get('nosotros', 'userController@nosotros');
+Route::get('/', 'userController@inicio');
+
+

@@ -67,7 +67,7 @@
                             <div class="collapse navbar-collapse marginMenu" id="main-navbar-container">
                                 <ul class="nav navbar-nav">
                                     <li class="dropdown active megamenu-container">
-                                        <a href="inicio.html">Inicio</a>
+                                        <a href="{{url('/')}}">Inicio</a>
                                     </li>
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Nosotros<span class="angle"></span></a>

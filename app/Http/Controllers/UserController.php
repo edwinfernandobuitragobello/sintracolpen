@@ -32,6 +32,10 @@ use App\nosotros4s;
 use App\nosotros5s;
 use App\nosotros6s;
 use App\nosotros7s;
+use App\nosotros8s;
+use App\nosotros9s;
+use App\nosotros10s;
+use App\nosotros11s;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -135,7 +139,7 @@ class UserController extends Controller
         $afiliate_yas1s = afiliate_yas1s::find(1);
         return view('user.afiliate-ya', compact('contactanos','enlaces_interes','enlaces_interes1s','afiliate_yas','afiliate_yas1s','capacitaciones'));
     }
-    // TODO SOBRE AFILIATE YA
+    // TODO SOBRE NOSOTROS
     public function nosotros(){
         $contactanos = Contactenos::find(1);
         $enlaces_interes = Enlaces_interes::find(1);
@@ -149,6 +153,30 @@ class UserController extends Controller
         $nosotros5s = nosotros5s::get();
         $nosotros6s = nosotros6s::find(1);
         $nosotros7s = nosotros7s::get();
-        return view('user.nosotros', compact('contactanos','enlaces_interes','enlaces_interes1s','nosotros','nosotros1s','nosotros2s','nosotros3s','nosotros4s','nosotros5s','nosotros6s','nosotros7s','capacitaciones'));
+        $nosotros8s = nosotros8s::find(1);
+        $nosotros9s = nosotros9s::find(1);
+        $nosotros10s = nosotros10s::find(1);
+        $nosotros11s = nosotros11s::find(1);
+        return view('user.nosotros', compact('contactanos','enlaces_interes','enlaces_interes1s','nosotros','nosotros1s','nosotros2s','nosotros3s','nosotros4s','nosotros5s','nosotros6s','nosotros7s','nosotros8s','nosotros9s','nosotros10s','nosotros11s','capacitaciones'));
+    }
+    // TODO SOBRE INICIO
+    public function inicio(){
+        $contactanos = Contactenos::find(1);
+        $enlaces_interes = Enlaces_interes::find(1);
+        $enlaces_interes1s = Enlaces_interes1s::get();
+        $capacitaciones = capacitaciones::find(1);
+        $nosotros = nosotros::find(1);
+        $nosotros1s = nosotros1s::find(1);
+        $nosotros2s = nosotros2s::find(1);
+        $nosotros3s = nosotros3s::find(1);
+        $nosotros4s = nosotros4s::find(1);
+        $nosotros5s = nosotros5s::get();
+        $nosotros6s = nosotros6s::find(1);
+        $nosotros7s = nosotros7s::get();
+        $nosotros8s = nosotros8s::find(1);
+        $nosotros9s = nosotros9s::find(1);
+        $nosotros10s = nosotros10s::find(1);
+        $nosotros11s = nosotros11s::find(1);
+        return view('user.inicio', compact('contactanos','enlaces_interes','enlaces_interes1s','nosotros','nosotros1s','nosotros2s','nosotros3s','nosotros4s','nosotros5s','nosotros6s','nosotros7s','nosotros8s','nosotros9s','nosotros10s','nosotros11s','capacitaciones'));
     }
 }

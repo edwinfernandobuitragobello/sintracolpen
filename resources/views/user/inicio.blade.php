@@ -1,148 +1,4 @@
-<!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <title>Sintracolpen</title>
-        <meta name="description" content="">
-        <!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <![endif]-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <!-- Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700,900,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Raleway:400,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300italic,400italic,600italic,700italic,600,800,300,700,800italic' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
-        
-        <!-- Styles -->
-        <link rel="stylesheet" href="css/animate.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/magnific-popup.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/revslider/revslider-index11.css">
-        <link rel="stylesheet" id="color-scheme" href="css/colors/green.css">
-        
-        <!-- Favicon -->
-        <link rel="icon" type="image/png" href="img/favicon.ico">
-        <script src="js/modernizr.js"></script>
-        <script src="js/jquery.min.js"></script>
-        <script src="js/queryloader2.min.js"></script>
-    </head>
-
-    <body>
-        <div class="boss-loader-overlay"></div>
-        <div id="wrapper" class="bg-gray">
-            <header id="header" role="banner">
-                <nav class="navbar navbar-default animated-dropdown btt-dropdown" role="navigation">
-                    <div class="navbar-top navbar-color clearfix">
-                        <div class="container">
-                            <div class="pull-right">
-                               <div class="social-icons pull-right hidden-xs">
-                                    <a href="https://twitter.com/sintracolpen1?lang=es" target="_blank" class="social-icon icon-twitter" title="Twitter">
-                                        <i class="fa fa-twitter sizeIcons-header"></i>
-                                    </a>
-                                    <a href="https://www.instagram.com/sintracolpen/?hl=es" target="_blank" class="social-icon icon-instagram" title="Instagram">
-                                        <i class="fa fa-instagram sizeIcons-header"></i>
-                                    </a>
-                                    <a href="https://www.youtube.com/channel/UCca6tePo-yD1tmmoQYJTn1g" class="social-icon icon-youtube" target="_blank" title="Youtube">
-                                        <i class="fa fa-youtube-play sizeIcons-header"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="navbar-inner sticky-menu">
-                        <div class="container">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle pull-right collapsed" data-toggle="collapse" data-target="#main-navbar-container">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                </button>
-
-                                <div class="navbar-header">
-                                    <a href="inicio.html"><img src="img/logoSintracolpen.png" id="logoHeader" class="pull-left marginLogo"></a>
-                                </div>
-                            </div>
-
-                            <div class="collapse navbar-collapse marginMenu" id="main-navbar-container">
-                                <ul class="nav navbar-nav">
-                                    <li class="dropdown active megamenu-container">
-                                        <a href="inicio.html">Inicio</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Nosotros<span class="angle"></span></a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li class="dropdown sub-dropdown">
-                                                <a href="nosotros.html">Misión - Visión</a>
-                                            </li>
-                                            <li class="dropdown sub-dropdown">
-                                                <a href="nosotros.html">¿Quiénes somos?</a>
-                                            </li>
-                                            <li class="dropdown sub-dropdown">
-                                                <a href="nosotros.html">¿Qué hacemos?</a>
-                                            </li>
-                                            <li class="dropdown sub-dropdown">
-                                                <a href="nosotros.html">Principios Organizacionales</a>
-                                            </li>
-                                            <li class="dropdown sub-dropdown">
-                                                <a href="nosotros.html">Valores Organizacionales</a>
-                                            </li>
-                                            <li class="dropdown sub-dropdown">
-                                                <a href="nosotros.html">Comites, juntas y organismos</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Afiliaciones<span class="angle"></span></a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li class="dropdown sub-dropdown">
-                                                <a href="afiliate-ya.html">Afiliate ya!</a>
-                                            </li>
-                                            <li class="dropdown sub-dropdown">
-                                                <a href="nuestros-afiliados.html">Nuestros afiliados</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contenidos<span class="angle"></span></a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li class="dropdown sub-dropdown">
-                                                <a href="boletines-generales.html">Boletines Generales</a>
-                                            </li>
-                                            <li class="dropdown sub-dropdown">
-                                                <a href="comunicados-oficiales.html">Comunicados Oficiales</a>
-                                            </li>
-                                            <li class="dropdown sub-dropdown">
-                                            <li class="dropdown sub-dropdown">
-                                                <a href="contenido-sindical.html">Contenido Sindical</a>
-                                            </li>
-                                            <li class="dropdown sub-dropdown">
-                                                <a href="documentos-oficiales.html">Documentos Oficiales</a>
-                                            </li>
-                                            <li class="dropdown sub-dropdown">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Multimedia<span class="angle"></span></a>
-                                                <ul class="dropdown-menu" role="menu">
-                                                    <li><a href="galeria.html">Galería</a></li>
-                                                    <li><a href="videos.html">Vídeos</a></li> 
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown sub-dropdown">
-                                                <a href="http://cursosvirtualesintracolpen.com/" target="blank">Capacitaciones</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown megamenu-container">
-                                        <a href="preguntas-frecuentes.html">Preguntas</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="contactanos.html">Contáctanos</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </header>
+@include('user.header')
 
             <div id="content" role="main" class="no-padding">
                 <div id="revslider-container">
@@ -417,65 +273,46 @@
             <div class="mb40 hidden-xs"></div>
 
             <div class="container">
-                <h2 class="title-underblock dark mb30">Enlaces de interés</h2>
+                <h2 class="title-underblock dark mb30">{{$enlaces_interes->titulo_enlaces_interes}}</h2>
                 <div class="team-member-carousel owl-carousel nav-border nav-higher">
-                    <a href="https://www.colpensiones.gov.co/" target="_blank" title="Colpensiones - Ven por tu futuro ya">
-                        <img src="img/aliados/logoColpensiones.jpg" style="width: 80%">
-                    </a>
-                    <a href="https://cut.org.co/" target="_blank" title="Central Colombiana de Trabajadores - Colombia">
-                        <img src="img/aliados/logoCUT-Colombia.jpg" style="width: 80%;">
-                    </a>
-                    <a href="http://www.mintrabajo.gov.co/web/guest/inicio" target="_blank" title="Mintrabajo - Paz, Equidad, Educación">
-                        <img src="img/aliados/LogoMintrabajo.jpg" style="width: 80%;">
-                    </a>
-                    <a href="https://www.procuraduria.gov.co/portal/" target="_blank" title="Procuraduría General de la Nación">
-                        <img src="img/aliados/logoProcuraduria.jpg" style="width: 80%;">
-                    </a>
-                    <a href="http://cutbogota.org/" target="_blank" title="Central Colombia de Trabajadores - Bogotá">
-                        <img src="img/aliados/logoCUT-Bogota.jpg" style="width: 80%">
-                    </a>
-                    <a href="http://www.ilo.org/global/lang--es/index.htm" target="_blank" title="Organización Internacional del Trabajo">
-                        <img src="img/aliados/logoOIT.jpg" style="width: 80%;">
-                    </a>
-                    <a href="http://www.ens.org.co/" target="_blank" title="Escuela Nacional Sindical">
-                        <img src="img/aliados/logoENS.jpg" style="width: 80%;">
-                    </a>
+                    @foreach($enlaces_interes1s as $enlaces_interes1)
+                        <a href="{{$enlaces_interes1->enlace_enlaces_interes}}" target="_blank" title="{{$enlaces_interes1->nombre_enlaces_interes}}">
+                            <img src="{{url('uploads')}}/{{$enlaces_interes1->imagen_enlaces_interes}}" style="width: 80%">
+                        </a>
+                    @endforeach
                 </div>
             </div>
             <div class="mb40 mb30-xs"></div>
-
         </div>
-
-
 
         <footer id="footer" role="contentinfo">
             <div id="footer-inner">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="widget">
                                 <div class="corporate-widget">
-                                    <a href=""><img src="img/logoSintracolpen.png"></a><br><br>
-                                    <p><i>Sindicato de Trabajadores de la Administradora Colombiana de Pensiones - SINTRACOLPEN.</i></p>
+                                    <a href=""><img src="{{ asset('imgUser/logoSintracolpen.png') }}"></a><br><br>
+                                    <p><i>{{$contactanos->texto_descriptivo_contactenos}}</i></p>
 
                                     <address>
-                                        <strong>Domicilio Principal: </strong>Calle 4 No. 9-43 <br> Zipaquirá - Cundinamarca<br> 
-                                        <strong>Oficina: </strong> 403<br><br>
-                                        <strong>Notificaciones: </strong>Carrera 20C No. 72-13 <br> Barrio San Felipe-Bogotá<br>
-                                        <strong>Oficina: </strong>207<br><br>
-                                        <strong>Correo: </strong> <a href="mailto:sintracolpen@gmail.com">sintracolpen@gmail.com</a><br>
-                                        <strong>Teléfono: </strong>3099131
+                                        <strong>Domicilio Principal: </strong>{{$contactanos->domicilio_principal_contactenos}}<br> 
+                                        <strong>Oficina: </strong> {{$contactanos->oficina1_contactenos}}<br><br>
+                                        <strong>Notificaciones: </strong>{{$contactanos->Notificaciones_contactenos}}<br>
+                                        <strong>Oficina: </strong>{{$contactanos->oficina2_contactenos}}<br><br>
+                                        <strong>Correo: </strong> <a href="mailto:{{$contactanos->correo_contactenos}}">{{$contactanos->correo_contactenos}}</a><br>
+                                        <strong>Teléfono: </strong>{{$contactanos->telefono_contactenos}}
                                     </address>
                                     
                                     <span class="social-icons-label">Síguenos en...</span>
                                     <div class="social-icons">
-                                        <a href="https://twitter.com/sintracolpen1?lang=es" target="_blank" class="social-icon icon-twitter" title="Twitter">
+                                        <a href="{{$contactanos->twitter_contactenos}}" target="_blank" class="social-icon icon-twitter" title="Twitter">
                                             <i class="fa fa-twitter sizeIcons-footer" ></i>
                                         </a>
-                                        <a href="https://www.instagram.com/sintracolpen/?hl=es" target="_blank" class="social-icon icon-instagram" title="Instagram">
+                                        <a href="{{$contactanos->instagram_contactenos}}" target="_blank" class="social-icon icon-instagram" title="Instagram">
                                             <i class="fa fa-instagram sizeIcons-footer"></i>
                                         </a>
-                                        <a href="https://www.youtube.com/channel/UCca6tePo-yD1tmmoQYJTn1g" target="_blank" class="social-icon icon-youtube" title="Youtube">
+                                        <a href="{{$contactanos->youtube_contactenos}}" target="_blank" class="social-icon icon-youtube" title="Youtube">
                                             <i class="fa fa-youtube-play sizeIcons-footer"></i>
                                         </a>
                                     </div>
@@ -483,40 +320,40 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <!-- <div class="col-md-4">
                             <div class="widget">
                                 <h4>Boletines Generales</h4>
                                 <ul class="latest-posts-list">
                                     <li class="clearfix">
-                                        <figure><img src="images/blog/thumbnails/post1.jpg" alt="Nombre del boletin"></figure>
+                                        <figure><img src="{{ asset('imagesUser/blog/thumbnails/post1.jpg') }}" alt="Nombre del boletin"></figure>
                                         <div class="entry-content">
                                             <h5><a href="#">Lorem ipsum dolor sit amet sine butou.</a></h5>
                                             <p>17/01/2015 - Por <a href="#">Bryan Eon</a></p>
                                         </div>
                                     </li>
                                     <li class="clearfix">
-                                        <figure><img src="images/blog/thumbnails/post1.jpg" alt="Nombre del boletin"></figure>
+                                        <figure><img src="{{ asset('imagesUser/blog/thumbnails/post1.jpg') }}" alt="Nombre del boletin"></figure>
                                         <div class="entry-content">
                                             <h5><a href="#">Quo commodi quidem saepe quos.</a></h5>
                                             <p>12/01/2015 - Por <a href="#">Bryan Eon</a></p>
                                         </div>
                                     </li>
                                     <li class="clearfix">
-                                        <figure><img src="images/blog/thumbnails/post1.jpg" alt="Nombre del boletin"></figure>
+                                        <figure><img src="{{ asset('imagesUser/blog/thumbnails/post1.jpg') }}" alt="Nombre del boletin"></figure>
                                         <div class="entry-content">
                                             <h5><a href="#">Ducimus volupta tibus, alias.</a></h5>
                                             <p>07/01/2015 - Por <a href="#">Bryan Eon</a></p>
                                         </div>
                                     </li>
                                     <li class="clearfix">
-                                        <figure><img src="images/blog/thumbnails/post1.jpg" alt="Nombre del boletin"></figure>
+                                        <figure><img src="{{ asset('imagesUser/blog/thumbnails/post1.jpg') }}" alt="Nombre del boletin"></figure>
                                         <div class="entry-content">
                                             <h5><a href="#">Lorem dolor sit amet vinche mae testai.</a></h5>
                                             <p>01/01/2015 - Por <a href="#">Bryan John</a></p>
                                         </div>
                                     </li>
                                     <li class="clearfix">
-                                        <figure><img src="images/blog/thumbnails/post1.jpg" alt="Nombre del boletin"></figure>
+                                        <figure><img src="{{ asset('imagesUser/blog/thumbnails/post1.jpg') }}" alt="Nombre del boletin"></figure>
                                         <div class="entry-content">
                                             <h5><a href="#">Lorem dolor sit amet vinche mae testai.</a></h5>
                                             <p>01/01/2015 - Por <a href="#">Bryan John</a></p>
@@ -524,13 +361,14 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="widget">
-                                <a class="twitter-timeline" href="https://twitter.com/Sintracolpen1?ref_src=twsrc%5Etfw" height="450" data-chrome="nofooter">Tweets por Sintracolpen</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                <a class="twitter-timeline" href="{{$contactanos->twitter_contactenos}}?ref_src=twsrc%5Etfw" height="450" data-chrome="nofooter">Tweets por Sintracolpen</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                             </div>
                         </div>
+  
                     </div>
                 </div>
             </div>
@@ -539,12 +377,12 @@
                     <div class="row">
                         <div class="col-md-6 col-md-push-6">
                             <ul class="footer-menu">
-                                <li><a href="inicio.html">Inicio</a></li>
-                                <li><a href="nosotros.html">Nosotros</a></li>
-                                <li><a href="afiliate-ya.html">Afiliaciones</a></li>
-                                <li><a href="contenidos.html">Contenidos</a></li>
-                                <li><a href="preguntas-frecuentes.html">Preguntas</a></li>
-                                <li><a href="contactanos.html">Contáctanos</a></li>
+                                <li><a href="{{url('/')}}">Inicio</a></li>
+                                <li><a href="{{url('nosotros')}}">Nosotros</a></li>
+                                <li><a href="#">Afiliaciones</a></li>
+                                <li><a href="#">Contenidos</a></li>
+                                <li><a href="{{url('preguntas-frecuentes')}}">Preguntas</a></li>
+                                <li><a href="{{url('contactanos')}}">Contáctanos</a></li>
                             </ul>
                         </div>
                         <div class="col-md-6 col-md-pull-6">
@@ -588,28 +426,25 @@
         </div>
     </div>
 
-        <script src="js/smoothscroll.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.hoverIntent.min.js"></script>
-        <script src="js/jquery.nicescroll.min.js"></script>
-        <script src="js/waypoints.min.js"></script>
-        <script src="js/waypoints-sticky.min.js"></script>
-        <script src="js/jquery.debouncedresize.js"></script>
-        <script src="js/retina.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/jflickrfeed.min.js"></script>
-        <script src="js/twitter/jquery.tweet.min.js"></script>
-        <script src="js/jquery.themepunch.tools.min.js"></script>
-        <script src="js/jquery.themepunch.revolution.min.js"></script>
-        <script src="js/isotope.pkgd.min.js"></script>
-        <script src="js/skrollr.min.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/jquery.knob.min.js"></script>
-        <script src="js/jquery.countTo.js"></script>
-        <script src="js/jquery.validate.min.js"></script>
-        <script src="js/contact.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/wow.min.js"></script>
+    <script src="{{ asset('jsUser/smoothscroll.js') }}"></script>
+    <script src="{{ asset('jsUser/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('jsUser/jquery.hoverIntent.min.js') }}"></script>
+    <script src="{{ asset('jsUser/jquery.nicescroll.min.js') }}"></script>
+    <script src="{{ asset('jsUser/waypoints.min.js') }}"></script>
+    <script src="{{ asset('jsUser/waypoints-sticky.min.js') }}"></script>
+    <script src="{{ asset('jsUser/jquery.debouncedresize.js') }}"></script>
+    <script src="{{ asset('jsUser/retina.min.js') }}"></script>
+    <script src="{{ asset('jsUser/twitter/jquery.tweet.min.js') }}"></script>
+    <script src="{{ asset('jsUser/jflickrfeed.min.js') }}"></script>
+    <script src="{{ asset('jsUser/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('jsUser/jquery.kwicks.min.js') }}"></script>
+    <script src="{{ asset('jsUser/skrollr.min.js') }}"></script>
+    <script src="{{ asset('jsUser/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('jsUser/wow.min.js') }}"></script>
+    <script src="{{ asset('jsUser/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('jsUser/mediaelement-and-player.min.js') }}"></script>
+    <script src="{{ asset('jsUser/main.js') }}"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsBJuX7MUGkO38AxIIn0K4rIZV5kba7M0&callback=initMap"></script>
 
         <script>
             (function () {

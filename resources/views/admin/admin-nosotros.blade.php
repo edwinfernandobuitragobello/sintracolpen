@@ -226,28 +226,29 @@
                                         <h2>Organismos de dirección</h2>
                                     </div>
 
-                                    <form action="" method="">
+                                    <form action="{{ url('/admin/nosotros_editar9') }}" method="POST" role="form" enctype="multipart/form-data">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Título</label>
-                                                <input type="text" id="" name="" class="form-control" placeholder="Título" required>
+                                                <input type="text" id="" name="titulo_organismos_nosotros" value="{{$nosotros8s->titulo_organismos_nosotros}}" class="form-control" placeholder="Título" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Descripción</label>
-                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción" required></textarea>
+                                                    <textarea class="form-control textArea" rows="4" id="" name="descripcion_organismos_nosotros" placeholder="Descripción" required>{{$nosotros8s->descripcion_organismos_nosotros}}</textarea>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Icono</label>
-                                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono">
+                                                            <input type="file" id="" name="icono_organismos_nosotros" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Imagen</label>
-                                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen">
+                                                            <input type="file" id="" name="imagen_organismos_nosotros" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen">
                                                         </div>
                                                     </div>
                                                 </div>     
@@ -268,31 +269,33 @@
                                         <h2>Junta Directiva Nacional</h2>
                                     </div>
 
-                                    <form action="" method="">
+                                    <form action="{{ url('/admin/nosotros_editar10') }}" method="POST" role="form" enctype="multipart/form-data">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Título</label>
-                                                    <input type="text" id="" name="" class="form-control" placeholder="Título" required>
+                                                <input type="text" id="" name="titulo_junta_nosotros" value="{{$nosotros9s->titulo_junta_nosotros}}" class="form-control" placeholder="Título" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Descripción</label>
-                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción" required></textarea>
+                                                    <textarea class="form-control textArea" rows="4" id="" name="descripcion_junta_nosotros" placeholder="Descripción" required>{{$nosotros9s->descripcion_junta_nosotros}}</textarea>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Icono</label>
-                                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono">
+                                                            <input type="file" id="" name="icono_junta_nosotros" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Imagen</label>
-                                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen">
+                                                            <input type="file" id="" name="imagen_junta_nosotros" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen">
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div>     
+                                                
                                                 <div class="form-group">
                                                     <button type="submit" class="btn btn-effect-ripple btn-primary floatRight">Guardar</button>
                                                 </div>
@@ -311,31 +314,33 @@
                                         <h2>Cómite Seccional Bucaramanga</h2>
                                     </div>
 
-                                    <form action="" method="">
+                                    <form action="{{ url('/admin/nosotros_editar11') }}" method="POST" role="form" enctype="multipart/form-data">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Título</label>
-                                                    <input type="text" id="" name="" class="form-control" placeholder="Título" required>
+                                                <input type="text" id="" name="titulo_comite_nosotros" value="{{$nosotros10s->titulo_comite_nosotros}}" class="form-control" placeholder="Título" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Descripción</label>
-                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción" required></textarea>
+                                                    <textarea class="form-control textArea" rows="4" id="" name="descripcion_comite_nosotros" placeholder="Descripción" required>{{$nosotros10s->descripcion_comite_nosotros}}</textarea>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Icono</label>
-                                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono">
+                                                            <input type="file" id="" name="icono_comite_nosotros" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Imagen</label>
-                                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen">
+                                                            <input type="file" id="" name="imagen_comite_nosotros" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen">
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div>     
+                                                
                                                 <div class="form-group">
                                                     <button type="submit" class="btn btn-effect-ripple btn-primary floatRight">Guardar</button>
                                                 </div>
@@ -352,31 +357,33 @@
                                         <h2>Junta Directiva Seccional Bogotá</h2>
                                     </div>
 
-                                    <form action="" method="">
+                                    <form action="{{ url('/admin/nosotros_editar12') }}" method="POST" role="form" enctype="multipart/form-data">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Título</label>
-                                                    <input type="text" id="" name="" class="form-control" placeholder="Título" required>
+                                                <input type="text" id="" name="titulo_bogota_nosotros" value="{{$nosotros11s->titulo_bogota_nosotros}}" class="form-control" placeholder="Título" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Descripción</label>
-                                                    <textarea class="form-control textArea" rows="4" id="" name="" placeholder="Descripción" required></textarea>
+                                                    <textarea class="form-control textArea" rows="4" id="" name="descripcion_bogota_nosotros" placeholder="Descripción" required>{{$nosotros11s->descripcion_bogota_nosotros}}</textarea>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Icono</label>
-                                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono">
+                                                            <input type="file" id="" name="icono_bogota_nosotros" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar icono">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Imagen</label>
-                                                            <input type="file" id="" name="" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen">
+                                                            <input type="file" id="" name="imagen_bogota_nosotros" class="filestyle" data-buttonName="btn-primary" data-buttonText="Seleccionar imagen">
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div>     
+                                                
                                                 <div class="form-group">
                                                     <button type="submit" class="btn btn-effect-ripple btn-primary floatRight">Guardar</button>
                                                 </div>
