@@ -178,4 +178,15 @@ class UserController extends Controller
         $inicios_segunda = inicios3s::find(1);
         return view('user.inicio', compact('contactanos','enlaces_interes','enlaces_interes1s','inicio1','inicio2','inicio3','inicios1s','inicios_primera','videos1s','inicios_segunda','capacitaciones'));
     }
+    public function enviar_email(Request $request){
+        $headers  = "MIME-Version: 1.0\n";
+        $headers .= "Content-type: text/plain; charset=iso-8859-1\n";
+        $headers .= "X-Priority: 3\n";
+        $headers .= "X-MSMail-Priority: Normal\n";
+        $headers .= "X-Mailer: php\n";
+        $headers .= "From: \"".$request->contactname." ".$request->Apellidos_correo."\" <".$request->contactemail.">\n";
+        mail('efbuitrago95@gmail.com', $request->contactsubject, $request->contactmessage , $headers);
+        //sechacienda@sonson-antioquia.gov.co
+        return redirect()->back()->with('success', 'Email enviado con exito');
+    }
 }

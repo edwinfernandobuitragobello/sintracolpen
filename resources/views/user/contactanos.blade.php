@@ -19,7 +19,8 @@
                 <div class="row">
                     <div class="col-sm-8">
                         <h2 class="title-underblock dark mb30">Contáctanos</h2>
-                        <form action="php/mail.php" method="post" id="contact-form">
+                        <form action="{{ url('/enviar_email') }}" method="POST" role="form">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">

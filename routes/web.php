@@ -115,5 +115,6 @@ Route::get('nuestros-afiliados', 'userController@nuestros_afiliados');
 Route::get('afiliate-ya', 'userController@afiliate_ya');
 Route::get('nosotros', 'userController@nosotros');
 Route::get('/', 'userController@inicio');
+Route::post('/enviar_email','userController@enviar_email');
 
 

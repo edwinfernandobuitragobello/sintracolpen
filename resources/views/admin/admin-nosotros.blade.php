@@ -209,7 +209,7 @@
                                                 <td class="text-center">{{$nosotros7->nombre_valores_nosotros}}</td>
                                                 <td>{{$nosotros7->descripcion_valores_nosotros}}</td>
                                                 <td class="text-center">
-                                                    <a href="#" data-id_valores="{{$nosotros7->id}}" data-nombre_valores_nosotros="{{$nosotros7->nombre_valores_nosotros}}" data-descripcion_valores_nosotros="{{$nosotros7->descripcion_valores_nosotros}}" data-toggle="modal" data-target="#editarPrincipio" title="Editar Principio" class="btn btn-effect-ripple btn-sm btn-success editar1"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#" data-id_valores="{{$nosotros7->id}}" data-nombre_valores_nosotros="{{$nosotros7->nombre_valores_nosotros}}" data-descripcion_valores_nosotros="{{$nosotros7->descripcion_valores_nosotros}}" data-toggle="modal" data-target="#editarValor" title="Editar Principio" class="btn btn-effect-ripple btn-sm btn-success editar1"><i class="fa fa-pencil"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach
