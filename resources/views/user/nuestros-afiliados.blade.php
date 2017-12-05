@@ -40,8 +40,26 @@
                     </div>
                 </div>
             </div>
-
 @include('user.footer')
+
+
+    <script type="text/javascript">
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('mapAfiliados'), {
+                    zoom: 6,
+                    center: {lat: 4.661520299999999, lng: -74.06472610000003},
+                    disableDefaultUI: true,
+                    scrollwheel: false
+                });
+            @foreach($nuestros_afiliados1s as $nuestros_afiliados1)
+                var marker = new google.maps.Marker({
+                    position: {lat: <?php echo $nuestros_afiliados1->latitud_nuestros_afiliados; ?>, lng: <?php echo $nuestros_afiliados1->longitud_nuestros_afiliados; ?>},
+                    map: map,
+                    title: '{{$nuestros_afiliados1->afiliado_nuestros_afiliados}}'
+                });
+            @endforeach
+        }
+    </script>
 
 <script type="text/javascript">
     $(".editar").click(function(){
